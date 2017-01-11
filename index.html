@@ -20,7 +20,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="keRee-Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="https://keree.github.io/index.html">
 <meta property="og:site_name" content="keRee-Blog">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="keRee-Blog">
@@ -36,8 +36,6 @@
 
 
 
-    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
-
 
 
     <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
@@ -51,8 +49,6 @@
 <link rel="stylesheet" href="/css/style.css">
 
 
-    <style> .article { opacity: 0;} </style>
-
 
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
@@ -65,7 +61,7 @@
 <script>
     var yiliaConfig = {
         fancybox: true,
-        animate: true,
+        animate: false,
         isHome: true,
         isPost: false,
         isArchive: false,
@@ -109,46 +105,6 @@
 
 
         
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                    
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
 
         <div id="switch-area" class="switch-area">
             <div class="switch-wrap">
@@ -169,22 +125,20 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa Email" href="mailto:dhx_email@126.com" title="Email"></a>
                             
                                 <a class="fa GitHub" href="#" title="GitHub"></a>
                             
                                 <a class="fa RSS" href="/atom.xml" title="RSS"></a>
                             
+                                <a class="fa 知乎" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa SegmentFault" href="/" title="SegmentFault"></a>
+                            
                         </ul>
                     </nav>
                 </section>
                 
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MongoDB/">MongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6，webppack/">es6，webppack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
-                    </div>
-                </section>
                 
                 
                 
@@ -245,11 +199,15 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                                <a class="fa Email" target="_blank" href="mailto:dhx_email@126.com" title="Email"></a>
                             
                                 <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
                             
                                 <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="/zhihu" title="知乎"></a>
+                            
+                                <a class="fa SegmentFault" target="_blank" href="/" title="SegmentFault"></a>
                             
                         </ul>
             </nav>
@@ -480,31 +438,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="exports与module-exports的区别"><a href="#exports与module-exports的区别" class="headerlink" title="exports与module.exports的区别"></a>exports与module.exports的区别</h3><hr>
-<h3 id="释义"><a href="#释义" class="headerlink" title="释义"></a>释义</h3><blockquote>
-<p>1.module.exports 初始值为一个空对象 {}</p>
-<p>2.exports 是指向的 module.exports 的引用</p>
-<p>3.require() 返回的是 module.exports 而不是 exports</p>
-</blockquote>
-<p><strong>用一句话来说明就是，require能看到的只有require.exports这个对象，他是看不到exports对象的，而我们在编写模块时用到的exports对象实际上只是对module.exports的引用</strong></p>
-<!-- 阅读全文 -->
-<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><blockquote>
-<p>基本类型：包括Undefined, Null, Boolean, Number和String五种基本数据类型<br>引用类型：保存在内存中的对象，不能直接操作，只能通过保存在变量中的地址引用对其进行操作</p>
-<p><strong>我们要讨论的exports和module.exports是Object类型，属于引用类型</strong></p>
-</blockquote>
-<p>看下面的例子来说明一下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">var module = &#123;</div><div class="line">    exports: &#123;</div><div class="line">        name: &quot;我是module的exports属性&quot;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">var exports = module.exports;       //exports是对module.exports的引用，也就是exports现在指向的内存地址和module.exports指向的内存地址是一样的</div><div class="line"></div><div class="line">console.log( module.exports );        /*&#123;name: &quot;我是module的exports属性&quot;&#125;*/</div><div class="line">console.log( exports );        /*&#123;name: &quot;我是module的exports属性&quot;&#125;*/</div><div class="line"></div><div class="line">exports.name = &quot;我想改一下名字&quot;;    </div><div class="line"></div><div class="line">/*</div><div class="line"> * 因为是引用类型，所以导致两个的值都发生了改变</div><div class="line"> */</div><div class="line">console.log( module.exports );        //&#123;name: &quot;我想改一下名字&quot;&#125;</div><div class="line">console.log( exports );        //&#123;name: &quot;我想改一下名字&quot;&#125;</div><div class="line"></div><div class="line">/*</div><div class="line"> * 重新定义一个想要导出的模块</div><div class="line"> */</div><div class="line">var Circle = &#123;</div><div class="line">    name: &quot;我是一个圆&quot;,</div><div class="line">    func: function(x)&#123;</div><div class="line">        return x*x*Math.PI; </div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">exports = Circle;   /* 此时Circle这个Object在内存中指向了新的地址，所以exports也指向了这个地址，那么exports与原来的地址就断开了联系 */    </div><div class="line"></div><div class="line">console.log(module.exports);    /* &#123;name: &quot;我想改一个名字&quot;&#125; */</div><div class="line">console.log(exports);       /* &#123;name: &quot;我是一个圆&quot;, func: [Function] */</div></pre></td></tr></table></figure>
-<h4 id="到这里应该可以看懂了一些，再回到Node-js中，module-exports初始的时候为-，exports也指向这个空对象"><a href="#到这里应该可以看懂了一些，再回到Node-js中，module-exports初始的时候为-，exports也指向这个空对象" class="headerlink" title="到这里应该可以看懂了一些，再回到Node.js中，module.exports初始的时候为{}，exports也指向这个空对象"></a>到这里应该可以看懂了一些，再回到Node.js中，module.exports初始的时候为{}，exports也指向这个空对象</h4><p>那么，如果这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">exports.name = function(x)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">module.exports.name = fucntion(X)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/* 以上两种写法是一样的效果，因为修改的是同一内存地址里的东西 */</div></pre></td></tr></table></figure></p>
-<p>再来看另一个例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exports =  function(x)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>上面的function是一个新的内存地址，导致exports与module.exports失去联系，而require的是module.exports这个对象,所以这个模块时导不出去的</p>
-</blockquote>
-<p>还是另一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">module.exports =  function(x)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>这个是可以正常导出的</p>
-</blockquote>
-<h3 id="module-exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。"><a href="#module-exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。" class="headerlink" title="# module.exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。"></a># module.exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。</h3>
+              不一样的自我
+          
       
     </div>
     
@@ -517,6 +452,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2017/01/11/exports与module.exports的区别/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
