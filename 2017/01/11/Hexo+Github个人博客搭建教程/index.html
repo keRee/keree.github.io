@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="移动端兼容性问题是不容忽视的">
+<meta name="description" content="详细的说明，让你用飞一般的速度搭建完成自己的个人博客！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动端IOS点击事件失效解决方案">
-<meta property="og:url" content="https://keree.github.io/2017/01/11/移动端IOS点击事件失效解决方案/index.html">
+<meta property="og:title" content="Hexo+Github个人博客搭建教程">
+<meta property="og:url" content="https://keree.github.io/2017/01/11/Hexo+Github个人博客搭建教程/index.html">
 <meta property="og:site_name" content="keRee-Blog">
-<meta property="og:description" content="移动端兼容性问题是不容忽视的">
-<meta property="og:updated_time" content="2017-01-11T04:51:52.421Z">
+<meta property="og:description" content="详细的说明，让你用飞一般的速度搭建完成自己的个人博客！">
+<meta property="og:updated_time" content="2017-01-11T13:25:58.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动端IOS点击事件失效解决方案">
-<meta name="twitter:description" content="移动端兼容性问题是不容忽视的">
+<meta name="twitter:title" content="Hexo+Github个人博客搭建教程">
+<meta name="twitter:description" content="详细的说明，让你用飞一般的速度搭建完成自己的个人博客！">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>移动端IOS点击事件失效解决方案 | keRee-Blog</title>
+<title>Hexo+Github个人博客搭建教程 | keRee-Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -216,11 +216,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-移动端IOS点击事件失效解决方案" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Hexo+Github个人博客搭建教程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/11/移动端IOS点击事件失效解决方案/" class="article-date">
-      <time datetime="2017-01-11T04:42:20.528Z" itemprop="datePublished">2017-01-11</time>
+      <a href="/2017/01/11/Hexo+Github个人博客搭建教程/" class="article-date">
+      <time datetime="2017-01-11T13:20:31.863Z" itemprop="datePublished">2017-01-11</time>
 </a>
 
 
@@ -235,7 +235,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      移动端IOS点击事件失效解决方案
+      Hexo+Github个人博客搭建教程
     </h1>
   
 
@@ -246,7 +246,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -256,19 +256,86 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="1、此为网上解决方案"><a href="#1、此为网上解决方案" class="headerlink" title="1、此为网上解决方案"></a>1、此为网上解决方案</h3><p>解决办法有 4 种可供选择：</p>
+        <!-- ## Hexo+Github个人博客搭建教程 -->
+<p>标签（空格分隔）： hexo github 个人博客</p>
+<hr>
+<h3 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h3><ol>
+<li><p>安装<a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">node.js</a> <strong>（已安装的请进行下一步）</strong></p>
 <blockquote>
-<p>1 将 click 事件直接绑定到目标元素（即 .target）上</p>
-<p>2 将目标元素换成 a标签 或者 button 等可点击的元素</p>
-<p>3 将 click 事件委托到非 document 或 body 的父级元素上</p>
-<p>4 给目标元素加一条样式规则 cursor: pointer;</p>
+<p>node.js官网：<a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">https://nodejs.org/zh-cn/</a><br>首次的安装的可以参考这篇博客：<a href="http://xiaoyaojones.blog.163.com/blog/static/28370125201351501113581/" target="_blank" rel="external">Nodejs、NPM安装</a></p>
 </blockquote>
-<!-- 阅读全文 -->
-<h3 id="2、实际应用：第3方案靠谱"><a href="#2、实际应用：第3方案靠谱" class="headerlink" title="2、实际应用：第3方案靠谱"></a>2、实际应用：第3方案靠谱</h3><blockquote>
-<p>须将click事件委托到目标的父级元素（非document、body）上<br>例：$(‘目标’).on(‘click’, ‘父级元素’, function(){</p>
-<pre><code>//方法
-</code></pre><p>   });</p>
+<p>这篇<a href="http://xiaoyaojones.blog.163.com/blog/static/28370125201351501113581/" target="_blank" rel="external">博客</a>讲的比较详细，对于首次的安装Node.js的我再啰嗦下:</p>
+<ul>
+<li><p>确保版本提示ok</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v    //v4.4.4</div><div class="line">npm -v     //3.10.5</div></pre></td></tr></table></figure>
+</li>
+<li><p>最好要配置好npm的全局模块的存放路径</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm config set prefix &quot;C:\Program Files\nodejs\node_global&quot;</div><div class="line">npm config set cache &quot;C:\Program Files\nodejs\node_cache&quot;</div></pre></td></tr></table></figure>
+<p> 后面的文件路径可以自定义，存放在你的node文档中比较好，以后全局安装的模块都可以在这里找到</p>
+<ul>
+<li>注意全局变量的设置 </li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p>安装<a href="https://www.git-scm.com/" target="_blank" rel="external">Git</a> <strong>（已安装的请进行下一步）</strong></p>
+<blockquote>
+<p>Git官网： <a href="https://www.git-scm.com/" target="_blank" rel="external">https://www.git-scm.com/</a><br>或者看廖雪峰的官网-<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000" target="_blank" rel="external">安装Git</a></p>
 </blockquote>
+</li>
+<li><p>安装<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo</a></p>
+<blockquote>
+<p>Hexo官网中文文档：<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/index.html</a></p>
+</blockquote>
+<p>当然既然node已经安装好了，我们可以自定义安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure>
+<p>OK，安装完成之后，可以 <code>hexo -v</code> 即可以看到自己相关的系统配置<br>贴下我自己的系统环境：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">hexo: 3.2.2</div><div class="line">hexo-cli: 1.0.2</div><div class="line">os: Windows_NT 6.1.7601 win32 x64</div><div class="line">http_parser: 2.5.2</div><div class="line">node: 4.4.4</div><div class="line">v8: 4.5.103.35</div><div class="line">uv: 1.8.0</div><div class="line">zlib: 1.2.8</div><div class="line">ares: 1.10.1-DEV</div><div class="line">icu: 56.1</div><div class="line">modules: 46</div><div class="line">openssl: 1.0.2h</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Hexo初试"><a href="#Hexo初试" class="headerlink" title="Hexo初试"></a>Hexo初试</h3><ol>
+<li><p><strong>初始化</strong> 新建一个自己的项目目录，如myBlog，然后在cmd中cd到项目目录 ，执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
+<p>提示： <code>INFO  Start blogging with Hexo!</code> 则说明成功了。</p>
+<p>此时我们可以看到myBlog目录结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">--myBlog</div><div class="line"> |--+ node_modules</div><div class="line"> |--+ scaffolds</div><div class="line"> |--+ source</div><div class="line"> |--+ themes</div><div class="line"> |--- .gitignore</div><div class="line"> |--- _config.yml</div><div class="line"> |--- package.json</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p><strong>生产静态页面</strong> 在cmd项目目录，执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g           //或者 hexo generate  也可以</div></pre></td></tr></table></figure>
+<p>提示：  <code>INFO 28 files generated in 3.24s</code>  类似的就OK啦！</p>
+</li>
+<li><p><strong>启动本地服务</strong> 在cmd项目目录，执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s           //或者 hexo server  也可以</div></pre></td></tr></table></figure>
+<p>提示：  <code>INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code><br>此时，我们可以在浏览器输入<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a><br>可以看的到系统提供的 Hexo Hello world!页面。</p>
+<ul>
+<li>如有问题可以查下看看4000端口是否被占用</li>
+</ul>
+<p>好了，到这里其实我们就可以开始配置Github了。</p>
+</li>
+</ol>
+<h3 id="Github配置"><a href="#Github配置" class="headerlink" title="Github配置"></a>Github配置</h3><p>到了这里我们需要关联Hexo和Github中的项目仓库。</p>
+<ol>
+<li><p>建立项目仓库Respository</p>
+<blockquote>
+<p>我们需要建立与自己用户名相对应的项目仓库，比如我的用户名是aduoo,那么我新建的仓库名为：aduoo.github.io</p>
+</blockquote>
+</li>
+<li><p>配置Git SSH Key&gt; 可以参考这篇<a href="http://blog.csdn.net/keyboardota/article/details/7603630" target="_blank" rel="external">博客</a></p>
+<blockquote>
+<p>这个目的是为了Hexo后面免密部署项目</p>
+</blockquote>
+</li>
+<li><p>修改Hexo配置，正式关联Hexo和Github<br>（1）、打开我们项目目录myBlog里的<code>_config.yml</code>文件（用编辑器哈）<br>（2）、翻到最后，修改如下（用户名处改成自己的哈）</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repository: ssh://git@github.com/aduoo/aduoo.github.io.git</div><div class="line">branch: master</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>那么接下来，我们可以部署自己的项目了。</p>
+<h3 id="Hexo部署项目"><a href="#Hexo部署项目" class="headerlink" title="Hexo部署项目"></a>Hexo部署项目</h3><p>在cmd项目目录，输入命令<code>hexo d</code>，最后提示<code>INFO Deploy done: git</code>，则说明项目成功部署到Github.</p>
+<p>恭喜，你可以在浏览器输入<a href="https://keree.github.io">https://aduoo.github.io</a>访问自己的blog了，可以看到会与在本地看到的一样。</p>
 
       
     </div>
@@ -280,16 +347,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/01/11/Hexo+Github个人博客搭建教程/">
-                    Hexo+Github个人博客搭建教程
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2017/01/11/MongoDB/">
-                    MongoDB学习（一）
+                <a href="/2017/01/11/移动端IOS点击事件失效解决方案/">
+                    移动端IOS点击事件失效解决方案
                 </a>
             </div>
         
@@ -301,7 +362,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、此为网上解决方案"><span class="toc-number">1.</span> <span class="toc-text">1、此为网上解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、实际应用：第3方案靠谱"><span class="toc-number">2.</span> <span class="toc-text">2、实际应用：第3方案靠谱</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统配置"><span class="toc-number">1.</span> <span class="toc-text">系统配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo初试"><span class="toc-number">2.</span> <span class="toc-text">Hexo初试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Github配置"><span class="toc-number">3.</span> <span class="toc-text">Github配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo部署项目"><span class="toc-number">4.</span> <span class="toc-text">Hexo部署项目</span></a></li></ol>
         
     </div>
     <style>
@@ -328,7 +389,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/01/11/移动端IOS点击事件失效解决方案/" data-title="移动端IOS点击事件失效解决方案" data-url="https://keree.github.io/2017/01/11/移动端IOS点击事件失效解决方案/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/01/11/Hexo+Github个人博客搭建教程/" data-title="Hexo+Github个人博客搭建教程" data-url="https://keree.github.io/2017/01/11/Hexo+Github个人博客搭建教程/"></div>
     <script>
         var duoshuoQuery = {short_name:"null"};
         var loadComment = function(){
@@ -351,15 +412,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/01/11/Hexo+Github个人博客搭建教程/" title="上一篇: Hexo+Github个人博客搭建教程">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/01/11/MongoDB/" title="下一篇: MongoDB学习（一）">
+            <a href="/2017/01/11/移动端IOS点击事件失效解决方案/" title="下一篇: 移动端IOS点击事件失效解决方案">
                 <i class="fa fa-angle-right"></i>
             </a>
         

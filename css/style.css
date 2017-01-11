@@ -2736,24 +2736,6 @@ pre .javascript .function {
 .tagcloud a.color3::before {
   border-right-color: #f5c7b7;
 }
-.tagcloud a.color4 {
-  background: #eead0e;
-}
-.tagcloud a.color4::before {
-  border-right-color: #eead0e;
-}
-.tagcloud a.color5 {
-  background: #918597;
-}
-.tagcloud a.color5::before {
-  border-right-color: #918597;
-}
-.tagcloud a.color6 {
-  background: #bc8f8f;
-}
-.tagcloud a.color6::before {
-  border-right-color: #bc8f8f;
-}
 .tagcloud a:hover {
   opacity: 1;
   -webkit-transform: scale(1.06);
