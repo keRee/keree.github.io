@@ -15,12 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="keRee-Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="本文主要是记录的作者在webpack实际使用中遇到的问题，及时记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack使用中遇到的一些问题及解决办法">
+<meta property="og:url" content="http://yoursite.com/2017/01/11/Error Chunk entry was removed Use hasRuntime()/index.html">
 <meta property="og:site_name" content="keRee-Blog">
+<meta property="og:description" content="本文主要是记录的作者在webpack实际使用中遇到的问题，及时记录">
+<meta property="og:updated_time" content="2017-01-11T04:48:38.597Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="keRee-Blog">
+<meta name="twitter:title" content="webpack使用中遇到的一些问题及解决办法">
+<meta name="twitter:description" content="本文主要是记录的作者在webpack实际使用中遇到的问题，及时记录">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives | keRee-Blog</title>
+<title>webpack使用中遇到的一些问题及解决办法 | keRee-Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,8 +66,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -252,155 +256,202 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-Error Chunk entry was removed Use hasRuntime()" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/11/移动端IOS点击事件失效解决方案/" class="archive-article-date">
-      <time datetime="2017-01-11T04:42:20.528Z" itemprop="datePublished">01-11</time>
+    <div class="article-meta">
+      <a href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/" class="article-date">
+      <time datetime="2017-01-11T04:41:38.479Z" itemprop="datePublished">2017-01-11</time>
 </a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/移动端IOS点击事件失效解决方案/">移动端IOS点击事件失效解决方案</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
     </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/11/MongoDB/" class="archive-article-date">
-      <time datetime="2017-01-11T04:41:57.045Z" itemprop="datePublished">01-11</time>
-</a>
-
-
-        </div>
-         
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/MongoDB/">MongoDB学习（一）</a>
+    <h1 class="article-title" itemprop="name">
+      webpack使用中遇到的一些问题及解决办法
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/" class="archive-article-date">
-      <time datetime="2017-01-11T04:41:38.479Z" itemprop="datePublished">01-11</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/">webpack使用中遇到的一些问题及解决办法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6，webppack/">es6，webppack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>在webpack打包css文件时出现:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error: Cannot find module &apos;node-sass&apos;</div></pre></td></tr></table></figure></p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install node-sass --save-dev</div></pre></td></tr></table></figure>
+<p>安装node-sass模块即可解决</p>
+<!-- 阅读全文 -->
+<h3 id="问题描述-1"><a href="#问题描述-1" class="headerlink" title="问题描述"></a>问题描述</h3><p>webpack利用extract-text-webpack-plugin插件打包css文件时，报：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Error: Chunk.entry was removed. Use hasRuntime()</div></pre></td></tr></table></figure></p>
+<p>股沟了一番之后，终于找到问题所在，原来是extract-text-webpack-plugin的版本问题。</p>
+<blockquote>
+<p>之前版本是^1.0.0</p>
+</blockquote>
+<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p>安装extract-text-webpack-plugin新版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save-dev extract-text-webpack-plugin@^2.0.0-beta.4</div></pre></td></tr></table></figure></p>
+<p>当然也可升级到你喜欢的版本</p>
+<p><a href="https://github.com/webpack/webpack/issues/2764" target="_blank" rel="external">资料链接</a></p>
+
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/11/exports与module.exports的区别/" class="archive-article-date">
-      <time datetime="2017-01-11T04:35:12.000Z" itemprop="datePublished">01-11</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/exports与module.exports的区别/">exports与module.exports的区别</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/">webpack使用中遇到的一些问题及解决办法</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">keRee</a></p>
+        <p><span>发布时间:</span>2017-01-11, 12:41:38</p>
+        <p><span>最后更新:</span>2017-01-11, 12:48:38</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/" title="webpack使用中遇到的一些问题及解决办法">http://yoursite.com/2017/01/11/Error Chunk entry was removed Use hasRuntime()/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/01/11/Error Chunk entry was removed Use hasRuntime()/　　作者: keRee" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2017/01/11/MongoDB/">
+                    MongoDB学习（一）
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/01/11/exports与module.exports的区别/">
+                    exports与module.exports的区别
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题描述"><span class="toc-number">1.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法"><span class="toc-number">2.</span> <span class="toc-text">解决方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题描述-1"><span class="toc-number">3.</span> <span class="toc-text">问题描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解决方法-1"><span class="toc-number">4.</span> <span class="toc-text">解决方法</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
 
     
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"webpack使用中遇到的一些问题及解决办法　| keRee-Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
+    
+</div>
+
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/01/11/Error Chunk entry was removed Use hasRuntime()/" data-title="webpack使用中遇到的一些问题及解决办法" data-url="http://yoursite.com/2017/01/11/Error Chunk entry was removed Use hasRuntime()/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"null"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/01/11/MongoDB/" title="上一篇: MongoDB学习（一）">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/01/11/exports与module.exports的区别/" title="下一篇: exports与module.exports的区别">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/11/移动端IOS点击事件失效解决方案/">移动端IOS点击事件失效解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/11/MongoDB/">MongoDB学习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/">webpack使用中遇到的一些问题及解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/11/exports与module.exports的区别/">exports与module.exports的区别</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

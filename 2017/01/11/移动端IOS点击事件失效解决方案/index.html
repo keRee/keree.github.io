@@ -15,12 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="keRee-Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="移动端兼容性问题是不容忽视的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端IOS点击事件失效解决方案">
+<meta property="og:url" content="http://yoursite.com/2017/01/11/移动端IOS点击事件失效解决方案/index.html">
 <meta property="og:site_name" content="keRee-Blog">
+<meta property="og:description" content="移动端兼容性问题是不容忽视的">
+<meta property="og:updated_time" content="2017-01-11T04:51:52.421Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="keRee-Blog">
+<meta name="twitter:title" content="移动端IOS点击事件失效解决方案">
+<meta name="twitter:description" content="移动端兼容性问题是不容忽视的">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -52,7 +56,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Archives | keRee-Blog</title>
+<title>移动端IOS点击事件失效解决方案 | keRee-Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -62,8 +66,8 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
-        isArchive: true,
+        isPost: true,
+        isArchive: false,
         isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
@@ -252,155 +256,195 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-移动端IOS点击事件失效解决方案" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/11/移动端IOS点击事件失效解决方案/" class="archive-article-date">
-      <time datetime="2017-01-11T04:42:20.528Z" itemprop="datePublished">01-11</time>
+    <div class="article-meta">
+      <a href="/2017/01/11/移动端IOS点击事件失效解决方案/" class="article-date">
+      <time datetime="2017-01-11T04:42:20.528Z" itemprop="datePublished">2017-01-11</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/移动端IOS点击事件失效解决方案/">移动端IOS点击事件失效解决方案</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      移动端IOS点击事件失效解决方案
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="1、此为网上解决方案"><a href="#1、此为网上解决方案" class="headerlink" title="1、此为网上解决方案"></a>1、此为网上解决方案</h3><p>解决办法有 4 种可供选择：</p>
+<blockquote>
+<p>1 将 click 事件直接绑定到目标元素（即 .target）上</p>
+<p>2 将目标元素换成 a标签 或者 button 等可点击的元素</p>
+<p>3 将 click 事件委托到非 document 或 body 的父级元素上</p>
+<p>4 给目标元素加一条样式规则 cursor: pointer;</p>
+</blockquote>
+<!-- 阅读全文 -->
+<h3 id="2、实际应用：第3方案靠谱"><a href="#2、实际应用：第3方案靠谱" class="headerlink" title="2、实际应用：第3方案靠谱"></a>2、实际应用：第3方案靠谱</h3><blockquote>
+<p>须将click事件委托到目标的父级元素（非document、body）上<br>例：$(‘目标’).on(‘click’, ‘父级元素’, function(){</p>
+<pre><code>//方法
+</code></pre><p>   });</p>
+</blockquote>
+
+      
+    </div>
+    
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/11/MongoDB/" class="archive-article-date">
-      <time datetime="2017-01-11T04:41:57.045Z" itemprop="datePublished">01-11</time>
-</a>
-
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/MongoDB/">MongoDB学习（一）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-archive">
-          
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/01/11/移动端IOS点击事件失效解决方案/">移动端IOS点击事件失效解决方案</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">keRee</a></p>
+        <p><span>发布时间:</span>2017-01-11, 12:42:20</p>
+        <p><span>最后更新:</span>2017-01-11, 12:51:52</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/01/11/移动端IOS点击事件失效解决方案/" title="移动端IOS点击事件失效解决方案">http://yoursite.com/2017/01/11/移动端IOS点击事件失效解决方案/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/01/11/移动端IOS点击事件失效解决方案/　　作者: keRee" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/01/11/MongoDB/">
+                    MongoDB学习（一）
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/" class="archive-article-date">
-      <time datetime="2017-01-11T04:41:38.479Z" itemprop="datePublished">01-11</time>
-</a>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、此为网上解决方案"><span class="toc-number">1.</span> <span class="toc-text">1、此为网上解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、实际应用：第3方案靠谱"><span class="toc-number">2.</span> <span class="toc-text">2、实际应用：第3方案靠谱</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/">webpack使用中遇到的一些问题及解决办法</a>
-    </h1>
-  
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"移动端IOS点击事件失效解决方案　| keRee-Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
 
-        <div class="article-info info-on-archive">
-          
+    
+</div>
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6，webppack/">es6，webppack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/01/11/移动端IOS点击事件失效解决方案/" data-title="移动端IOS点击事件失效解决方案" data-url="http://yoursite.com/2017/01/11/移动端IOS点击事件失效解决方案/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"null"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/01/11/MongoDB/" title="下一篇: MongoDB学习（一）">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/11/exports与module.exports的区别/" class="archive-article-date">
-      <time datetime="2017-01-11T04:35:12.000Z" itemprop="datePublished">01-11</time>
-</a>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/11/移动端IOS点击事件失效解决方案/">移动端IOS点击事件失效解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/11/MongoDB/">MongoDB学习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/">webpack使用中遇到的一些问题及解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/11/exports与module.exports的区别/">exports与module.exports的区别</a></li></ul>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/exports与module.exports的区别/">exports与module.exports的区别</a>
-    </h1>
-  
 
-        <div class="article-info info-on-archive">
-          
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">

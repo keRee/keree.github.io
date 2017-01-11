@@ -15,19 +15,34 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="exports与module.exports的区别
+释义
+1.module.exports 初始值为一个空对象 {}
+2.exports 是指向的 module.exports 的引用
+3.require() 返回的是 module.exports 而不是 exports
+
+用一句话来说明就是，require能看到的只有require.exports这个对象，他是看不到exports对象的，而我们">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/01/10/hello-world/index.html">
+<meta property="og:title" content="exports与module.exports的区别">
+<meta property="og:url" content="http://yoursite.com/2017/01/11/my-first-blog/index.html">
 <meta property="og:site_name" content="keRee-Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2017-01-10T09:11:25.746Z">
+<meta property="og:description" content="exports与module.exports的区别
+释义
+1.module.exports 初始值为一个空对象 {}
+2.exports 是指向的 module.exports 的引用
+3.require() 返回的是 module.exports 而不是 exports
+
+用一句话来说明就是，require能看到的只有require.exports这个对象，他是看不到exports对象的，而我们">
+<meta property="og:updated_time" content="2017-01-11T04:36:30.751Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="exports与module.exports的区别">
+<meta name="twitter:description" content="exports与module.exports的区别
+释义
+1.module.exports 初始值为一个空对象 {}
+2.exports 是指向的 module.exports 的引用
+3.require() 返回的是 module.exports 而不是 exports
+
+用一句话来说明就是，require能看到的只有require.exports这个对象，他是看不到exports对象的，而我们">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -59,7 +74,7 @@ Quick">
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Hello World | keRee-Blog</title>
+<title>exports与module.exports的区别 | keRee-Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -259,11 +274,11 @@ Quick">
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-my-first-blog" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/10/hello-world/" class="article-date">
-      <time datetime="2017-01-10T09:11:25.746Z" itemprop="datePublished">2017-01-10</time>
+      <a href="/2017/01/11/my-first-blog/" class="article-date">
+      <time datetime="2017-01-11T04:35:12.000Z" itemprop="datePublished">2017-01-11</time>
 </a>
 
 
@@ -278,7 +293,7 @@ Quick">
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      exports与module.exports的区别
     </h1>
   
 
@@ -288,6 +303,10 @@ Quick">
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -295,16 +314,30 @@ Quick">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <h3 id="exports与module-exports的区别"><a href="#exports与module-exports的区别" class="headerlink" title="exports与module.exports的区别"></a>exports与module.exports的区别</h3><hr>
+<h3 id="释义"><a href="#释义" class="headerlink" title="释义"></a>释义</h3><blockquote>
+<p>1.module.exports 初始值为一个空对象 {}</p>
+<p>2.exports 是指向的 module.exports 的引用</p>
+<p>3.require() 返回的是 module.exports 而不是 exports</p>
+</blockquote>
+<p><strong>用一句话来说明就是，require能看到的只有require.exports这个对象，他是看不到exports对象的，而我们在编写模块时用到的exports对象实际上只是对module.exports的引用</strong></p>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><blockquote>
+<p>基本类型：包括Undefined, Null, Boolean, Number和String五种基本数据类型<br>引用类型：保存在内存中的对象，不能直接操作，只能通过保存在变量中的地址引用对其进行操作</p>
+<p><strong>我们要讨论的exports和module.exports是Object类型，属于引用类型</strong></p>
+</blockquote>
+<p>看下面的例子来说明一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">var module = &#123;</div><div class="line">    exports: &#123;</div><div class="line">        name: &quot;我是module的exports属性&quot;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">var exports = module.exports;       //exports是对module.exports的引用，也就是exports现在指向的内存地址和module.exports指向的内存地址是一样的</div><div class="line"></div><div class="line">console.log( module.exports );        /*&#123;name: &quot;我是module的exports属性&quot;&#125;*/</div><div class="line">console.log( exports );        /*&#123;name: &quot;我是module的exports属性&quot;&#125;*/</div><div class="line"></div><div class="line">exports.name = &quot;我想改一下名字&quot;;    </div><div class="line"></div><div class="line">/*</div><div class="line"> * 因为是引用类型，所以导致两个的值都发生了改变</div><div class="line"> */</div><div class="line">console.log( module.exports );        //&#123;name: &quot;我想改一下名字&quot;&#125;</div><div class="line">console.log( exports );        //&#123;name: &quot;我想改一下名字&quot;&#125;</div><div class="line"></div><div class="line">/*</div><div class="line"> * 重新定义一个想要导出的模块</div><div class="line"> */</div><div class="line">var Circle = &#123;</div><div class="line">    name: &quot;我是一个圆&quot;,</div><div class="line">    func: function(x)&#123;</div><div class="line">        return x*x*Math.PI; </div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">exports = Circle;   /* 此时Circle这个Object在内存中指向了新的地址，所以exports也指向了这个地址，那么exports与原来的地址就断开了联系 */    </div><div class="line"></div><div class="line">console.log(module.exports);    /* &#123;name: &quot;我想改一个名字&quot;&#125; */</div><div class="line">console.log(exports);       /* &#123;name: &quot;我是一个圆&quot;, func: [Function] */</div></pre></td></tr></table></figure>
+<h4 id="到这里应该可以看懂了一些，再回到Node-js中，module-exports初始的时候为-，exports也指向这个空对象"><a href="#到这里应该可以看懂了一些，再回到Node-js中，module-exports初始的时候为-，exports也指向这个空对象" class="headerlink" title="到这里应该可以看懂了一些，再回到Node.js中，module.exports初始的时候为{}，exports也指向这个空对象"></a>到这里应该可以看懂了一些，再回到Node.js中，module.exports初始的时候为{}，exports也指向这个空对象</h4><p>那么，如果这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">exports.name = function(x)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">module.exports.name = fucntion(X)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/* 以上两种写法是一样的效果，因为修改的是同一内存地址里的东西 */</div></pre></td></tr></table></figure></p>
+<p>再来看另一个例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exports =  function(x)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>上面的function是一个新的内存地址，导致exports与module.exports失去联系，而require的是module.exports这个对象,所以这个模块时导不出去的</p>
+</blockquote>
+<p>还是另一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">module.exports =  function(x)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这个是可以正常导出的</p>
+</blockquote>
+<h3 id="module-exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。"><a href="#module-exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。" class="headerlink" title="# module.exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。"></a># module.exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。</h3>
       
     </div>
     
@@ -312,13 +345,13 @@ Quick">
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2017/01/10/hello-world/">Hello World</a></p>
+        <p><span>Title:</span><a href="/2017/01/11/my-first-blog/">exports与module.exports的区别</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">keRee</a></p>
-        <p><span>Created:</span>2017-01-10, 17:11:25</p>
-        <p><span>Updated:</span>2017-01-10, 17:11:25</p>
+        <p><span>Created:</span>2017-01-11, 12:35:12</p>
+        <p><span>Updated:</span>2017-01-11, 12:36:30</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2017/01/10/hello-world/" title="Hello World">http://yoursite.com/2017/01/10/hello-world/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/01/10/hello-world/　　By keRee" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2017/01/11/my-first-blog/" title="exports与module.exports的区别">http://yoursite.com/2017/01/11/my-first-blog/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2017/01/11/my-first-blog/　　By keRee" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -330,12 +363,12 @@ Quick">
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
+        
+            <div id="article-nav-older" class="article-nav-title">
                 <a href="/2017/01/11/exports与module.exports的区别/">
                     exports与module.exports的区别
                 </a>
             </div>
-        
         
     </nav>
 
@@ -345,7 +378,7 @@ Quick">
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#exports与module-exports的区别"><span class="toc-number">1.</span> <span class="toc-text">exports与module.exports的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#释义"><span class="toc-number">2.</span> <span class="toc-text">释义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念"><span class="toc-number">2.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#到这里应该可以看懂了一些，再回到Node-js中，module-exports初始的时候为-，exports也指向这个空对象"><span class="toc-number">2.2.</span> <span class="toc-text">到这里应该可以看懂了一些，再回到Node.js中，module.exports初始的时候为{}，exports也指向这个空对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#module-exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。"><span class="toc-number">3.</span> <span class="toc-text"># module.exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。</span></a></li></ol>
         
     </div>
     <style>
@@ -381,7 +414,7 @@ Quick">
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Hello World　| keRee-Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"exports与module.exports的区别　| keRee-Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -397,7 +430,7 @@ Quick">
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/01/10/hello-world/" data-title="Hello World" data-url="http://yoursite.com/2017/01/10/hello-world/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/01/11/my-first-blog/" data-title="exports与module.exports的区别" data-url="http://yoursite.com/2017/01/11/my-first-blog/"></div>
     <script>
         var duoshuoQuery = {short_name:"null"};
         var loadComment = function(){
@@ -420,15 +453,15 @@ Quick">
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/01/11/exports与module.exports的区别/" title="Pre: exports与module.exports的区别">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/2017/01/11/exports与module.exports的区别/" title="Next: exports与module.exports的区别">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
