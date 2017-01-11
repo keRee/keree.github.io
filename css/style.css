@@ -128,6 +128,7 @@ body {
   -moz-font-feature-settings: "liga" on;
   color: #333;
   -webkit-overflow-scrolling: touch;
+  border-top: 3px solid #ffa500;
 }
 ::selection {
   background: rgba(147,181,224,0.6);
@@ -1331,7 +1332,7 @@ color
   transition: color 0.3s;
 }
 .article-title:hover {
-  color: #b0a0aa;
+  color: #258fb8;
 }
 .article-inner {
   position: relative;
@@ -1342,11 +1343,11 @@ color
   box-shadow: 3px 2px 8px rgba(0,0,0,0.07);
 }
 .article-header {
-  border-left: 6px solid #eee;
+  border-left: 0px solid #eee;
   padding: 15px 8.2em 15px 25px;
 }
 .article-header:hover {
-  border-left: 5px solid #9c9;
+  border-left: 0px solid #9c9;
 }
 .article-info li:hover {
   background: none;
@@ -1373,6 +1374,8 @@ color
   background: rgba(255,255,255,0.4);
   -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  border-left: 5px solid rgba(112,134,142,0.85);
+  background: rgba(255,255,255,0.7);
 }
 .article-entry blockquote p {
   margin: 0.4em auto;
@@ -1599,7 +1602,7 @@ color
   opacity: 0.75;
 }
 .article-more-link a:hover {
-  background: #9c9;
+  background: #1874cd;
   opacity: 1;
 }
 .article-more-link a.hidden {
@@ -1617,17 +1620,13 @@ color
   height: 2.5em;
   margin: 1em auto;
   font-size: 1rem;
-  background: rgba(158,188,226,0.75);
-}
-#article-nav:hover {
-  background: #93b5e0;
 }
 .article-nav-title {
   display: table-cell;
   vertical-align: middle;
 }
 .article-nav-title a {
-  color: #fff;
+  color: #258fb8;
 }
 .article-nav-title a:hover {
   font-style: italic;
@@ -2099,14 +2098,14 @@ aside.comment-bar:active {
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: rgba(249,249,249,0.5);
+  background: rgba(32,34,37,0.85);
   margin: auto;
   padding: 0.35em 1.5em;
   border-style: solid;
   border-color: #ddd;
   border-width: 1px;
   overflow: auto;
-  color: #4d4d4c;
+  color: #c5c8c6;
   line-height: 1.3rem;
 }
 .article-entry .highlight .gutter pre,
@@ -2123,12 +2122,12 @@ aside.comment-bar:active {
   text-shadow: none;
   padding: 0;
   background: none;
-  color: #4d4d4c;
+  color: #c5c8c6;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 .article-entry .highlight {
-  border-radius: 2px;
+  border-radius: 5px;
   max-height: 50em;
   margin-top: 0.5em;
   margin-bottom: 1em;
@@ -2152,7 +2151,7 @@ aside.comment-bar:active {
 }
 .article-entry .highlight figcaption {
   font-size: 0.85em;
-  color: #8e908c;
+  color: #969896;
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -2179,7 +2178,7 @@ aside.comment-bar:active {
   border-style: solid;
   border-color: #ddd;
   border-width: 1px 0;
-  background: rgba(249,249,249,0.5);
+  background: rgba(32,34,37,0.85);
   padding: 15px 20px 15px 0;
 }
 .article-entry .gist .gist-file {
@@ -2205,8 +2204,8 @@ aside.comment-bar:active {
   border: none;
 }
 .article-entry .gist .gist-file .gist-meta {
-  background: rgba(249,249,249,0.5);
-  color: #8e908c;
+  background: rgba(32,34,37,0.85);
+  color: #969896;
   font: 0.85em "Lucida Grande", Verdana, "Helvetica Neue", Arial;
   text-shadow: 0 0;
   padding: 0;
@@ -2227,10 +2226,14 @@ aside.comment-bar:active {
   border-radius: 3px;
   -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.08);
   box-shadow: 1px 1px 1px rgba(0,0,0,0.08);
+  var: 5;
+  color: #fff;
+  background: rgba(153,204,153,0.7);
+  background: rgba(239,117,34,0.42);
 }
 pre .comment,
 pre .title {
-  color: #8e908c;
+  color: #969896;
 }
 pre .variable,
 pre .attribute,
@@ -2244,7 +2247,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #c82829;
+  color: #c66;
 }
 pre .number,
 pre .preprocessor,
@@ -2252,12 +2255,12 @@ pre .built_in,
 pre .literal,
 pre .params,
 pre .constant {
-  color: #f5871f;
+  color: #de935f;
 }
 pre .class,
 pre .ruby .class .title,
 pre .css .rules .attribute {
-  color: #718c00;
+  color: #b5bd68;
 }
 pre .string,
 pre .value,
@@ -2265,10 +2268,10 @@ pre .inheritance,
 pre .header,
 pre .ruby .symbol,
 pre .xml .cdata {
-  color: #718c00;
+  color: #b5bd68;
 }
 pre .css .hexcolor {
-  color: #3e999f;
+  color: #8abeb7;
 }
 pre .function,
 pre .python .decorator,
@@ -2278,11 +2281,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #4271ae;
+  color: #81a2be;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #8959a8;
+  color: #b294bb;
 }
 #footer {
   font-size: 0.8rem;
@@ -2710,22 +2713,22 @@ pre .javascript .function {
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei" "Lucida Grande", Verdana, "Helvetica Neue", Arial;
 }
 .tagcloud a.color0 {
-  background: #ba8f6c;
+  background: #1874cd;
 }
 .tagcloud a.color0::before {
-  border-right-color: #ba8f6c;
+  border-right-color: #1874cd;
 }
 .tagcloud a.color1 {
-  background: #ff945c;
+  background: #ee6a50;
 }
 .tagcloud a.color1::before {
-  border-right-color: #ff945c;
+  border-right-color: #ee6a50;
 }
 .tagcloud a.color2 {
-  background: #7b5d5f;
+  background: #607b8b;
 }
 .tagcloud a.color2::before {
-  border-right-color: #7b5d5f;
+  border-right-color: #607b8b;
 }
 .tagcloud a.color3 {
   background: #f5c7b7;
@@ -2734,10 +2737,10 @@ pre .javascript .function {
   border-right-color: #f5c7b7;
 }
 .tagcloud a.color4 {
-  background: #cfb7c4;
+  background: #eead0e;
 }
 .tagcloud a.color4::before {
-  border-right-color: #cfb7c4;
+  border-right-color: #eead0e;
 }
 .tagcloud a.color5 {
   background: #918597;
@@ -2757,11 +2760,11 @@ pre .javascript .function {
   -moz-transform: scale(1.06);
   -ms-transform: scale(1.06);
   transform: scale(1.06);
-  background-color: #9c9;
-  border-color: #9c9;
+  background-color: #1874cd;
+  border-color: #1874cd;
 }
 .tagcloud a:hover::before {
-  border-right-color: #9c9;
+  border-right-color: #1874cd;
 }
 .tagcloud a:before {
   content: " ";
@@ -2999,13 +3002,13 @@ body {
   background: #fff;
 }
 #article-nav {
-  background: rgba(158,188,226,0.9);
+  background: rgba(0,0,0,0);
 }
 body {
   background: #808080;
 }
 .article-header {
-  border-left: 5px solid #666;
+  border-left: 0px solid #666;
 }
 .article-more-link a {
   background: #4d4d4d;
