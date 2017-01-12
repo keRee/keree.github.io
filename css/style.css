@@ -396,6 +396,9 @@ a {
   #container .archives .archive-article {
     padding: 0;
   }
+  #container .archives .archive-article-title {
+    font-size: 1rem;
+  }
   #container .archives .archive-article-date {
     margin-right: 0;
   }
