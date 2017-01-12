@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://keree.github.io/2017/01/11/Hexo+Github个人博客搭建教程/index.html">
 <meta property="og:site_name" content="keRee-Blog">
 <meta property="og:description" content="详细的说明，让你用飞一般的速度搭建完成自己的个人博客！">
-<meta property="og:updated_time" content="2017-01-11T13:28:07.065Z">
+<meta property="og:updated_time" content="2017-01-12T02:34:05.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+Github个人博客搭建教程">
 <meta name="twitter:description" content="详细的说明，让你用飞一般的速度搭建完成自己的个人博客！">
@@ -214,7 +214,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap"><article id="post-Hexo+Github个人博客搭建教程" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -257,83 +257,55 @@
       
           
         <!-- ## Hexo+Github个人博客搭建教程 -->
-<p>标签（空格分隔）： hexo github 个人博客</p>
 <hr>
-<h3 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h3><ol>
-<li><p>安装<a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">node.js</a> <strong>（已安装的请进行下一步）</strong></p>
+<h3 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h3><p>1、 安装<a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">node.js</a> <strong>（已安装的请进行下一步）</strong></p>
 <blockquote>
 <p>node.js官网：<a href="https://nodejs.org/zh-cn/" target="_blank" rel="external">https://nodejs.org/zh-cn/</a><br>首次的安装的可以参考这篇博客：<a href="http://xiaoyaojones.blog.163.com/blog/static/28370125201351501113581/" target="_blank" rel="external">Nodejs、NPM安装</a></p>
 </blockquote>
-<p>这篇<a href="http://xiaoyaojones.blog.163.com/blog/static/28370125201351501113581/" target="_blank" rel="external">博客</a>讲的比较详细，对于首次的安装Node.js的我再啰嗦下:</p>
-<ul>
-<li><p>确保版本提示ok</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v    //v4.4.4</div><div class="line">npm -v     //3.10.5</div></pre></td></tr></table></figure>
-</li>
-<li><p>最好要配置好npm的全局模块的存放路径</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm config set prefix &quot;C:\Program Files\nodejs\node_global&quot;</div><div class="line">npm config set cache &quot;C:\Program Files\nodejs\node_cache&quot;</div></pre></td></tr></table></figure>
-<p> 后面的文件路径可以自定义，存放在你的node文档中比较好，以后全局安装的模块都可以在这里找到</p>
-<ul>
-<li>注意全局变量的设置 </li>
-</ul>
-</li>
-</ol>
-<ol>
-<li><p>安装<a href="https://www.git-scm.com/" target="_blank" rel="external">Git</a> <strong>（已安装的请进行下一步）</strong></p>
+<p>  这篇<a href="http://xiaoyaojones.blog.163.com/blog/static/28370125201351501113581/" target="_blank" rel="external">博客</a>讲的比较详细，对于首次的安装Node.js的我再啰嗦下:<br>  确保版本提示ok</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v    //v4.4.4</div><div class="line">npm -v     //3.10.5</div></pre></td></tr></table></figure>
+<p>  最好要配置好npm的全局模块的存放路径</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm config set prefix &quot;C:\Program Files\nodejs\node_global&quot;</div><div class="line">npm config set cache &quot;C:\Program Files\nodejs\node_cache&quot;</div></pre></td></tr></table></figure>
+<p>  后面的文件路径可以自定义，存放在你的node文档中比较好，以后全局安装的模块都可以在这里找到</p>
+<p>  注意全局变量的设置 </p>
+<p>2、安装<a href="https://www.git-scm.com/" target="_blank" rel="external">Git</a> <strong>（已安装的请进行下一步）</strong></p>
 <blockquote>
 <p>Git官网： <a href="https://www.git-scm.com/" target="_blank" rel="external">https://www.git-scm.com/</a><br>或者看廖雪峰的官网-<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137396287703354d8c6c01c904c7d9ff056ae23da865a000" target="_blank" rel="external">安装Git</a></p>
 </blockquote>
-</li>
-<li><p>安装<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo</a></p>
+<p>3、安装<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">Hexo</a></p>
 <blockquote>
 <p>Hexo官网中文文档：<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/index.html</a></p>
 </blockquote>
-<p>当然既然node已经安装好了，我们可以自定义安装：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure>
-<p>OK，安装完成之后，可以 <code>hexo -v</code> 即可以看到自己相关的系统配置<br>贴下我自己的系统环境：</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">hexo: 3.2.2</div><div class="line">hexo-cli: 1.0.2</div><div class="line">os: Windows_NT 6.1.7601 win32 x64</div><div class="line">http_parser: 2.5.2</div><div class="line">node: 4.4.4</div><div class="line">v8: 4.5.103.35</div><div class="line">uv: 1.8.0</div><div class="line">zlib: 1.2.8</div><div class="line">ares: 1.10.1-DEV</div><div class="line">icu: 56.1</div><div class="line">modules: 46</div><div class="line">openssl: 1.0.2h</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="Hexo初试"><a href="#Hexo初试" class="headerlink" title="Hexo初试"></a>Hexo初试</h3><ol>
-<li><strong>初始化</strong> 新建一个自己的项目目录，如myBlog，然后在cmd中cd到项目目录 ，执行命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>提示： <code>INFO  Start blogging with Hexo!</code> 则说明成功了。</p>
-<p>此时我们可以看到myBlog目录结构：<br>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">--myBlog</div><div class="line"> |--+ node_modules</div><div class="line"> |--+ scaffolds</div><div class="line"> |--+ source</div><div class="line"> |--+ themes</div><div class="line"> |--- .gitignore</div><div class="line"> |--- _config.yml</div><div class="line"> |--- package.json</div></pre></td></tr></table></figure></p>
-<ol>
-<li><p><strong>生产静态页面</strong> 在cmd项目目录，执行命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g           //或者 hexo generate  也可以</div></pre></td></tr></table></figure>
-<p>提示：  <code>INFO 28 files generated in 3.24s</code>  类似的就OK啦！</p>
-</li>
-<li><p><strong>启动本地服务</strong> 在cmd项目目录，执行命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s           //或者 hexo server  也可以</div></pre></td></tr></table></figure>
-<p>提示：  <code>INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code><br>此时，我们可以在浏览器输入<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a><br>可以看的到系统提供的 Hexo Hello world!页面。</p>
-<ul>
-<li>如有问题可以查下看看4000端口是否被占用</li>
-</ul>
-<p>好了，到这里其实我们就可以开始配置Github了。</p>
-</li>
-</ol>
-<h3 id="Github配置"><a href="#Github配置" class="headerlink" title="Github配置"></a>Github配置</h3><p>到了这里我们需要关联Hexo和Github中的项目仓库。</p>
-<ol>
-<li><p>建立项目仓库Respository</p>
+<p>  当然既然node已经安装好了，我们可以自定义安装：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo</div></pre></td></tr></table></figure>
+<p>  OK，安装完成之后，可以 <code>hexo -v</code> 即可以看到自己相关的系统配置<br>  贴下我自己的系统环境：</p>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">hexo</span>: 3<span class="selector-class">.2</span><span class="selector-class">.2</span></div><div class="line"><span class="selector-tag">hexo-cli</span>: 1<span class="selector-class">.0</span><span class="selector-class">.2</span></div><div class="line"><span class="selector-tag">os</span>: <span class="selector-tag">Windows_NT</span> 6<span class="selector-class">.1</span><span class="selector-class">.7601</span> <span class="selector-tag">win32</span> <span class="selector-tag">x64</span></div><div class="line"><span class="selector-tag">http_parser</span>: 2<span class="selector-class">.5</span><span class="selector-class">.2</span></div><div class="line"><span class="selector-tag">node</span>: 4<span class="selector-class">.4</span><span class="selector-class">.4</span></div><div class="line"><span class="selector-tag">v8</span>: 4<span class="selector-class">.5</span><span class="selector-class">.103</span><span class="selector-class">.35</span></div><div class="line"><span class="selector-tag">uv</span>: 1<span class="selector-class">.8</span><span class="selector-class">.0</span></div><div class="line"><span class="selector-tag">zlib</span>: 1<span class="selector-class">.2</span><span class="selector-class">.8</span></div><div class="line"><span class="selector-tag">ares</span>: 1<span class="selector-class">.10</span><span class="selector-class">.1-DEV</span></div><div class="line"><span class="selector-tag">icu</span>: 56<span class="selector-class">.1</span></div><div class="line"><span class="selector-tag">modules</span>: 46</div><div class="line"><span class="selector-tag">openssl</span>: 1<span class="selector-class">.0</span><span class="selector-class">.2h</span></div></pre></td></tr></table></figure>
+<h3 id="Hexo初试"><a href="#Hexo初试" class="headerlink" title="Hexo初试"></a>Hexo初试</h3><p>1、 <strong>初始化</strong> 新建一个自己的项目目录，如myBlog，然后在cmd中cd到项目目录，执行命令：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
+<p>  提示： <code>INFO  Start blogging with Hexo!</code> 则说明成功了。</p>
+<p>  此时我们可以看到myBlog目录结构：<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">--myBlog</div><div class="line">|--+ node_modules</div><div class="line">|--+ scaffolds</div><div class="line">|--+ source</div><div class="line">|--+ themes</div><div class="line">|--- .gitignore</div><div class="line">|--- _config.yml</div><div class="line">|--- package.json</div></pre></td></tr></table></figure></p>
+<p>2、 <strong>生产静态页面</strong> 在cmd项目目录，执行命令：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g           //或者 hexo generate  也可以</div></pre></td></tr></table></figure>
+<p>  提示：  <code>INFO 28 files generated in 3.24s</code>  类似的就OK啦！</p>
+<p>3、 <strong>启动本地服务</strong> 在cmd项目目录，执行命令：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s           //或者 hexo server  也可以</div></pre></td></tr></table></figure>
+<p>  提示：  <code>INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code></p>
+<p>  此时，我们可以在浏览器输入<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a><br>  可以看的到系统提供的 Hexo Hello world!页面。<br>  如有问题可以查下看看4000端口是否被占用</p>
+<p>  好了，到这里其实我们就可以开始配置Github了。</p>
+<h3 id="Github配置"><a href="#Github配置" class="headerlink" title="Github配置"></a>Github配置</h3><p>  到了这里我们需要关联Hexo和Github中的项目仓库。<br>1、建立项目仓库Respository</p>
 <blockquote>
 <p>我们需要建立与自己用户名相对应的项目仓库，比如我的用户名是aduoo,那么我新建的仓库名为：aduoo.github.io</p>
 </blockquote>
-</li>
-<li><p>配置Git SSH Key&gt; 可以参考这篇<a href="http://blog.csdn.net/keyboardota/article/details/7603630" target="_blank" rel="external">博客</a></p>
+<p>2、配置Git SSH Key&gt; 可以参考这篇<a href="http://blog.csdn.net/keyboardota/article/details/7603630" target="_blank" rel="external">博客</a></p>
 <blockquote>
 <p>这个目的是为了Hexo后面免密部署项目</p>
 </blockquote>
-</li>
-<li><p>修改Hexo配置，正式关联Hexo和Github<br>（1）、打开我们项目目录myBlog里的<code>_config.yml</code>文件（用编辑器哈）<br>（2）、翻到最后，修改如下（用户名处改成自己的哈）</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repository: ssh://git@github.com/aduoo/aduoo.github.io.git</div><div class="line">branch: master</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>那么接下来，我们可以部署自己的项目了。</p>
-<h3 id="Hexo部署项目"><a href="#Hexo部署项目" class="headerlink" title="Hexo部署项目"></a>Hexo部署项目</h3><p>在cmd项目目录，输入命令<code>hexo d</code>，最后提示<code>INFO Deploy done: git</code>，则说明项目成功部署到Github.</p>
-<p>恭喜，你可以在浏览器输入<a href="https://keree.github.io">https://aduoo.github.io</a>访问自己的blog了，可以看到会与在本地看到的一样。</p>
+<p>3、修改Hexo配置，正式关联Hexo和Github</p>
+<p>  （1）、打开我们项目目录myBlog里的<code>_config.yml</code>文件（用编辑器哈）<br>  （2）、翻到最后，修改如下（用户名处改成自己的哈）</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: ssh://git@github.com/aduoo/aduoo.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>  那么接下来，我们可以部署自己的项目了。</p>
+<h3 id="Hexo部署项目"><a href="#Hexo部署项目" class="headerlink" title="Hexo部署项目"></a>Hexo部署项目</h3><p>  在cmd项目目录，输入命令<code>hexo d</code>，最后提示<code>INFO Deploy done: git</code>，则说明项目成功部署到Github.</p>
+<p>  恭喜，你可以在浏览器输入<a href="https://keree.github.io">https://aduoo.github.io</a>访问自己的blog了，可以看到会与在本地看到的一样。</p>
 
       
     </div>
@@ -358,7 +330,7 @@
 </article>
 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
+        <strong class="toc-title">Contents</strong>
         
             <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#系统配置"><span class="toc-number">1.</span> <span class="toc-text">系统配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo初试"><span class="toc-number">2.</span> <span class="toc-text">Hexo初试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Github配置"><span class="toc-number">3.</span> <span class="toc-text">Github配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo部署项目"><span class="toc-number">4.</span> <span class="toc-text">Hexo部署项目</span></a></li></ol>
         
@@ -374,10 +346,10 @@
         }
     </style>
 
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
 
     <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
     </script>
 
 
@@ -410,13 +382,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2017/01/11/移动端IOS点击事件失效解决方案/" title="下一篇: 移动端IOS点击事件失效解决方案">
+            <a href="/2017/01/11/移动端IOS点击事件失效解决方案/" title="Next: 移动端IOS点击事件失效解决方案">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -439,14 +411,14 @@
                 2016-2017 keRee
             </div>
             <!-- <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div> -->
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -455,7 +427,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -472,9 +444,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
