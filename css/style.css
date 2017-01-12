@@ -2238,7 +2238,7 @@ aside.comment-bar:active {
   var: 5;
   color: #fff;
   background: rgba(153,204,153,0.7);
-  background: rgba(239,117,34,0.42);
+  background: rgba(24,117,205,0.42);
 }
 pre .comment,
 pre .title {
