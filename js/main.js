@@ -162,6 +162,7 @@ require([], function (){
     if(yiliaConfig.isArchive || yiliaConfig.isTag || yiliaConfig.isCategory) {
         $(document).ready(function() {
             $("#footer").after("<button class='hide-labels'>TAGS</button>");
+            //$(".article-info").hide();
             $(".hide-labels").click(function() {
                 $(".article-info").toggle(200);
             })
