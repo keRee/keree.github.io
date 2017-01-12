@@ -341,8 +341,7 @@ a {
     margin: 0.625rem 10px;
   }
   #container .article .article-entry {
-    padding-left: 0;
-    padding-right: 0;
+    padding: 0.8rem 0.5rem;
     font-size: 0.6rem;
   }
   #container .article .article-entry .highlight {
