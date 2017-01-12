@@ -2730,6 +2730,24 @@ pre .javascript .function {
 .tagcloud a.color2::before {
   border-right-color: #607b8b;
 }
+.tagcloud a.color3 {
+  background: #1874cd;
+}
+.tagcloud a.color3::before {
+  border-right-color: #1874cd;
+}
+.tagcloud a.color4 {
+  background: #ee6a50;
+}
+.tagcloud a.color4::before {
+  border-right-color: #ee6a50;
+}
+.tagcloud a.color5 {
+  background: #607b8b;
+}
+.tagcloud a.color5::before {
+  border-right-color: #607b8b;
+}
 .tagcloud a:hover {
   opacity: 1;
   -webkit-transform: scale(1.06);
