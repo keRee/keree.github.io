@@ -2730,12 +2730,6 @@ pre .javascript .function {
 .tagcloud a.color2::before {
   border-right-color: #607b8b;
 }
-.tagcloud a.color3 {
-  background: #f5c7b7;
-}
-.tagcloud a.color3::before {
-  border-right-color: #f5c7b7;
-}
 .tagcloud a:hover {
   opacity: 1;
   -webkit-transform: scale(1.06);
