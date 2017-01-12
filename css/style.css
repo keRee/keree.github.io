@@ -998,6 +998,7 @@ a {
   padding: 0 40px;
 }
 #scroll {
+  display: none;
   right: 0;
 }
 .scroll {
