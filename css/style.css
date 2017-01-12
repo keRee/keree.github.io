@@ -2713,40 +2713,40 @@ pre .javascript .function {
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei" "Lucida Grande", Verdana, "Helvetica Neue", Arial;
 }
 .tagcloud a.color0 {
-  background: #1874cd;
+  background: #4d4d4d;
 }
 .tagcloud a.color0::before {
-  border-right-color: #1874cd;
+  border-right-color: #4d4d4d;
 }
 .tagcloud a.color1 {
-  background: #ee6a50;
+  background: #4d4d4d;
 }
 .tagcloud a.color1::before {
-  border-right-color: #ee6a50;
+  border-right-color: #4d4d4d;
 }
 .tagcloud a.color2 {
-  background: #607b8b;
+  background: #4d4d4d;
 }
 .tagcloud a.color2::before {
-  border-right-color: #607b8b;
+  border-right-color: #4d4d4d;
 }
 .tagcloud a.color3 {
-  background: #1874cd;
+  background: #4d4d4d;
 }
 .tagcloud a.color3::before {
-  border-right-color: #1874cd;
+  border-right-color: #4d4d4d;
 }
 .tagcloud a.color4 {
-  background: #ee6a50;
+  background: #4d4d4d;
 }
 .tagcloud a.color4::before {
-  border-right-color: #ee6a50;
+  border-right-color: #4d4d4d;
 }
 .tagcloud a.color5 {
-  background: #607b8b;
+  background: #4d4d4d;
 }
 .tagcloud a.color5::before {
-  border-right-color: #607b8b;
+  border-right-color: #4d4d4d;
 }
 .tagcloud a:hover {
   opacity: 1;
