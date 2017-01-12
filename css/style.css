@@ -1027,6 +1027,7 @@ a {
   border-bottom: 1px solid #fff;
 }
 .hide-labels {
+  display: none;
   position: fixed;
   left: 378px;
   top: 30px;
@@ -1130,7 +1131,9 @@ color
   position: relative;
 }
 .archives .article-info {
+  display: none;
   border: none;
+  padding-top: 1em;
 }
 .archives .archive-article {
   margin-left: 160px;
@@ -1147,7 +1150,7 @@ color
   border-bottom: none;
 }
 .archives .archive-article-title {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: #333;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
@@ -1155,7 +1158,7 @@ color
   transition: color 0.3s;
 }
 .archives .archive-article-title:hover {
-  color: #657b83;
+  color: #1874cd;
 }
 .archives .archive-article-title span {
   display: block;
@@ -1176,6 +1179,7 @@ color
 }
 .archive-article-inner .archive-article-header {
   position: relative;
+  padding: 1em 0;
 }
 .archive-article-inner .article-meta {
   position: relative;
@@ -1984,7 +1988,9 @@ aside.comment-bar:active {
   position: relative;
 }
 .archives .article-info {
+  display: none;
   border: none;
+  padding-top: 1em;
 }
 .archives .archive-article {
   margin-left: 160px;
@@ -2001,7 +2007,7 @@ aside.comment-bar:active {
   border-bottom: none;
 }
 .archives .archive-article-title {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   color: #333;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
@@ -2009,7 +2015,7 @@ aside.comment-bar:active {
   transition: color 0.3s;
 }
 .archives .archive-article-title:hover {
-  color: #657b83;
+  color: #1874cd;
 }
 .archives .archive-article-title span {
   display: block;
@@ -2030,6 +2036,7 @@ aside.comment-bar:active {
 }
 .archive-article-inner .archive-article-header {
   position: relative;
+  padding: 1em 0;
 }
 .archive-article-inner .article-meta {
   position: relative;
