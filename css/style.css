@@ -387,6 +387,9 @@ a {
 /* 内容超出宽度时隐藏超出部分的内容 */
     text-overflow: ellipsis;
   }
+  #container .article-info .article-tag {
+    display: none;
+  }
   #container .archive-article-inner .article-meta {
     top: 0;
     margin-top: 0.5em;
