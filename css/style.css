@@ -291,6 +291,7 @@ a {
     color: #fff;
   }
   #container .overlay .slider-trigger {
+    display: none;
     position: absolute;
     z-index: 101;
     bottom: 0;
@@ -342,6 +343,7 @@ a {
   #container .article .article-entry {
     padding-left: 0;
     padding-right: 0;
+    font-size: 0.6rem;
   }
   #container .article .article-entry .highlight {
     padding: 0.35em 0.6em;
@@ -349,7 +351,7 @@ a {
   #container .article .article-title {
     display: block;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
   }
   #container .article .article-meta {
@@ -357,6 +359,33 @@ a {
   }
   #container .article-inner {
     padding: 12px;
+  }
+  #container #article-nav {
+    font-size: 0.6rem;
+  }
+  #container #article-nav #article-nav-newer {
+    padding-left: 0;
+  }
+  #container #article-nav #article-nav-newer::before {
+    content: '';
+  }
+  #container #article-nav #article-nav-older {
+    padding-right: 0;
+  }
+  #container #article-nav #article-nav-older::before {
+    content: '';
+  }
+  #container #article-nav .article-nav-title a {
+    display: inline-block;
+/*内联对象需加*/
+    width: 70%;
+    word-break: keep-all;
+/* 不换行 */
+    white-space: nowrap;
+/* 不换行 */
+    overflow: hidden;
+/* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis;
   }
   #container .archive-article-inner .article-meta {
     top: 0;
@@ -445,6 +474,7 @@ a {
     margin-top: 1em;
   }
   #container #tocButton {
+    display: none;
     z-index: 100;
     position: fixed;
     left: 0.5em;
