@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://keree.github.io/2017/01/11/MongoDB/index.html">
 <meta property="og:site_name" content="keRee-Blog">
 <meta property="og:description" content="MongoDB下载与安装">
-<meta property="og:updated_time" content="2017-02-04T12:22:53.233Z">
+<meta property="og:updated_time" content="2017-02-04T12:25:51.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MongoDB学习（一）">
 <meta name="twitter:description" content="MongoDB下载与安装">
@@ -251,18 +251,18 @@
 <p>我的电脑–&gt;属性–&gt;高级系统设置–&gt;环境变量–&gt;用户变量</p>
 <!-- 阅读全文 -->
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">将Mongod的路径C:\program files\mongodb\3.2\bin加入到PATH里，若没有PATH变量，则自己新建一个保存</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">将Mongod的路径`C:\program files\mongodb\3.2\bin`加入到PATH里，若没有PATH变量，则自己新建一个保存</div></pre></td></tr></table></figure>
 <p>4、 在已进入MongoDB安装目录的窗口输入mongod执行</p>
 <blockquote>
-<p>在此可能会报 Data directory c:\data\db not found</p>
-<p>不用担心，只需在C:\目录下创建这两个文件即可，然后再次执行mongod</p>
+<p>在此可能会报 <code>Data directory c:\data\db not found</code></p>
+<p>不用担心，只需在C:\目录下创建这两个文件即可，然后再次执行<code>mongod</code></p>
 <p>以上为设置默认db目录，也可自行自定义设置</p>
-<p>最后提示 waiting for connetions on port 27017 (此为默认端口)，则说明此步骤成功</p>
+<p>最后提示 <code>waiting for connetions on port 27017</code>(此为默认端口)，则说明此步骤成功</p>
 </blockquote>
 <p>5、 重新打开一个command窗口，输入mongo执行</p>
 <blockquote>
-<p>提示 connecting to: test</p>
-<p>输入db执行，去查看另一个command窗口，会提示 1 connection now open</p>
+<p>提示 <code>connecting to: test</code></p>
+<p>输入db执行，去查看另一个command窗口，会提示 <code>1 connection now open</code></p>
 <p>到这里就初步成功了</p>
 </blockquote>
 
