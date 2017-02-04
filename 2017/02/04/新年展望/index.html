@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="不一样的自我">
+<meta name="description" content="过去的一年里，感谢家人、亲友和领导同事的陪伴与帮助。新一年的又开始了！希望自己万事顺利，手上的项目平稳进行，另外工作之余多去更新自己的知识树！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="exports与module.exports的区别">
-<meta property="og:url" content="https://keree.github.io/2017/01/11/exports与module.exports的区别/index.html">
+<meta property="og:title" content="新一年的展望">
+<meta property="og:url" content="https://keree.github.io/2017/02/04/新年展望/index.html">
 <meta property="og:site_name" content="keRee-Blog">
-<meta property="og:description" content="不一样的自我">
-<meta property="og:updated_time" content="2017-01-11T05:15:24.192Z">
+<meta property="og:description" content="过去的一年里，感谢家人、亲友和领导同事的陪伴与帮助。新一年的又开始了！希望自己万事顺利，手上的项目平稳进行，另外工作之余多去更新自己的知识树！">
+<meta property="og:updated_time" content="2017-02-04T12:40:58.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="exports与module.exports的区别">
-<meta name="twitter:description" content="不一样的自我">
+<meta name="twitter:title" content="新一年的展望">
+<meta name="twitter:description" content="过去的一年里，感谢家人、亲友和领导同事的陪伴与帮助。新一年的又开始了！希望自己万事顺利，手上的项目平稳进行，另外工作之余多去更新自己的知识树！">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>exports与module.exports的区别 | keRee-Blog</title>
+<title>新一年的展望 | keRee-Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -204,11 +204,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-exports与module.exports的区别" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-新年展望" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/11/exports与module.exports的区别/" class="article-date">
-      <time datetime="2017-01-11T04:35:12.000Z" itemprop="datePublished">2017-01-11</time>
+      <a href="/2017/02/04/新年展望/" class="article-date">
+      <time datetime="2017-02-04T12:33:03.135Z" itemprop="datePublished">2017-02-04</time>
 </a>
 
 
@@ -223,7 +223,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      exports与module.exports的区别
+      新一年的展望
     </h1>
   
 
@@ -234,7 +234,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -244,31 +244,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="exports与module-exports的区别"><a href="#exports与module-exports的区别" class="headerlink" title="exports与module.exports的区别"></a>exports与module.exports的区别</h3><hr>
-<h3 id="释义"><a href="#释义" class="headerlink" title="释义"></a>释义</h3><blockquote>
-<p>1.module.exports 初始值为一个空对象 {}</p>
-<p>2.exports 是指向的 module.exports 的引用</p>
-<p>3.require() 返回的是 module.exports 而不是 exports</p>
-</blockquote>
-<p><strong>用一句话来说明就是，require能看到的只有require.exports这个对象，他是看不到exports对象的，而我们在编写模块时用到的exports对象实际上只是对module.exports的引用</strong></p>
-<!-- 阅读全文 -->
-<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><blockquote>
-<p>基本类型：包括Undefined, Null, Boolean, Number和String五种基本数据类型<br>引用类型：保存在内存中的对象，不能直接操作，只能通过保存在变量中的地址引用对其进行操作</p>
-<p><strong>我们要讨论的exports和module.exports是Object类型，属于引用类型</strong></p>
-</blockquote>
-<p>看下面的例子来说明一下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">var module = &#123;</div><div class="line">    exports: &#123;</div><div class="line">        name: &quot;我是module的exports属性&quot;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">var exports = module.exports;       //exports是对module.exports的引用，也就是exports现在指向的内存地址和module.exports指向的内存地址是一样的</div><div class="line"></div><div class="line">console.log( module.exports );        /*&#123;name: &quot;我是module的exports属性&quot;&#125;*/</div><div class="line">console.log( exports );        /*&#123;name: &quot;我是module的exports属性&quot;&#125;*/</div><div class="line"></div><div class="line">exports.name = &quot;我想改一下名字&quot;;    </div><div class="line"></div><div class="line">/*</div><div class="line"> * 因为是引用类型，所以导致两个的值都发生了改变</div><div class="line"> */</div><div class="line">console.log( module.exports );        //&#123;name: &quot;我想改一下名字&quot;&#125;</div><div class="line">console.log( exports );        //&#123;name: &quot;我想改一下名字&quot;&#125;</div><div class="line"></div><div class="line">/*</div><div class="line"> * 重新定义一个想要导出的模块</div><div class="line"> */</div><div class="line">var Circle = &#123;</div><div class="line">    name: &quot;我是一个圆&quot;,</div><div class="line">    func: function(x)&#123;</div><div class="line">        return x*x*Math.PI; </div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">exports = Circle;   /* 此时Circle这个Object在内存中指向了新的地址，所以exports也指向了这个地址，那么exports与原来的地址就断开了联系 */    </div><div class="line"></div><div class="line">console.log(module.exports);    /* &#123;name: &quot;我想改一个名字&quot;&#125; */</div><div class="line">console.log(exports);       /* &#123;name: &quot;我是一个圆&quot;, func: [Function] */</div></pre></td></tr></table></figure>
-<h4 id="到这里应该可以看懂了一些，再回到Node-js中，module-exports初始的时候为-，exports也指向这个空对象"><a href="#到这里应该可以看懂了一些，再回到Node-js中，module-exports初始的时候为-，exports也指向这个空对象" class="headerlink" title="到这里应该可以看懂了一些，再回到Node.js中，module.exports初始的时候为{}，exports也指向这个空对象"></a>到这里应该可以看懂了一些，再回到Node.js中，module.exports初始的时候为{}，exports也指向这个空对象</h4><p>那么，如果这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">exports.name = function(x)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">module.exports.name = fucntion(X)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">/* 以上两种写法是一样的效果，因为修改的是同一内存地址里的东西 */</div></pre></td></tr></table></figure></p>
-<p>再来看另一个例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">exports =  function(x)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>上面的function是一个新的内存地址，导致exports与module.exports失去联系，而require的是module.exports这个对象,所以这个模块时导不出去的</p>
-</blockquote>
-<p>还是另一个例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">module.exports =  function(x)&#123;</div><div class="line">    console.log(x);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>这个是可以正常导出的</p>
-</blockquote>
-<h3 id="module-exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。"><a href="#module-exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。" class="headerlink" title="# module.exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。"></a># module.exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。</h3>
+        <p>过去的一年里，感谢家人、亲友和领导同事的陪伴与帮助。新一年的又开始了！希望自己万事顺利，手上的项目平稳进行，另外工作之余多去更新自己的知识树！</p>
+
       
     </div>
     
@@ -279,12 +256,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/">
-                    webpack使用中遇到的一些问题及解决办法
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/01/13/推荐-Coldplay - Viva la vida吉他弹奏/">
+                    Coldplay - Viva la vida - 超赞吉他弹奏
                 </a>
             </div>
-        
         
     </nav>
 
@@ -294,7 +271,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#exports与module-exports的区别"><span class="toc-number">1.</span> <span class="toc-text">exports与module.exports的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#释义"><span class="toc-number">2.</span> <span class="toc-text">释义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概念"><span class="toc-number">2.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#到这里应该可以看懂了一些，再回到Node-js中，module-exports初始的时候为-，exports也指向这个空对象"><span class="toc-number">2.2.</span> <span class="toc-text">到这里应该可以看懂了一些，再回到Node.js中，module.exports初始的时候为{}，exports也指向这个空对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#module-exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。"><span class="toc-number">3.</span> <span class="toc-text"># module.exports除了可以导出对象、函数，还可以导出所有的类型，比如字符串，数值。</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -321,7 +298,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/01/11/exports与module.exports的区别/" data-title="exports与module.exports的区别" data-url="https://keree.github.io/2017/01/11/exports与module.exports的区别/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/02/04/新年展望/" data-title="新一年的展望" data-url="https://keree.github.io/2017/02/04/新年展望/"></div>
     <script>
         var duoshuoQuery = {short_name:"null"};
         var loadComment = function(){
@@ -344,15 +321,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/" title="Pre: webpack使用中遇到的一些问题及解决办法">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+            <a href="/2017/01/13/推荐-Coldplay - Viva la vida吉他弹奏/" title="Next: Coldplay - Viva la vida - 超赞吉他弹奏">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
