@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="过去的一年里，感谢家人、亲友和领导同事的陪伴与帮助。新一年的又开始了！希望自己万事顺利，手上的项目平稳进行，另外工作之余多去更新自己的知识树！">
+<meta name="description" content="css 页面重绘和回流(重排)以及优化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新一年的展望">
-<meta property="og:url" content="https://keree.github.io/2017/01/13/新年展望/index.html">
+<meta property="og:title" content="css 页面重绘和回流(重排)以及优化">
+<meta property="og:url" content="https://keree.github.io/2016/05/27/description- css 页面重绘和回流(重排)以及优化/index.html">
 <meta property="og:site_name" content="keRee-Blog">
-<meta property="og:description" content="过去的一年里，感谢家人、亲友和领导同事的陪伴与帮助。新一年的又开始了！希望自己万事顺利，手上的项目平稳进行，另外工作之余多去更新自己的知识树！">
-<meta property="og:updated_time" content="2017-02-07T12:21:00.369Z">
+<meta property="og:description" content="css 页面重绘和回流(重排)以及优化">
+<meta property="og:updated_time" content="2017-02-07T12:24:02.707Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新一年的展望">
-<meta name="twitter:description" content="过去的一年里，感谢家人、亲友和领导同事的陪伴与帮助。新一年的又开始了！希望自己万事顺利，手上的项目平稳进行，另外工作之余多去更新自己的知识树！">
+<meta name="twitter:title" content="css 页面重绘和回流(重排)以及优化">
+<meta name="twitter:description" content="css 页面重绘和回流(重排)以及优化">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>新一年的展望 | keRee-Blog</title>
+<title>css 页面重绘和回流(重排)以及优化 | keRee-Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -204,11 +204,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-新年展望" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-description- css 页面重绘和回流(重排)以及优化" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2017/01/13/新年展望/" class="article-date">
-      <time datetime="2017-01-13T13:20:36.000Z" itemprop="datePublished">2017-01-13</time>
+      <a href="/2016/05/27/description- css 页面重绘和回流(重排)以及优化/" class="article-date">
+      <time datetime="2016-05-27T06:10:16.000Z" itemprop="datePublished">2016-05-27</time>
 </a>
 
 
@@ -223,7 +223,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      新一年的展望
+      css 页面重绘和回流(重排)以及优化
     </h1>
   
 
@@ -234,7 +234,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6，webppack/">es6，webppack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -244,7 +244,18 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>过去的一年里，感谢家人、亲友和领导同事的陪伴与帮助。新一年的又开始了！希望自己万事顺利，手上的项目平稳进行，另外工作之余多去更新自己的知识树！</p>
+        <h3 id="一、html页面的呈现流程"><a href="#一、html页面的呈现流程" class="headerlink" title="一、html页面的呈现流程"></a>一、html页面的呈现流程</h3><p>1、浏览器把获取到的HTML代码解析成1个DOM树，HTML中的每个tag都是DOM树中的1个节点，根节点就是我们常用的document对象。DOM树里包含了所有HTML标签，包括display:none隐藏，还有用JS动态添加的元素等。</p>
+<p>2、浏览器把所有样式(用户定义的CSS和用户代理)解析成样式结构体，在解析的过程中会去掉浏览器不能识别的样式，比如IE会去掉-moz开头的样式，而FF会去掉_开头的样式。</p>
+<p>3、DOM Tree 和样式结构体组合后构建render tree, render tree类似于DOM tree，但区别很大，render tree能识别样式，render tree中每个NODE都有自己的style，而且 render tree不包含隐藏的节点 (比如display:none的节点，还有head节点)，因为这些节点不会用于呈现，而且不会影响呈现的，所以就不会包含到 render tree中。注意 visibility:hidden隐藏的元素还是会包含到 render tree中的，因为visibility:hidden 会影响布局(layout)，会占有空间。根据CSS2的标准，render tree中的每个节点都称为Box (Box dimensions)，理解页面元素为一个具有填充、边距、边框和位置的盒子。</p>
+<p>4、一旦render tree构建完毕后，浏览器就可以根据render tree来绘制页面了。</p>
+<h3 id="二、回流与重绘"><a href="#二、回流与重绘" class="headerlink" title="二、回流与重绘"></a>二、回流与重绘</h3><p>1、当render tree中的一部分(或全部)因为元素的规模尺寸，布局，隐藏等改变而需要重新构建。这就称为<strong>回流(reflow)</strong>。每个页面至少需要一次回流，就是在页面第一次加载的时候。在回流的时候，浏览器会使渲染树中受到影响的部分失效，并重新构造这部分渲染树，完成回流后，浏览器会重新绘制受影响的部分到屏幕中，该过程成为重绘。</p>
+<p>2、当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观，风格，而不会影响布局的，比如background-color。则就叫称为<strong>重绘</strong>。</p>
+<blockquote>
+<p>注意：回流必将引起重绘，而重绘不一定会引起回流。</p>
+</blockquote>
+<p>当页面布局和几何属性改变时就需要回流。下述情况会发生浏览器回流：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">添加或者删除可见的DOM元素；</div><div class="line">元素位置改变；</div><div class="line">元素尺寸改变——边距、填充、边框、宽度和高度</div><div class="line">内容改变——比如文本改变或者图片大小改变而引起的计算值宽度和高度改变；</div><div class="line">页面渲染初始化；</div><div class="line">浏览器窗口尺寸改变——resize事件发生时；</div></pre></td></tr></table></figure></p>
+<h3 id="三、优化（减少回流、重绘）"><a href="#三、优化（减少回流、重绘）" class="headerlink" title="三、优化（减少回流、重绘）"></a>三、优化（减少回流、重绘）</h3><p>浏览器本身的优化策略：浏览器会维护1个队列，把所有会引起回流、重绘的操作放入这个队列，等队列中的操作到了一定的数量或者到了一定的时间间隔，浏览器就会flush队列，进行一个批处理。这样就会让多次的回流、重绘变成一次回流重绘。但有时候我们写的一些代码可能会强制浏览器提前flush队列，这样浏览器的优化可能就起不到作用了。当你请求向浏览器请求一些 style信息的时候，就会让浏览器flush队列。<br>减少对render tree的操作（合并多次多DOM和样式的修改），并减少对一些style信息的请求，尽量利用好浏览器的优化策略</p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>1、 将多次改变样式属性的操作合并成一次操作。<br>2、将需要多次重排的元素，position属性设为absolute或fixed，这样此元素就脱离了文档流，它的变化不会影响到其他元素。例如有动画效果的元素就最好设置为绝对定位。<br>3、 在内存中多次操作节点，完成后再添加到文档中去。例如要异步获取表格数据，渲染到页面。可以先取得数据后在内存中构建整个表格的html片段，再一次性添加到文档中去，而不是循环添加每一行。<br>4、 由于display属性为none的元素不在渲染树中，对隐藏的元素操作不会引发其他元素的重排。如果要对一个元素进行复杂的操作时，可以先隐藏它，操作完成后再显示。这样只在隐藏和显示时触发2次重排。<br>5、在需要经常取那些引起浏览器重排的属性值时，要缓存到变量。 </p>
 
       
     </div>
@@ -256,10 +267,16 @@
 
     <nav id="article-nav">
         
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/06/24/MongoDB/">
+                    MongoDB学习（一）
+                </a>
+            </div>
+        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/10/13/Error Chunk entry was removed Use hasRuntime()/">
-                    webpack使用中遇到的一些问题及解决办法
+                <a href="/2016/05/22/移动端IOS点击事件失效解决方案/">
+                    移动端IOS点击事件失效解决方案
                 </a>
             </div>
         
@@ -271,7 +288,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、html页面的呈现流程"><span class="toc-number">1.</span> <span class="toc-text">一、html页面的呈现流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、回流与重绘"><span class="toc-number">2.</span> <span class="toc-text">二、回流与重绘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、优化（减少回流、重绘）"><span class="toc-number">3.</span> <span class="toc-text">三、优化（减少回流、重绘）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方法"><span class="toc-number">3.1.</span> <span class="toc-text">方法</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -298,7 +315,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2017/01/13/新年展望/" data-title="新一年的展望" data-url="https://keree.github.io/2017/01/13/新年展望/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/05/27/description- css 页面重绘和回流(重排)以及优化/" data-title="css 页面重绘和回流(重排)以及优化" data-url="https://keree.github.io/2016/05/27/description- css 页面重绘和回流(重排)以及优化/"></div>
     <script>
         var duoshuoQuery = {short_name:"null"};
         var loadComment = function(){
@@ -321,13 +338,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/06/24/MongoDB/" title="上一篇: MongoDB学习（一）">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/10/13/Error Chunk entry was removed Use hasRuntime()/" title="下一篇: webpack使用中遇到的一些问题及解决办法">
+            <a href="/2016/05/22/移动端IOS点击事件失效解决方案/" title="下一篇: 移动端IOS点击事件失效解决方案">
                 <i class="fa fa-angle-right"></i>
             </a>
         
