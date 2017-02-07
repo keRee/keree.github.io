@@ -15,12 +15,16 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="keRee-Blog">
-<meta property="og:url" content="https://keree.github.io/tags/vue/index.html">
+<meta name="description" content="MongoDB下载与安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB学习（一）">
+<meta property="og:url" content="https://keree.github.io/2016/06/24/MongoDB/index.html">
 <meta property="og:site_name" content="keRee-Blog">
+<meta property="og:description" content="MongoDB下载与安装">
+<meta property="og:updated_time" content="2017-02-07T12:20:23.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="keRee-Blog">
+<meta name="twitter:title" content="MongoDB学习（一）">
+<meta name="twitter:description" content="MongoDB下载与安装">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -50,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: vue | keRee-Blog</title>
+<title>MongoDB学习（一） | keRee-Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -60,9 +64,9 @@
         fancybox: true,
         animate: false,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -200,99 +204,171 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-MongoDB" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/" class="archive-article-date">
-      <time datetime="2017-01-11T04:41:38.479Z" itemprop="datePublished">01-11</time>
+    <div class="article-meta">
+      <a href="/2016/06/24/MongoDB/" class="article-date">
+      <time datetime="2016-06-24T02:53:56.000Z" itemprop="datePublished">2016-06-24</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/">webpack使用中遇到的一些问题及解决办法</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MongoDB学习（一）
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6，webppack/">es6，webppack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><h3 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h3><p>1、 在<a href="https://www.mongodb.com/download-center?jmp=nav" target="_blank" rel="external">MongoDB官网</a>下载自己需要的版本，直接安装就可以<br>2、 打开command，进入到MongoDB的安装目录，例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:\program files\mongodb\3.2\bin</div></pre></td></tr></table></figure>
+<p>3、 设置环境变量</p>
+<blockquote>
+<p>我的电脑–&gt;属性–&gt;高级系统设置–&gt;环境变量–&gt;用户变量</p>
+<!-- 阅读全文 -->
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">将Mongod的路径 C:\program files\mongodb\3.2\bin 加入到PATH里，若没有PATH变量，则自己新建一个保存</div></pre></td></tr></table></figure>
+<p>4、 在已进入MongoDB安装目录的窗口输入mongod执行</p>
+<blockquote>
+<p>在此可能会报 <code>Data directory c:\data\db not found</code></p>
+<p>不用担心，只需在C:\目录下创建这两个文件即可，然后再次执行<code>mongod</code></p>
+<p>以上为设置默认db目录，也可自行自定义设置</p>
+<p>最后提示 <code>waiting for connetions on port 27017</code>(此为默认端口)，则说明此步骤成功</p>
+</blockquote>
+<p>5、 重新打开一个command窗口，输入mongo执行</p>
+<blockquote>
+<p>提示 <code>connecting to: test</code></p>
+<p>输入db执行，去查看另一个command窗口，会提示 <code>1 connection now open</code></p>
+<p>到这里就初步成功了</p>
+</blockquote>
+
+      
+    </div>
+    
   </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/07/02/exports与module.exports的区别/">
+                    exports与module.exports的区别
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/05/22/移动端IOS点击事件失效解决方案/">
+                    移动端IOS点击事件失效解决方案
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MongoDB"><span class="toc-number">1.</span> <span class="toc-text">MongoDB</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载与安装"><span class="toc-number">1.0.1.</span> <span class="toc-text">下载与安装</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
     
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/06/24/MongoDB/" data-title="MongoDB学习（一）" data-url="https://keree.github.io/2016/06/24/MongoDB/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"null"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
     
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
+    <script> loadComment(); </script>
+
+</div>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/10/13/description- css 页面重绘和回流(重排)以及优化/" class="archive-article-date">
-      <time datetime="2016-10-13T13:20:36.000Z" itemprop="datePublished">10-13</time>
-</a>
 
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/10/13/description- css 页面重绘和回流(重排)以及优化/">css 页面重绘和回流(重排)以及优化</a>
-    </h1>
-  
 
-        <div class="article-info info-on-archive">
-          
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6，webppack/">es6，webppack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/07/02/exports与module.exports的区别/" title="上一篇: exports与module.exports的区别">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/05/22/移动端IOS点击事件失效解决方案/" title="下一篇: 移动端IOS点击事件失效解决方案">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/13/新年展望/">新一年的展望</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/11/Error Chunk entry was removed Use hasRuntime()/">webpack使用中遇到的一些问题及解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/description- css 页面重绘和回流(重排)以及优化/">css 页面重绘和回流(重排)以及优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/">Coldplay - Viva la vida - 超赞吉他弹奏</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/02/exports与module.exports的区别/">exports与module.exports的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/24/MongoDB/">MongoDB学习（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/22/移动端IOS点击事件失效解决方案/">移动端IOS点击事件失效解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/13/Hexo+Github个人博客搭建教程/">Hexo+Github个人博客搭建教程</a></li></ul>
 
-    
 
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
