@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="keRee" />
+
+
+
+<meta name="description" content="git常用命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="https://keree.github.io/2016/06/15/git常用命令/index.html">
+<meta property="og:site_name" content="keRee-Blog">
+<meta property="og:description" content="git常用命令">
+<meta property="og:updated_time" content="2017-02-14T02:45:59.524Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git常用命令">
+<meta name="twitter:description" content="git常用命令">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="keRee-Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>git常用命令 | keRee-Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: false,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: undefined
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">keRee</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/bookmark/">收藏</a></li>
+                        
+                            <li><a href="/vueProgram/Home/">Res</a></li>
+                        
+                            <li><a href="/about/">About</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:dhx_email@126.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="https://github.com/keRee" title="GitHub"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">keRee</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">keRee</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/bookmark/">收藏</a></li>
+                
+                    <li><a href="/vueProgram/Home/">Res</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:dhx_email@126.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/keRee" title="GitHub"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-git常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/15/git常用命令/" class="article-date">
+      <time datetime="2016-06-15T03:03:09.000Z" itemprop="datePublished">2016-06-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git常用命令
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <!-- # git常用命令 -->
+<hr>
+<h4 id="新建代码库"><a href="#新建代码库" class="headerlink" title="新建代码库"></a>新建代码库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># 在当前目录新建一个Git代码库</div><div class="line">$ git init</div><div class="line"></div><div class="line"># 新建一个目录，将其初始化为Git代码库</div><div class="line">$ git init [project-name]</div><div class="line"></div><div class="line"># 下载一个项目和它的整个代码历史</div><div class="line">$ git clone [url]</div></pre></td></tr></table></figure>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>Git的设置文件为<code>.gitconfig</code>，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># 显示当前的Git配置</div><div class="line">$ git config --list</div><div class="line"></div><div class="line"># 编辑Git配置文件</div><div class="line">$ git config -e [--global]</div><div class="line"></div><div class="line"># 设置提交代码时的用户信息</div><div class="line">$ git config [--global] user.name &quot;[name]&quot;</div><div class="line">$ git config [--global] user.email &quot;[email address]&quot;</div></pre></td></tr></table></figure></p>
+<h4 id="远程同步"><a href="#远程同步" class="headerlink" title="远程同步"></a>远程同步</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"># 下载远程仓库的所有变动</div><div class="line">$ git fetch [remote]</div><div class="line"></div><div class="line"># 显示所有远程仓库</div><div class="line">$ git remote -v</div><div class="line"></div><div class="line"># 显示某个远程仓库的信息</div><div class="line">$ git remote show [remote]</div><div class="line"></div><div class="line"># 增加一个新的远程仓库，并命名</div><div class="line">$ git remote add [shortname] [url]</div><div class="line"></div><div class="line"># 取回远程仓库的变化，并与本地分支合并</div><div class="line">$ git pull [remote] [branch]</div><div class="line"></div><div class="line"># 上传本地指定分支到远程仓库</div><div class="line">$ git push [remote] [branch]</div><div class="line"></div><div class="line"># 强行推送当前分支到远程仓库，即使有冲突</div><div class="line">$ git push [remote] --force</div><div class="line"></div><div class="line"># 推送所有分支到远程仓库</div><div class="line">$ git push [remote] --all</div></pre></td></tr></table></figure>
+<h4 id="增加删除文件"><a href="#增加删除文件" class="headerlink" title="增加删除文件"></a>增加删除文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># 添加指定文件到暂存区</div><div class="line">$ git add [file1] [file2] ...</div><div class="line"></div><div class="line"># 添加指定目录到暂存区，包括子目录</div><div class="line">$ git add [dir]</div><div class="line"></div><div class="line"># 添加当前目录的所有文件到暂存区</div><div class="line">$ git add .</div><div class="line"></div><div class="line"># 添加每个变化前，都会要求确认</div><div class="line"># 对于同一个文件的多处变化，可以实现分次提交</div><div class="line">$ git add -p</div><div class="line"></div><div class="line"># 删除工作区文件，并且将这次删除放入暂存区</div><div class="line">$ git rm [file1] [file2] ...</div><div class="line"></div><div class="line"># 停止追踪指定文件，但该文件会保留在工作区</div><div class="line">$ git rm --cached [file]</div><div class="line"></div><div class="line"># 改名文件，并且将这个改名放入暂存区</div><div class="line">$ git mv [file-original] [file-renamed]</div></pre></td></tr></table></figure>
+<h4 id="代码提交"><a href="#代码提交" class="headerlink" title="代码提交"></a>代码提交</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># 提交暂存区到仓库区</div><div class="line">$ git commit -m [message]</div><div class="line"></div><div class="line"># 提交暂存区的指定文件到仓库区</div><div class="line">$ git commit [file1] [file2] ... -m [message]</div><div class="line"></div><div class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</div><div class="line">$ git commit -a</div><div class="line"></div><div class="line"># 提交时显示所有diff信息</div><div class="line">$ git commit -v</div><div class="line"></div><div class="line"># 使用一次新的commit，替代上一次提交</div><div class="line"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</div><div class="line">$ git commit --amend -m [message]</div><div class="line"></div><div class="line"># 重做上一次commit，并包括指定文件的新变化</div><div class="line">$ git commit --amend [file1] [file2] ...</div></pre></td></tr></table></figure>
+<h4 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"># 列出所有本地分支</div><div class="line">$ git branch</div><div class="line"></div><div class="line"># 列出所有远程分支</div><div class="line">$ git branch -r</div><div class="line"></div><div class="line"># 列出所有本地分支和远程分支</div><div class="line">$ git branch -a</div><div class="line"></div><div class="line"># 新建一个分支，但依然停留在当前分支</div><div class="line">$ git branch [branch-name]</div><div class="line"></div><div class="line"># 新建一个分支，并切换到该分支</div><div class="line">$ git checkout -b [branch]</div><div class="line"></div><div class="line"># 新建一个分支，指向指定commit</div><div class="line">$ git branch [branch] [commit]</div><div class="line"></div><div class="line"># 新建一个分支，与指定的远程分支建立追踪关系</div><div class="line">$ git branch --track [branch] [remote-branch]</div><div class="line"></div><div class="line"># 切换到指定分支，并更新工作区</div><div class="line">$ git checkout [branch-name]</div><div class="line"></div><div class="line"># 切换到上一个分支</div><div class="line">$ git checkout -</div><div class="line"></div><div class="line"># 建立追踪关系，在现有分支与指定的远程分支之间</div><div class="line">$ git branch --set-upstream [branch] [remote-branch]</div><div class="line"></div><div class="line"># 合并指定分支到当前分支</div><div class="line">$ git merge [branch]</div><div class="line"></div><div class="line"># 选择一个commit，合并进当前分支</div><div class="line">$ git cherry-pick [commit]</div><div class="line"></div><div class="line"># 删除分支</div><div class="line">$ git branch -d [branch-name]</div><div class="line"></div><div class="line"># 删除远程分支</div><div class="line">$ git push origin --delete [branch-name]</div><div class="line">$ git branch -dr [remote/branch]</div></pre></td></tr></table></figure>
+<h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"># 列出所有tag</div><div class="line">$ git tag</div><div class="line"></div><div class="line"># 新建一个tag在当前commit</div><div class="line">$ git tag [tag]</div><div class="line"></div><div class="line"># 新建一个tag在指定commit</div><div class="line">$ git tag [tag] [commit]</div><div class="line"></div><div class="line"># 删除本地tag</div><div class="line">$ git tag -d [tag]</div><div class="line"></div><div class="line"># 删除远程tag</div><div class="line">$ git push origin :refs/tags/[tagName]</div><div class="line"></div><div class="line"># 查看tag信息</div><div class="line">$ git show [tag]</div><div class="line"></div><div class="line"># 提交指定tag</div><div class="line">$ git push [remote] [tag]</div><div class="line"></div><div class="line"># 提交所有tag</div><div class="line">$ git push [remote] --tags</div><div class="line"></div><div class="line"># 新建一个分支，指向某个tag</div><div class="line">$ git checkout -b [branch] [tag]</div></pre></td></tr></table></figure>
+<h4 id="查看信息"><a href="#查看信息" class="headerlink" title="查看信息"></a>查看信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># 显示有变更的文件</div><div class="line">$ git status</div><div class="line"></div><div class="line"># 显示当前分支的版本历史</div><div class="line">$ git log</div><div class="line"></div><div class="line"># 显示commit历史，以及每次commit发生变更的文件</div><div class="line">$ git log --stat</div><div class="line"></div><div class="line"># 搜索提交历史，根据关键词</div><div class="line">$ git log -S [keyword]</div><div class="line"></div><div class="line"># 显示某个commit之后的所有变动，每个commit占据一行</div><div class="line">$ git log [tag] HEAD --pretty=format:%s</div><div class="line"></div><div class="line"># 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件</div><div class="line">$ git log [tag] HEAD --grep feature</div><div class="line"></div><div class="line"># 显示某个文件的版本历史，包括文件改名</div><div class="line">$ git log --follow [file]</div><div class="line">$ git whatchanged [file]</div><div class="line"></div><div class="line"># 显示指定文件相关的每一次diff</div><div class="line">$ git log -p [file]</div><div class="line"></div><div class="line"># 显示过去5次提交</div><div class="line">$ git log -5 --pretty --oneline</div><div class="line"></div><div class="line"># 显示所有提交过的用户，按提交次数排序</div><div class="line">$ git shortlog -sn</div><div class="line"></div><div class="line"># 显示指定文件是什么人在什么时间修改过</div><div class="line">$ git blame [file]</div><div class="line"></div><div class="line"># 显示暂存区和工作区的差异</div><div class="line">$ git diff</div><div class="line"></div><div class="line"># 显示暂存区和上一个commit的差异</div><div class="line">$ git diff --cached [file]</div><div class="line"></div><div class="line"># 显示工作区与当前分支最新commit之间的差异</div><div class="line">$ git diff HEAD</div><div class="line"></div><div class="line"># 显示两次提交之间的差异</div><div class="line">$ git diff [first-branch]...[second-branch]</div><div class="line"></div><div class="line"># 显示今天你写了多少行代码</div><div class="line">$ git diff --shortstat &quot;@&#123;0 day ago&#125;&quot;</div><div class="line"></div><div class="line"># 显示某次提交的元数据和内容变化</div><div class="line">$ git show [commit]</div><div class="line"></div><div class="line"># 显示某次提交发生变化的文件</div><div class="line">$ git show --name-only [commit]</div><div class="line"></div><div class="line"># 显示某次提交时，某个文件的内容</div><div class="line">$ git show [commit]:[filename]</div><div class="line"></div><div class="line"># 显示当前分支的最近几次提交</div><div class="line">$ git reflog</div></pre></td></tr></table></figure>
+<h4 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"># 恢复暂存区的指定文件到工作区</div><div class="line">$ git checkout [file]</div><div class="line"></div><div class="line"># 恢复某个commit的指定文件到暂存区和工作区</div><div class="line">$ git checkout [commit] [file]</div><div class="line"></div><div class="line"># 恢复暂存区的所有文件到工作区</div><div class="line">$ git checkout .</div><div class="line"></div><div class="line"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</div><div class="line">$ git reset [file]</div><div class="line"></div><div class="line"># 重置暂存区与工作区，与上一次commit保持一致</div><div class="line">$ git reset --hard</div><div class="line"></div><div class="line"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</div><div class="line">$ git reset [commit]</div><div class="line"></div><div class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</div><div class="line">$ git reset --hard [commit]</div><div class="line"></div><div class="line"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</div><div class="line">$ git reset --keep [commit]</div><div class="line"></div><div class="line"># 新建一个commit，用来撤销指定commit</div><div class="line"># 后者的所有变化都将被前者抵消，并且应用到当前分支</div><div class="line">$ git revert [commit]</div><div class="line"></div><div class="line"># 暂时将未提交的变化移除，稍后再移入</div><div class="line">$ git stash</div><div class="line">$ git stash pop</div></pre></td></tr></table></figure>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># 生成一个可供发布的压缩包</div><div class="line">$ git archive</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/06/24/MongoDB/">
+                    MongoDB学习
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/05/27/description- css 页面重绘和回流(重排)以及优化/">
+                    css 页面重绘和回流(重排)以及优化
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#新建代码库"><span class="toc-number">1.</span> <span class="toc-text">新建代码库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置"><span class="toc-number">2.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#远程同步"><span class="toc-number">3.</span> <span class="toc-text">远程同步</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#增加删除文件"><span class="toc-number">4.</span> <span class="toc-text">增加删除文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码提交"><span class="toc-number">5.</span> <span class="toc-text">代码提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分支"><span class="toc-number">6.</span> <span class="toc-text">分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#标签"><span class="toc-number">7.</span> <span class="toc-text">标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查看信息"><span class="toc-number">8.</span> <span class="toc-text">查看信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#撤销"><span class="toc-number">9.</span> <span class="toc-text">撤销</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他"><span class="toc-number">10.</span> <span class="toc-text">其他</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/06/15/git常用命令/" data-title="git常用命令" data-url="https://keree.github.io/2016/06/15/git常用命令/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"null"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+    </script>
+    
+    <script> loadComment(); </script>
+
+</div>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/06/24/MongoDB/" title="上一篇: MongoDB学习">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/05/27/description- css 页面重绘和回流(重排)以及优化/" title="下一篇: css 页面重绘和回流(重排)以及优化">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/13/新年展望/">新一年的展望</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/13/Error Chunk entry was removed Use hasRuntime()/">webpack使用中遇到的一些问题及解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/">Coldplay - Viva la vida - 超赞吉他弹奏</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/02/exports与module.exports的区别/">exports与module.exports的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/24/MongoDB/">MongoDB学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/15/git常用命令/">git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/27/description- css 页面重绘和回流(重排)以及优化/">css 页面重绘和回流(重排)以及优化</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/22/移动端IOS点击事件失效解决方案/">移动端IOS点击事件失效解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/13/Hexo+Github个人博客搭建教程/">Hexo+Github个人博客搭建教程</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2017 keRee
+            </div>
+            <!-- <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div> -->
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
