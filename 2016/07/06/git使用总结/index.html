@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="超好听哦！">
+<meta name="description" content="git使用总结">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Coldplay - Viva la vida - 超赞吉他弹奏">
-<meta property="og:url" content="https://keree.github.io/2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/index.html">
+<meta property="og:title" content="git使用总结">
+<meta property="og:url" content="https://keree.github.io/2016/07/06/git使用总结/index.html">
 <meta property="og:site_name" content="keRee-Blog">
-<meta property="og:description" content="超好听哦！">
-<meta property="og:updated_time" content="2017-02-07T12:21:31.489Z">
+<meta property="og:description" content="git使用总结">
+<meta property="og:updated_time" content="2017-02-16T06:43:26.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Coldplay - Viva la vida - 超赞吉他弹奏">
-<meta name="twitter:description" content="超好听哦！">
+<meta name="twitter:title" content="git使用总结">
+<meta name="twitter:description" content="git使用总结">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Coldplay - Viva la vida - 超赞吉他弹奏 | keRee-Blog</title>
+<title>git使用总结 | keRee-Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -208,11 +208,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-推荐-Coldplay - Viva la vida吉他弹奏" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-git使用总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/" class="article-date">
-      <time datetime="2016-09-03T15:10:25.000Z" itemprop="datePublished">2016-09-03</time>
+      <a href="/2016/07/06/git使用总结/" class="article-date">
+      <time datetime="2016-07-06T12:21:19.000Z" itemprop="datePublished">2016-07-06</time>
 </a>
 
 
@@ -227,7 +227,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Coldplay - Viva la vida - 超赞吉他弹奏
+      git使用总结
     </h1>
   
 
@@ -238,7 +238,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -248,8 +248,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="Coldplay-Viva-la-vida"><a href="#Coldplay-Viva-la-vida" class="headerlink" title="Coldplay - Viva la vida"></a>Coldplay - Viva la vida</h3><hr>
-<h4 id="今天给大家推荐一个超赞的吉他弹奏"><a href="#今天给大家推荐一个超赞的吉他弹奏" class="headerlink" title="今天给大家推荐一个超赞的吉他弹奏"></a>今天给大家推荐一个超赞的吉他弹奏</h4><p><a href="https://www.youtube.com/embed/7Ss0q-_VJCk" target="_blank" rel="external">Coldplay - Viva la vida</a>点此播放</p>
+        <!-- # git使用总结 -->
+<h4 id="git配置代码提交时的用户信息"><a href="#git配置代码提交时的用户信息" class="headerlink" title="git配置代码提交时的用户信息"></a>git配置代码提交时的用户信息</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># 设置提交代码时的用户信息</div><div class="line">$ git config --global user.name &quot;[name]&quot;</div><div class="line">$ git config --global user.email &quot;[email address]&quot;</div></pre></td></tr></table></figure>
+<h4 id="git向远程仓库推送内容"><a href="#git向远程仓库推送内容" class="headerlink" title="git向远程仓库推送内容"></a>git向远程仓库推送内容</h4><p>步骤如下：<br>1、创建版本库</p>
+<blockquote>
+<p>简单来讲就是设置一个目录，使得里面的文件可以被GIT管理</p>
+</blockquote>
+<p>所以，第一步在一个合适的地方新建一个目录，例如<code>F:\myRepository</code><br>第二部，打开<code>Git Bash</code>，定位到刚刚新建的目录处<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cd f:myRepository</div></pre></td></tr></table></figure></p>
+<p>然后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init</div></pre></td></tr></table></figure></p>
+<p>提示<code>Initialized empty Git repository in F:/myRepository/.git/</code>就ok了<br>2、添加文件<br>第一步，我们在<code>F:\myRepository</code>目录下放一个<code>index.html</code>文件<br>第二步，本来我们现在就可以直接添加文件了，但是为了让我们更了解git的状态，我们执行一下<code>git status</code>（这个可以显示有变更的文件）–<code>git status</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ git status</div><div class="line">On branch master</div><div class="line"></div><div class="line">Initial commit</div><div class="line"></div><div class="line">Untracked files:</div><div class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</div><div class="line"></div><div class="line">        index.html</div><div class="line"></div><div class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</div></pre></td></tr></table></figure>
+<p><code>提示</code>注意看，它告诉了我们下一步该怎么做<code>use &quot;git add &lt;file&gt;...</code><br>第三步，正式的添加文件–<code>git add &lt;file&gt;...</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git add index.html</div><div class="line">warning: LF will be replaced by CRLF in index.html.</div><div class="line">The file will have its original line endings in your working directory.</div></pre></td></tr></table></figure></p>
+<p>3、代码提交–<code>git commit -m [message]</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &apos;my first commit&apos;</div><div class="line">[master (root-commit) 12cd454] my first commit</div><div class="line"> 1 file changed, 11 insertions(+)</div><div class="line"> create mode 100644 index.html</div></pre></td></tr></table></figure></p>
+<p>4、添加远程仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote add [remote-name] git@github.com:[github-user-name]/[repository-name].git</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -262,15 +273,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/10/13/Error Chunk entry was removed Use hasRuntime()/">
-                    webpack使用中遇到的一些问题及解决办法
+                <a href="/2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/">
+                    Coldplay - Viva la vida - 超赞吉他弹奏
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/07/06/git使用总结/">
-                    git使用总结
+                <a href="/2016/07/02/exports与module.exports的区别/">
+                    exports与module.exports的区别
                 </a>
             </div>
         
@@ -282,7 +293,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Coldplay-Viva-la-vida"><span class="toc-number">1.</span> <span class="toc-text">Coldplay - Viva la vida</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#今天给大家推荐一个超赞的吉他弹奏"><span class="toc-number">1.1.</span> <span class="toc-text">今天给大家推荐一个超赞的吉他弹奏</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#git配置代码提交时的用户信息"><span class="toc-number">1.</span> <span class="toc-text">git配置代码提交时的用户信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git向远程仓库推送内容"><span class="toc-number">2.</span> <span class="toc-text">git向远程仓库推送内容</span></a></li></ol>
         
     </div>
     <style>
@@ -309,7 +320,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/" data-title="Coldplay - Viva la vida - 超赞吉他弹奏" data-url="https://keree.github.io/2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/07/06/git使用总结/" data-title="git使用总结" data-url="https://keree.github.io/2016/07/06/git使用总结/"></div>
     <script>
         var duoshuoQuery = {short_name:"null"};
         var loadComment = function(){
@@ -332,7 +343,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/10/13/Error Chunk entry was removed Use hasRuntime()/" title="上一篇: webpack使用中遇到的一些问题及解决办法">
+            <a href="/2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/" title="上一篇: Coldplay - Viva la vida - 超赞吉他弹奏">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -340,7 +351,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/07/06/git使用总结/" title="下一篇: git使用总结">
+            <a href="/2016/07/02/exports与module.exports的区别/" title="下一篇: exports与module.exports的区别">
                 <i class="fa fa-angle-right"></i>
             </a>
         
