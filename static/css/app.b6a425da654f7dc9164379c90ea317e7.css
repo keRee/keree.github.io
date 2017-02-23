@@ -90,7 +90,7 @@ button{
 	height: 16px;
 	top: 10px;
 	right: 30px;
-	background: rgba(255, 255, 255, 0.3) url(/static/img/icon_64.f6b5f7a.png) no-repeat center;
+	background: rgba(255, 255, 255, 0.3) url(./../img/icon_64.f6b5f7a.png) no-repeat center;
 	background-position: -0px -186px;
 	background-size: 32px 349px;
 	cursor: pointer;
