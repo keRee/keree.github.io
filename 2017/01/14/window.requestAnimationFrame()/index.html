@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="MongoDB快速入门">
+<meta name="description" content="window.requestAnimationFrame()基于脚本的动画计时控制">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MongoDB学习">
-<meta property="og:url" content="https://keree.github.io/2016/06/24/MongoDB/index.html">
+<meta property="og:title" content="window.requestAnimationFrame()">
+<meta property="og:url" content="https://keree.github.io/2017/01/14/window.requestAnimationFrame()/index.html">
 <meta property="og:site_name" content="keRee-Blog">
-<meta property="og:description" content="MongoDB快速入门">
-<meta property="og:updated_time" content="2017-02-10T09:32:17.014Z">
+<meta property="og:description" content="window.requestAnimationFrame()基于脚本的动画计时控制">
+<meta property="og:updated_time" content="2017-02-24T03:14:45.148Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MongoDB学习">
-<meta name="twitter:description" content="MongoDB快速入门">
+<meta name="twitter:title" content="window.requestAnimationFrame()">
+<meta name="twitter:description" content="window.requestAnimationFrame()基于脚本的动画计时控制">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>MongoDB学习 | keRee-Blog</title>
+<title>window.requestAnimationFrame() | keRee-Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -208,11 +208,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-MongoDB" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-window.requestAnimationFrame()" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/06/24/MongoDB/" class="article-date">
-      <time datetime="2016-06-24T02:53:56.000Z" itemprop="datePublished">2016-06-24</time>
+      <a href="/2017/01/14/window.requestAnimationFrame()/" class="article-date">
+      <time datetime="2017-01-14T02:24:22.000Z" itemprop="datePublished">2017-01-14</time>
 </a>
 
 
@@ -227,7 +227,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      MongoDB学习
+      window.requestAnimationFrame()
     </h1>
   
 
@@ -238,7 +238,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MongoDB/">MongoDB</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -248,64 +248,19 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h3><p>1、 在<a href="https://www.mongodb.com/download-center?jmp=nav" target="_blank" rel="external">MongoDB官网</a>下载自己需要的版本，直接安装就可以<br>2、 打开command，进入到MongoDB的安装目录，例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C:\program files\mongodb\3.2\bin</div></pre></td></tr></table></figure>
-<p>3、 设置环境变量</p>
+        <!-- # window.requestAnimationFrame() -->
+<h3 id="window-requestAnimationFrame-是个啥？"><a href="#window-requestAnimationFrame-是个啥？" class="headerlink" title="window.requestAnimationFrame()是个啥？"></a>window.requestAnimationFrame()是个啥？</h3><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame" target="_blank" rel="external">window.requestAnimationFrame()</a>方法告诉浏览器您希望执行动画，并请求浏览器调用指定的函数在下一次重绘之前更新动画。该方法将在重绘之前调用的回调作为参数。</p>
+<p>看出来了吧，就是为我们提供了一个执行动画的方法！<br><strong>那我们为什么要用做个执行动画呢？</strong></p>
+<p>首先我们要说下显示器，因为一般显示器大约是16.7ms的刷新频率，也就是大概1s钟60次；<br>那么 requestAnimationFrame方法通过在系统准备好绘制动画帧时调用该帧，从而为创建动画网页提供了一种更平滑更高效的方法；<br>也就是说requestAnimationFrame方法的频率与显示器刷新频率大概相同；</p>
+<p>在此 API 之前，使用 setTimeout 和 setInterval 绘制的动画并没有为 Web 开发人员提供有效的方法来规划动画的图形计时器。这导致了动画过度绘制，浪费 CPU 周期以及消耗额外的电能等问题。而且，即使看不到网站，特别是当网站使用背景选项卡中的页面或浏览器已最小化时，动画都会频繁出现。而requestAnimationFrame方法在不在当前选项卡或者浏览器最小化时会停止动画，从而可以更好地节约系统资源。</p>
+<h3 id="使用方法（语法）"><a href="#使用方法（语法）" class="headerlink" title="使用方法（语法）"></a>使用方法（语法）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">requestID = window.requestAnimationFrame(callback);</div></pre></td></tr></table></figure>
+<p><strong>参数callback</strong><br>在每次需要重新绘制动画时,会调用这个参数所指定的函数。这个回调函数会收到一个参数，这个 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/DOMHighResTimeStamp" target="_blank" rel="external">DOMHighResTimeStamp</a> 类型的参数指示当前时间距离开始触发 requestAnimationFrame 的回调的时间</p>
 <blockquote>
-<p>我的电脑–&gt;属性–&gt;高级系统设置–&gt;环境变量–&gt;用户变量</p>
-<!-- 阅读全文 -->
+<p>也就是说callback函数在在执行时可以自动获得一个参数timestamp<br>timestamp表示当前时间距离开始触发 requestAnimationFrame 的回调的时间</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">将Mongod的路径 C:\program files\mongodb\3.2\bin 加入到PATH里，若没有PATH变量，则自己新建一个保存</div></pre></td></tr></table></figure>
-<p>4、 在已进入MongoDB安装目录的窗口输入mongod执行</p>
-<blockquote>
-<p>在此可能会报 <code>Data directory c:\data\db not found</code></p>
-<p>不用担心，只需在C:\目录下创建这两个文件即可，然后再次执行<code>mongod</code></p>
-<p>以上为设置默认db目录，也可自行自定义设置</p>
-<p>最后提示 <code>waiting for connetions on port 27017</code>(此为默认端口)，则说明此步骤成功</p>
-</blockquote>
-<p>5、 重新打开一个command窗口，输入mongo执行</p>
-<blockquote>
-<p>提示 <code>connecting to: test</code></p>
-<p>输入db执行，去查看另一个command窗口，会提示 <code>1 connection now open</code></p>
-<p>到这里就初步成功了</p>
-</blockquote>
-<h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><h4 id="创建、切换、查看和删除数据库"><a href="#创建、切换、查看和删除数据库" class="headerlink" title="创建、切换、查看和删除数据库"></a>创建、切换、查看和删除数据库</h4><p>1、创建与切换</p>
-<blockquote>
-<p>&gt;use Database_name</p>
-</blockquote>
-<p>如果没有则创建数据库，如果已存在这个数据库名则切换到这个数据库<br>例如：<br>创建一个mydb的数据库</p>
-<blockquote>
-<p>&gt;use mydb</p>
-</blockquote>
-<p>查看当前数据库名称</p>
-<blockquote>
-<p>&gt;db<br>mydb</p>
-</blockquote>
-<p>创建另一个数据库–名称：secondDB</p>
-<blockquote>
-<p>&gt;use secondDB</p>
-</blockquote>
-<p>若是secondDB数据库已存在</p>
-<blockquote>
-<p>&gt;use secondDB<br>switched to db secondDB</p>
-</blockquote>
-<p>再次查看当前数据库名称</p>
-<blockquote>
-<p>&gt;db<br>secondDB</p>
-</blockquote>
-<p>2、查看数据库列表</p>
-<blockquote>
-<p>&gt;show dbs<br>mydb 0.000GB<br>secondDB 0.000GB</p>
-</blockquote>
-<p>3、删除数据库</p>
-<blockquote>
-<p>&gt;db.dropDatabase()<br>{“dropped” : “secondDB”, “ok” : “1”}</p>
-</blockquote>
-<p>这将删除当前选定的数据库。如果还没有选择任何数据库，然后它会删除默认的 ‘ test’ 数据库<br>此时</p>
-<blockquote>
-<p>&gt;show dbs<br>mydb 0.000GB</p>
-</blockquote>
-<h4 id="PHP操作MongoDB"><a href="#PHP操作MongoDB" class="headerlink" title="PHP操作MongoDB"></a>PHP操作MongoDB</h4><p>连接数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">    $m = new MongoClient();         // 连接默认主机和端口为：mongodb://localhost:27017</div><div class="line">	$db = $m-&gt;mydb;                // 获取名称为 &quot;mydb&quot; 的数据库</div><div class="line"></div><div class="line">    $collection = $db-&gt;userInfo;    // 选择集合</div><div class="line">    // $collection = $db-&gt;createCollection(&quot;userInfo&quot;);       //创建集合</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>requestID 是一个长整型非零值,作为一个唯一的标识符.你可以将该值作为参数传给<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/cancelAnimationFrame" target="_blank" rel="external">window.cancelAnimationFrame()</a> 来取消这个回调函数。</p>
+<h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p>目前移动端的是不兼容的，而PC上也得做兼容处理；<br>代码请看这里：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var lastTime = 0;</div><div class="line">var vendors = [&apos;webkit&apos;, &apos;moz&apos;, &apos;ms&apos;, &apos;o&apos;];</div><div class="line">for(var x = 0; x &lt; vendors.length &amp;&amp; !window.requestAnimationFrame; ++x) &#123;</div><div class="line">    window.requestAnimationFrame = window[vendors[x]+&apos;RequestAnimationFrame&apos;];</div><div class="line">    window.cancelAnimationFrame =</div><div class="line">      window[vendors[x]+&apos;CancelAnimationFrame&apos;] || window[vendors[x]+&apos;CancelRequestAnimationFrame&apos;];</div><div class="line">&#125;</div><div class="line">if (!window.requestAnimationFrame) &#123;</div><div class="line">    window.requestAnimationFrame = function(callback, element) &#123;</div><div class="line">        var currTime = new Date().getTime();</div><div class="line">        var timeToCall = Math.max(0, 16 - (currTime - lastTime));</div><div class="line">        var id = window.setTimeout(function() &#123; callback(currTime + timeToCall); &#125;,</div><div class="line">          timeToCall);</div><div class="line">        lastTime = currTime + timeToCall;</div><div class="line">        return id;</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line">if (!window.cancelAnimationFrame) &#123;</div><div class="line">    window.cancelAnimationFrame = function(id) &#123;</div><div class="line">        clearTimeout(id);</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里的处理是如果支持就使用window.requestAnimationFrame()方法，如果不支持则退为使用window.setTimeout()方法</p>
 
       
     </div>
@@ -317,16 +272,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/07/02/exports与module.exports的区别/">
-                    exports与module.exports的区别
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/06/15/git常用命令/">
-                    git常用命令
+                <a href="/2017/01/13/新年展望/">
+                    新一年的展望
                 </a>
             </div>
         
@@ -338,7 +287,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载与安装"><span class="toc-number">1.</span> <span class="toc-text">下载与安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本操作"><span class="toc-number">2.</span> <span class="toc-text">基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建、切换、查看和删除数据库"><span class="toc-number">2.1.</span> <span class="toc-text">创建、切换、查看和删除数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PHP操作MongoDB"><span class="toc-number">2.2.</span> <span class="toc-text">PHP操作MongoDB</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#window-requestAnimationFrame-是个啥？"><span class="toc-number">1.</span> <span class="toc-text">window.requestAnimationFrame()是个啥？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方法（语法）"><span class="toc-number">2.</span> <span class="toc-text">使用方法（语法）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#返回值"><span class="toc-number">3.</span> <span class="toc-text">返回值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兼容性"><span class="toc-number">4.</span> <span class="toc-text">兼容性</span></a></li></ol>
         
     </div>
     <style>
@@ -365,7 +314,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/06/24/MongoDB/" data-title="MongoDB学习" data-url="https://keree.github.io/2016/06/24/MongoDB/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2017/01/14/window.requestAnimationFrame()/" data-title="window.requestAnimationFrame()" data-url="https://keree.github.io/2017/01/14/window.requestAnimationFrame()/"></div>
     <script>
         var duoshuoQuery = {short_name:"null"};
         var loadComment = function(){
@@ -388,15 +337,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/07/02/exports与module.exports的区别/" title="上一篇: exports与module.exports的区别">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/06/15/git常用命令/" title="下一篇: git常用命令">
+            <a href="/2017/01/13/新年展望/" title="下一篇: 新一年的展望">
                 <i class="fa fa-angle-right"></i>
             </a>
         
