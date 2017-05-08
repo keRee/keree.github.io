@@ -1382,7 +1382,7 @@ color
   transition: color 0.3s;
 }
 .article-title:hover {
-  color: #258fb8;
+  color: #666;
 }
 .article-inner {
   position: relative;
@@ -2289,14 +2289,14 @@ aside.comment-bar:active {
 .article-entry code {
   color: #808080;
   background: rgba(248,237,223,0.5);
-  padding: 0.05em 0.3em;
+  padding: 0.1em 0.3em;
   border-radius: 3px;
   -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.08);
   box-shadow: 1px 1px 1px rgba(0,0,0,0.08);
   var: 5;
   color: #fff;
   background: rgba(153,204,153,0.7);
-  background: rgba(24,117,205,0.42);
+  background: #359960;
 }
 pre .comment,
 pre .title {
