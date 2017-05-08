@@ -1,4 +1,6 @@
 define([], function(){
+    //
+    $('.archive-article-title').attr('target', '_self');
 
     var Tips = (function(){
 
