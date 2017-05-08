@@ -265,8 +265,12 @@ a {
   min-height: 100%;
   background: rgba(255,255,255,0.8);
   left: 300px;
-  width: 960px;
-  margin: 0 auto;
+}
+@media screen and (min-width: 680px) {
+  #container .mid-col {
+    width: 960px;
+    margin: 0 auto;
+  }
 }
 @media screen and (max-width: 800px) {
   #container .left-col {
@@ -1169,12 +1173,11 @@ color
   position: relative;
 }
 .archives .article-info {
-  display: none;
   border: none;
   padding-top: 1em;
 }
 .archives .archive-article {
-  margin-left: 160px;
+  margin-left: 10px;
   padding: 0.5em 0;
   border-bottom: 1px solid #eee;
   border-top: 1px solid #fff;
@@ -1249,8 +1252,12 @@ color
   margin-bottom: 5px;
   margin-top: -10px;
 }
+.archive-article-inner .article-meta .archive-article-date time {
+/*display: none;*/
+  cursor: pointer;
+}
 .archive-article-inner .article-meta .archive-article-date time:before {
-  content: "\f073";
+/*content: "\f073";*/
   color: #999;
   position: relative;
   margin-right: 10px;
@@ -1394,6 +1401,12 @@ color
 }
 .article-info li:hover {
   background: none;
+}
+.article-desc {
+  margin-top: 2em;
+  font-size: 16px;
+  color: #aaa;
+  padding-left: 0.8em;
 }
 .article-info-index.article-info {
   padding-top: 20px;
@@ -2030,12 +2043,11 @@ aside.comment-bar:active {
   position: relative;
 }
 .archives .article-info {
-  display: none;
   border: none;
   padding-top: 1em;
 }
 .archives .archive-article {
-  margin-left: 160px;
+  margin-left: 10px;
   padding: 0.5em 0;
   border-bottom: 1px solid #eee;
   border-top: 1px solid #fff;
@@ -2110,8 +2122,12 @@ aside.comment-bar:active {
   margin-bottom: 5px;
   margin-top: -10px;
 }
+.archive-article-inner .article-meta .archive-article-date time {
+/*display: none;*/
+  cursor: pointer;
+}
 .archive-article-inner .article-meta .archive-article-date time:before {
-  content: "\f073";
+/*content: "\f073";*/
   color: #999;
   position: relative;
   margin-right: 10px;
@@ -2391,30 +2407,32 @@ pre .javascript .function {
 #page-nav .page-number {
   width: 20px;
   height: 20px;
-  background: #4d4d4d;
+  background: #fff;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
   display: inline-block;
-  color: #fff;
+  color: #333;
   line-height: 20px;
   font-size: 12px;
   margin: 0 3px 30px;
 }
 #page-nav .page-number:hover {
-  background: #5e5e5e;
+  background: #359960;
+  color: #fff;
 }
 #page-nav .current {
-  background: #88acdb;
-  cursor: default;
+  background: #359960;
+  color: #fff;
+  cursor: pointer;
 }
 #page-nav .current:hover {
-  background: #88acdb;
+  background: #359960;
 }
 #page-nav .extend {
   color: #4d4d4d;
   margin: 0 27px;
-  opacity: 0;
+  opacity: 1;
 }
 #page-nav .extend:hover {
   color: #5e5e5e;
