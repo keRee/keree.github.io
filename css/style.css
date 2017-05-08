@@ -165,7 +165,7 @@ h6 {
 a {
   text-decoration: none;
   outline-width: 0;
-  color: #258fb8;
+  color: #359960;
   outline: none;
 }
 .alignleft {
@@ -246,7 +246,7 @@ a {
 #container .left-col .overlay {
   width: 100%;
   height: 180px;
-  background-color: #000;
+  background-color: #fff;
   position: absolute;
   opacity: 0.7;
 }
@@ -260,12 +260,13 @@ a {
   font-weight: bold;
 }
 #container .mid-col {
-  position: absolute;
+  position: '';
   right: 0;
   min-height: 100%;
   background: rgba(255,255,255,0.8);
   left: 300px;
-  width: auto;
+  width: 960px;
+  margin: 0 auto;
 }
 @media screen and (max-width: 800px) {
   #container .left-col {
@@ -606,7 +607,7 @@ a {
 #header .profilepic {
   text-align: center;
   display: block;
-  border: 5px solid #fff;
+  border: 0px solid #fff;
   border-radius: 50%;
   width: 128px;
   height: 128px;
@@ -636,7 +637,7 @@ a {
 }
 #header .profilepic:hover {
   background: #fff;
-  border: 5px solid #88acdb;
+  border: 0px solid #88acdb;
   -webkit-box-shadow: 0 0 1.5em #88acdb;
   box-shadow: 0 0 1.5em #88acdb;
   -webkit-animation: profilepic 0.15s linear infinite alternate;
@@ -1085,6 +1086,7 @@ a {
   opacity: 1;
 }
 #post-nav-button {
+  display: none;
   left: 300px;
   top: 61.8%;
 }
@@ -1194,7 +1196,7 @@ color
   transition: all 0.3s;
 }
 .archives .archive-article-title:hover {
-  color: #1874cd;
+  color: #359960;
   padding-left: 1em;
 }
 .archives .archive-article-title span {
@@ -1284,7 +1286,7 @@ color
   background: transparent;
 }
 .body-wrap {
-  margin-bottom: 126px;
+  margin-bottom: 66px;
   overflow: hidden;
 }
 .article {
@@ -1359,7 +1361,7 @@ color
   color: #c8c8c8;
 }
 .article-title {
-  color: #696969;
+  color: #666;
   margin-left: 0px;
   font-weight: 400;
   line-height: 1.3;
@@ -1380,8 +1382,8 @@ color
   margin-bottom: 0px;
   padding-bottom: 0.5em;
   word-break: break-word;
-  -webkit-box-shadow: 3px 2px 8px rgba(0,0,0,0.07);
-  box-shadow: 3px 2px 8px rgba(0,0,0,0.07);
+  -webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0.07);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.07);
 }
 .article-header {
   border-left: 0px solid #eee;
@@ -1407,16 +1409,18 @@ color
   line-height: 1.65em;
   padding: 0 2em;
   font-size: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
 }
 .article-entry blockquote {
   padding: 0.4em 20px;
   margin: 0.5em auto;
   border-left: 4px solid rgba(147,181,224,0.4);
   background: rgba(255,255,255,0.4);
-  -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-  border-left: 5px solid rgba(112,134,142,0.85);
-  background: #e3e3e3;
+  -webkit-box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.3);
+  border-left: 5px solid #b4b4b4;
+  background: #f7f7f7;
 }
 .article-entry blockquote p {
   margin: 0.4em auto;
@@ -1555,19 +1559,19 @@ color
   border-bottom: 1px solid #eee;
 }
 .article-entry h1 {
-  font-size: 2.25rem;
+  font-size: 1.95rem;
   line-height: 1.2;
 }
 .article-entry h2 {
-  font-size: 1.75rem;
+  font-size: 1.45rem;
   line-height: 1.225;
 }
 .article-entry h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.43;
 }
 .article-entry h4 {
-  font-size: 1.25rem;
+  font-size: 0.95rem;
   line-height: 1.1;
 }
 .article-entry h1 {
@@ -1589,35 +1593,36 @@ color
   background: none;
 }
 .article-meta {
-  position: absolute;
+  position: '';
   right: 0;
   top: 23px;
-  width: 9rem;
-  padding-right: 1.2rem;
+  width: 20rem;
+  padding-left: 2.6rem;
   font-size: 0.875rem;
-  text-align: right;
+  text-align: left;
   z-index: 1;
+  padding-bottom: 1rem;
 }
 .article-meta time {
   color: #aaa;
-  float: right;
+  float: none;
 }
 .article-meta time:before {
   margin-top: 0px;
   margin-right: 4px;
-  content: "\f073";
+/*content "\f073"*/
   font: 1em FontAwesome;
   color: #999;
 }
 .article-meta a:nth-child(2) {
   clear: right;
-  float: right;
-  padding-top: 0.45rem;
+  float: none;
+  padding-top: 0rem;
   color: #999;
 }
 .article-meta a:nth-child(2):hover {
   color: #258fb8;
-  font-size: 110%;
+  font-size: 100%;
 }
 .article-meta a:nth-child(2) i {
   vertical-align: top;
@@ -1667,10 +1672,10 @@ color
   vertical-align: middle;
 }
 .article-nav-title a {
-  color: #258fb8;
+  color: #359960;
 }
 .article-nav-title a:hover {
-  font-style: italic;
+  font-style: none;
 }
 #article-nav-older {
   padding-right: 1em;
@@ -2052,7 +2057,7 @@ aside.comment-bar:active {
   transition: all 0.3s;
 }
 .archives .archive-article-title:hover {
-  color: #1874cd;
+  color: #359960;
   padding-left: 1em;
 }
 .archives .archive-article-title span {
@@ -2143,19 +2148,19 @@ aside.comment-bar:active {
 }
 .article-entry pre,
 .article-entry .highlight {
-  background: rgba(32,34,37,0.85);
+  background: #f7f7f7;
   margin: auto;
   padding: 0.35em 1.5em;
   border-style: solid;
   border-color: #ddd;
-  border-width: 1px;
+  border-width: 0px;
   overflow: auto;
-  color: #c5c8c6;
+  color: #333;
   line-height: 1.3rem;
 }
 .article-entry .highlight .gutter pre,
 .article-entry .gist .gist-file .gist-data .line-numbers {
-  color: #d3d3d3;
+  color: #359960;
   font-size: 0.85rem;
 }
 .article-entry pre,
@@ -2214,6 +2219,7 @@ aside.comment-bar:active {
 .article-entry .highlight .gutter pre {
   text-align: right;
   padding-right: 1em;
+  display: none;
 }
 .article-entry .highlight .line {
   line-height: 1.3rem;
@@ -2336,8 +2342,9 @@ pre .javascript .function {
   font-size: 0.8rem;
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
   text-shadow: 0 1px #fff;
-  position: absolute;
+  position: '';
   bottom: 20px;
+  padding: 30px 0;
   opacity: 0.75;
   width: 100%;
   text-align: center;
@@ -2746,52 +2753,23 @@ pre .javascript .function {
   text-decoration: none;
   font-weight: normal;
   font-size: 0.75rem;
-  color: #fff;
+  color: #359960;
   height: 1.125rem;
   line-height: 1.125rem;
   float: left;
-  padding: 0 5px 0 10px;
+  padding: 0 5px 0 5px;
   position: relative;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px 5px;
   margin: 5px 9px 5px 8px;
   opacity: 0.75;
   font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei" "Lucida Grande", Verdana, "Helvetica Neue", Arial;
-}
-.tagcloud a.color0 {
-  background: #999;
-}
-.tagcloud a.color0::before {
-  border-right-color: #999;
-}
-.tagcloud a.color1 {
-  background: #999;
-}
-.tagcloud a.color1::before {
-  border-right-color: #999;
-}
-.tagcloud a.color2 {
-  background: #999;
-}
-.tagcloud a.color2::before {
-  border-right-color: #999;
-}
-.tagcloud a.color3 {
-  background: #999;
-}
-.tagcloud a.color3::before {
-  border-right-color: #999;
-}
-.tagcloud a.color4 {
-  background: #999;
-}
-.tagcloud a.color4::before {
-  border-right-color: #999;
-}
-.tagcloud a.color5 {
-  background: #999;
-}
-.tagcloud a.color5::before {
-  border-right-color: #999;
+  background: rgba(1,126,102,0.08);
+/*for color, i in color-list
+        &.color{i}
+            background color
+            &::before
+                border-right-color color
+    */
 }
 .tagcloud a:hover {
   opacity: 1;
@@ -2799,14 +2777,15 @@ pre .javascript .function {
   -moz-transform: scale(1.06);
   -ms-transform: scale(1.06);
   transform: scale(1.06);
-  background-color: #1874cd;
-  border-color: #1874cd;
+  background-color: none;
+  border-color: none;
 }
 .tagcloud a:hover::before {
-  border-right-color: #1874cd;
+  border-right-color: none;
 }
 .tagcloud a:before {
-  content: " ";
+  display: none;
+  content: "";
   width: 0;
   height: 0;
   position: absolute;
@@ -2815,9 +2794,9 @@ pre .javascript .function {
   border: 0.5625rem solid transparent;
 }
 .tagcloud a:after {
-  content: " ";
-  width: 4px;
-  height: 4px;
+/*content ""*/
+  width: 0px;
+  height: 0px;
   background-color: #fff;
   border-radius: 4px;
   -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.3);
@@ -2829,13 +2808,13 @@ pre .javascript .function {
 .article-tag::before,
 .article-category::before {
   float: left;
-  color: #999;
+  color: #359960;
   font: 16px FontAwesome;
   margin-right: 5px;
   margin-top: 0.333333333333333rem;
 }
 .article-tag::before {
-  content: "\f02b";
+/*content "\f02b"*/
   margin-left: 1em;
 }
 .article-category::before {
@@ -3005,7 +2984,7 @@ pre .javascript .function {
   overflow: hidden;
 }
 body {
-  background: #d3d3d3;
+  background: #fff;
 }
 #container .left-col {
   background: #fff;
@@ -3044,7 +3023,7 @@ body {
   background: rgba(0,0,0,0);
 }
 body {
-  background: #808080;
+  background: #fff;
 }
 .article-header {
   border-left: 0px solid #666;

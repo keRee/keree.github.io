@@ -141,7 +141,7 @@ require([], function (){
     }
 
     // Random Color 边栏顶部随机颜色
-    var colorList = ["#000", "#000", "#000", "#000", "#000", "#000", "#000", "#000", "#000"];
+    var colorList = ["#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff", "#fff"];
     var id = Math.ceil(Math.random()*(colorList.length-1));
     // PC
     $("#container .left-col .overlay").css({"background-color": colorList[id],"opacity": .3});
