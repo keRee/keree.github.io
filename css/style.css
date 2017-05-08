@@ -131,7 +131,7 @@ body {
   border-top: 3px solid #ffa500;
 }
 ::selection {
-  background: rgba(147,181,224,0.6);
+  background: #359960;
   color: #fff;
 }
 h2,
