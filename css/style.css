@@ -128,7 +128,7 @@ body {
   -moz-font-feature-settings: "liga" on;
   color: #333;
   -webkit-overflow-scrolling: touch;
-  border-top: 3px solid #ffa500;
+  border-top: 3px solid #359960;
 }
 ::selection {
   background: #359960;
