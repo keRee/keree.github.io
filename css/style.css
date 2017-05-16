@@ -204,7 +204,7 @@ a {
   height: 110px;
   position: absolute;
   width: 100%;
-  background: #4d4d4d;
+  background: #fff;
 }
 #container #mobile-nav .overlay.fixed {
   position: fixed;
