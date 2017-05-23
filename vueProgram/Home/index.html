@@ -1,1 +1,34 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><title>keRee-Github</title><link href=/static/css/app.b6a425da654f7dc9164379c90ea317e7.css rel=stylesheet></head><body><div id=app></div><script src=""></script><script type=text/javascript src=/static/js/manifest.b95064e100aa937e7951.js></script><script type=text/javascript src=/static/js/vendor.9f73731ab2011717755c.js></script><script type=text/javascript src=/static/js/app.e4c8a181ccc9b4209ca4.js></script></body></html>
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1.minimum-scale=1"><title>s_test</title><link href=./static/css/app.32956f46dad073b04c0ac1068ebef21d.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript>try{
+        var app = document.getElementById('app'),
+            body = document.body,
+            winW = window.screen.width,
+            winH = window.screen.height,
+            scaleNum = winW / 375;
+        var h = 0;
+            h = winH / scaleNum;
+            // winW = document.body.clientWidth,
+            // winH = document.body.clientHeight;
+        function autoScale(num){
+          var head = document.body.head || document.getElementsByTagName('head')[0],
+              style = document.createElement('style'),
+              // cssText = '#app{width: 375px;height: ' + h + 'px;overflow: hidden;-webkit-transform: scale(' + num + ');transform: scale(' + num + ');-webkit-transform-origin: 0px 0px 0px;transform-origin: 0px 0px 0px;}',
+              cssText = 'body{width: 375px;height: ' + h + 'px;overflow: hidden;-webkit-transform: scale(' + num + ');transform: scale(' + num + ');-webkit-transform-origin: 0px 0px 0px;transform-origin: 0px 0px 0px;}\
+              .wrap{width: 375px;height: ' + h + 'px;overflow: auto;}\
+            '
+          style.type = 'text/css';
+
+          style.appendChild(document.createTextNode( cssText ));
+          head.appendChild(style);
+
+
+          console.log(winW, winH)
+        }
+        autoScale(scaleNum);
+        window.onresize=function(){
+          autoScale(scaleNum)
+        }
+        var child = app.childNodes
+        console.log('h:'+h, scaleNum)
+      }catch(e){
+        console.log(e)
+      }</script><script type=text/javascript src=./static/js/manifest.c86cba4857ac4dde2fc7.js></script><script type=text/javascript src=./static/js/vendor.de5f295d1a067d5b6104.js></script><script type=text/javascript src=./static/js/app.c9a6b39361f4a135a4be.js></script></body></html>
