@@ -1,11 +1,13 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1.minimum-scale=1"><title>keRee-vue</title><link href=./static/css/app.19e1e083f2d88d9a7996bb9597780ab8.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript>try{
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1.minimum-scale=1"><title>keRee-vue</title><link href=./static/css/app.443f410405391198d68c8791a8b0da5a.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript>try{
         var app = document.getElementById('app'),
             body = document.body,
             winW = window.screen.width,
             winH = window.screen.height,
-            scaleNum = winW / 375;
+            docW = document.documentElement.clientWidth,
+            docH = document.documentElement.clientHeight,
+            scaleNum = docW / 375;
         var h = 0;
-            h = winH / scaleNum;
+            h = docH / scaleNum;
             // winW = document.body.clientWidth,
             // winH = document.body.clientHeight;
         function autoScale(num){
