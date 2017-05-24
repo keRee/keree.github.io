@@ -1,2 +1,0 @@
-webpackJsonp([2],{37:function(e,n,t){var r=t(0)(t(42),t(51),null,null);e.exports=r.exports},42:function(e,n){},51:function(e,n){e.exports={render:function(){var e=this,n=e.$createElement;e._self._c;return e._m(0)},staticRenderFns:[function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",{},[t("p",[e._v("新闻页")])])}]}}});
-//# sourceMappingURL=2.dbdc408596f614558d2b.js.map

@@ -1,2 +1,0 @@
-webpackJsonp([3],{36:function(e,n,t){var r=t(0)(t(41),t(53),null,null);e.exports=r.exports},41:function(e,n){},53:function(e,n){e.exports={render:function(){var e=this,n=e.$createElement;e._self._c;return e._m(0)},staticRenderFns:[function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",{},[t("p",[e._v("关于我")])])}]}}});
-//# sourceMappingURL=3.d97ba12d5ab091c44c1f.js.map
