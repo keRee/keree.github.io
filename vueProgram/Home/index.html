@@ -1,36 +1,46 @@
 <!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1.minimum-scale=1"><title>keRee-vue</title><link href=./static/css/app.443f410405391198d68c8791a8b0da5a.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript>try{
         var app = document.getElementById('app'),
-            body = document.body,
-            winW = window.screen.width,
-            winH = window.screen.height,
-            docW = document.documentElement.clientWidth,
-            docH = document.documentElement.clientHeight,
-            scaleNum = docW / 375;
-        var h = 0;
-            h = docH / scaleNum;
+            body = document.body;
+
+        var myapp = {
+            winW : window.screen.width,
+            winH :window.screen.height,
+            docW : document.documentElement.clientWidth,
+            docH : document.documentElement.clientHeight,
+            scaleNum : document.documentElement.clientWidth / 375,
+            h : document.documentElement.clientHeight * 375 / document.documentElement.clientWidth
+        }
+        function rset(){
+          return myapp = {
+            winW : window.screen.width,
+            winH :window.screen.height,
+            docW : document.documentElement.clientWidth,
+            docH : document.documentElement.clientHeight,
+            scaleNum : document.documentElement.clientWidth / 375,
+            h : document.documentElement.clientHeight * 375 / document.documentElement.clientWidth
+          }
+        }
             // winW = document.body.clientWidth,
             // winH = document.body.clientHeight;
-        function autoScale(num){
+        function autoScale(myapp){
           var head = document.body.head || document.getElementsByTagName('head')[0],
               style = document.createElement('style'),
               // cssText = '#app{width: 375px;height: ' + h + 'px;overflow: hidden;-webkit-transform: scale(' + num + ');transform: scale(' + num + ');-webkit-transform-origin: 0px 0px 0px;transform-origin: 0px 0px 0px;}',
-              cssText = 'body{width: 375px;height: ' + h + 'px;overflow: hidden;-webkit-transform: scale(' + num + ');transform: scale(' + num + ');-webkit-transform-origin: 0px 0px 0px;transform-origin: 0px 0px 0px;}\
-              .wrap{width: 375px;height: ' + h + 'px;overflow: auto;}\
-            '
+              cssText = 'body{width: 375px;height: ' + myapp.h + 'px;overflow: hidden;-webkit-transform: scale(' + myapp.scaleNum + ');transform: scale(' + myapp.scaleNum + ');-webkit-transform-origin: 0px 0px 0px;transform-origin: 0px 0px 0px;}\
+              .wrap{width: 375px;height: ' + myapp.h + 'px;overflow: auto;}'
           style.type = 'text/css';
 
           style.appendChild(document.createTextNode( cssText ));
           head.appendChild(style);
 
-
-          console.log(winW, winH)
+          console.log(myapp)
         }
-        autoScale(scaleNum);
+        autoScale(myapp);
         window.onresize=function(){
-          autoScale(scaleNum)
+          console.log('resize')
+          rset()
+          autoScale(myapp)
         }
-        var child = app.childNodes
-        console.log('h:'+h, scaleNum)
       }catch(e){
         console.log(e)
       }</script><script type=text/javascript src=./static/js/manifest.9f952e7af7d72927b61e.js></script><script type=text/javascript src=./static/js/vendor.af5723b5fba53b1ca512.js></script><script type=text/javascript src=./static/js/app.cb5116995919b76ff064.js></script></body></html>
