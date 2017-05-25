@@ -1,0 +1,2 @@
+webpackJsonp([4],{34:function(e,n,t){var r=t(0)(t(41),t(65),null,null);e.exports=r.exports},41:function(e,n){},65:function(e,n){e.exports={render:function(){var e=this,n=e.$createElement;e._self._c;return e._m(0)},staticRenderFns:[function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",{},[t("p",[e._v("活动页")])])}]}}});
+//# sourceMappingURL=4.59d08a77cf4799c5222f.js.map
