@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="超好听哦！">
+<meta name="description" content="服务器搭建">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Coldplay - Viva la vida - 超赞吉他弹奏">
-<meta property="og:url" content="https://keree.github.io/2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/index.html">
+<meta property="og:title" content="CentOS7搭建Node服务器，配置Nginx、forever">
+<meta property="og:url" content="https://keree.github.io/2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/index.html">
 <meta property="og:site_name" content="keRee-Blog">
-<meta property="og:description" content="超好听哦！">
-<meta property="og:updated_time" content="2017-02-07T12:21:31.489Z">
+<meta property="og:description" content="服务器搭建">
+<meta property="og:updated_time" content="2017-07-26T12:48:27.907Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Coldplay - Viva la vida - 超赞吉他弹奏">
-<meta name="twitter:description" content="超好听哦！">
+<meta name="twitter:title" content="CentOS7搭建Node服务器，配置Nginx、forever">
+<meta name="twitter:description" content="服务器搭建">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -54,7 +54,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Coldplay - Viva la vida - 超赞吉他弹奏 | keRee-Blog</title>
+<title>CentOS7搭建Node服务器，配置Nginx、forever | keRee-Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -208,13 +208,13 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-推荐-Coldplay - Viva la vida吉他弹奏" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-CentOS7搭建Node服务器，配置Nginx、forever" class="article article-type-post" itemscope itemprop="blogPost">
   <!-- 
     <div class="article-meta">
       <a  href="/archives/"> keRee </a>
 最后编辑于
-<a href="/2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/" class="article-date">
-      <time datetime="2016-09-03T15:10:25.000Z" itemprop="datePublished">2016-09-03</time>
+<a href="/2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/" class="article-date">
+      <time datetime="2016-12-24T02:53:56.000Z" itemprop="datePublished">2016-12-24</time>
 </a>
 
 
@@ -229,7 +229,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Coldplay - Viva la vida - 超赞吉他弹奏
+      CentOS7搭建Node服务器，配置Nginx、forever
     </h1>
   
 
@@ -240,7 +240,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/life/">life</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -252,8 +252,8 @@
       <div class="article-meta">
         <a  href="/archives/"> keRee </a>
 最后编辑于
-<a href="/2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/" class="article-date">
-      <time datetime="2016-09-03T15:10:25.000Z" itemprop="datePublished">2016-09-03</time>
+<a href="/2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/" class="article-date">
+      <time datetime="2016-12-24T02:53:56.000Z" itemprop="datePublished">2016-12-24</time>
 </a>
 
 
@@ -263,8 +263,101 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="Coldplay-Viva-la-vida"><a href="#Coldplay-Viva-la-vida" class="headerlink" title="Coldplay - Viva la vida"></a>Coldplay - Viva la vida</h3><hr>
-<h4 id="今天给大家推荐一个超赞的吉他弹奏"><a href="#今天给大家推荐一个超赞的吉他弹奏" class="headerlink" title="今天给大家推荐一个超赞的吉他弹奏"></a>今天给大家推荐一个超赞的吉他弹奏</h4><p><a href="https://www.youtube.com/embed/7Ss0q-_VJCk" target="_blank" rel="external">Coldplay - Viva la vida</a>点此播放</p>
+        <ol>
+<li>前提准备</li>
+</ol>
+<ul>
+<li><p>阿里云服务器安装CentOS7系统，安装NodeJs环境；</p>
+</li>
+<li><p>在ECS上装好系统后，去<a href="https://www.netsarang.com/download/free_license.html" target="_blank" rel="external">netsarang</a>官网下载个人免费版的XShell和XFtp，管理自己的服务器；</p>
+<blockquote>
+<p>XShell和XFtp需要用ECS提供的外网IP和密码配置好（分别采用ssh和sftp的方式）</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>安装NodeJs</li>
+</ol>
+<ul>
+<li>下载NodeJs（源码安装）<blockquote>
+<p>一种方式是在<a href="http://nodejs.cn/download/" target="_blank" rel="external">NodeJs</a>官网自己下载好Node源码包，然后通过XFtp上传到自己的服务器</p>
+<p>另一种方式是在XShell中采用wget – <code>[root@*** ~]# wget https://npm.taobao.org/mirrors/node/v8.2.1/node-v8.2.1.tar.gz</code></p>
+</blockquote>
+</li>
+<li>解压<br>  <code>[root@*** ~]#  tar zxf node-v8.2.1.tar.gz</code></li>
+<li>编译安装<br>  <code>[root@*** ~]#  cd node-v8.2.1</code><br>  <code>[root@*** node-v8.2.1]#  ./configure --prefix=/usr/local/node</code><br>  <code>[root@*** node-v8.2.1]#  make</code><br>  <code>[root@*** node-v8.2.1]#  make install</code></li>
+<li>配置Node环境<br>  <code>[root@*** node-v8.2.1]#  vi /etc/profile</code><br>  使用vim打开profile，按键盘i进入到vim编辑模式，在文本的最后插入以下内容：<br>  <code>export NODE_HOME=/usr/local/node</code><br>  <code>export PATH=$NODE_HOME/bin:$PATH</code><br>  <code>export NODE_PATH=$NODE_HOME/lib/node_modules:$PATH</code><br>  输入完成之后，按ESC退出编辑模式；<br>  然后再输入<code>:wq</code>，退出并保存我们刚刚编辑过得文件；<br>  输入以下命令让刚刚的变动生效：<br>  <code>[root@*** node-v8.2.1]#  source /etc/profile</code></li>
+<li>测试安装是否生效<br>  <code>[root@*** node-v8.2.1]#  node -v</code><br>  出现版本号<code>v8.2.1</code>，则说明安装成功；</li>
+<li>总结<br>   <code>./configure</code> <pre><code>&gt; 需要进入到解压好的node文件夹操作
+</code></pre>   <code>--prefix=/usr/local/node</code><br>  此处是把Node安装到<code>/usr/local/node</code>目录下（一般安装的都是在/usr/local目录下）；<br>  这个命令也可以不要，但可能会导致目录混乱；<br>  如果系统是CentOS低版本，安装NodeJs过程中可能会提示gcc-c++版本过低，需要升级；</li>
+</ul>
+<ol>
+<li>配置一个简单的Web项目</li>
+</ol>
+<ul>
+<li>写一个测试脚本<br>  <code>[root@*** node-v8.2.1]# cd ..</code><br>  <code>[root@*** ~]# vi test.js</code><br>  进入vim后，按i进入编辑模式，写个简单的脚本：<br>  ``const http = require(‘http’);<br>  const hostname = ‘0.0.0.0’;<br>  const port = 80;<br>  const server = http.createServer((req, res) =&gt; {<pre><code>res.statusCode = 200;
+res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;);
+res.end(&apos;Hello World\n&apos;);
+</code></pre>  });<br>  server.listen(port, hostname, () =&gt; {<pre><code>console.log(`Server running at http://${hostname}:${port}/`);
+</code></pre>  });<code>按Esc退出编辑，输入`:wq`退出并保存；
+  `[root@*** ~]# node test.js`
+  提示：</code>Server running at <a href="http://0.0.0.0:80/`则说明成功了；" target="_blank" rel="external">http://0.0.0.0:80/`则说明成功了；</a></li>
+<li>在外网测试访问<br>  在浏览器输入在即的公网IP，出现<code>Hello World</code>，则说明Web服务搭建成功了！</li>
+<li>总结<br>  若出现不能访问的情况，则需要看下防火墙；<br>  CentOs7默认防火墙是关闭的，需要在Ecs的安全组入网端配置一下（防止端口被屏蔽）；</li>
+</ul>
+<ol>
+<li>安装Nginx</li>
+</ol>
+<ul>
+<li>安装依赖<br>  <code>[root@*** ~]# yum -y install zlib zlib-devel openssl openssl--devel pcre pcre-devel</code></li>
+<li>下载nginx源码包<br>  <code>[root@*** ~]# wget http://nginx.org/download/nginx-1.12.1.tar.gz</code></li>
+<li>解压、配置、编译、安装nginx<br>  <code>[root@*** ~]# tar zxf nginx-1.12.1.tar.gz</code><br>  <code>[root@*** ~]# cd nginx-1.12.1</code><br>  <code>[root@*** nginx-1.12.1]# ./configure --prefix=/usr/local/nginx</code><br>  <code>[root@*** nginx-1.12.1]# make</code><br>  <code>[root@*** nginx-1.12.1]# make install</code></li>
+<li>配置nginx反向代理<br>  进入<code>/usr/local/nginx/conf</code>目录，打开文件<code>nginx.conf</code>(可以vim打开，也可以在编辑器打开)<br>  在http对象下，将模块<code>配置一</code>修改为模块<code>配置二</code><br>  ``// 配置一<br>  server{<pre><code>listen 80;
+server_name localhost;
+location / {
+    root    html;
+    index   index.html index.htm;
+}
+</code></pre>  }<code> </code>// 配置二<br>  server{<pre><code>listen 80;
+server_name localhost;
+location / {
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host  $http_host;
+    proxy_set_header X-Nginx-Proxy true;
+    proxy_set_header Connection &quot;&quot;;
+    proxy_pass      http://127.0.0.1:3000;  # 此处配置为node默认的3000端口
+}
+</code></pre>  }``</li>
+<li>启动nginx服务<br>  <code>[root@*** ~]# cd /usr/local/nginx/sbin</code><br>  <code>[root@*** sbin]# ./nginx</code></li>
+</ul>
+<ol>
+<li>安装forever<br> 可以让进程在终端关闭之后，继续运行；</li>
+</ol>
+<ul>
+<li>安装<br>  <code>[root@*** ~]# npm install forever -g</code></li>
+<li>启动<br>  <code>[root@*** ~]# forever start /root/app/index.js</code></li>
+<li>关闭<br>  方式一：<br>  <code>[root@*** ~]# forever stop /root/app/index.js</code><br>  方式二：<br>  查看forever list - 守护进程列表<br>  <code>[root@*** ~]# forever list</code><br>  <code>info:    Forever processes running</code><br>  <code>data: uid command  script  forever pid   id logfile    uptime</code><br>  <code>data:[0] UGhW /usr/local/node/bin/node /root/app/index.js 22288 22294    /root/.forever/UGhW.log 0:3:57:32.789</code><br>  根据uid 选择关闭；当前是0则<code>stop 0</code>即可；<br>  <code>[root@*** ~]# forever stop 0</code></li>
+<li>输出日志和错误<br>  <code>[root@*** ~]# forever start -l forever.log -o out.log -e err.log /root/app/index.js</code></li>
+</ul>
+<ol>
+<li>一些Linux基本操作</li>
+</ol>
+<ul>
+<li>删除文件夹<br>  <code>rm -rf /usr/local/node</code><br>  将会删除掉<code>/usr/local/node</code>目录及其包含的而所有文件、文件夹</li>
+<li>删除文件<br>  <code>rm -f /usr/local/node/ini.log</code><br>  将会删除掉<code>/usr/local/node</code>目录下的文件<code>ini.log</code></li>
+<li>查看端口号<br>  <code>netstat -tln</code><br>  <code>netstat -tln | grep 80</code><br>  前者是查看端口使用情况，后者是只查看端口80的使用情况</li>
+<li>查看端口是哪个程序占用的？哪个进程？<br>  <code>lsof -i:80</code><br>  <code>COMMAND PID  USER  FD  TYPE DEVICE SIZE/OFF NODE NAME</code><br>  <code>Ali 11836 root 18u IPv4 13553 0t0  TCP iZw:44452-&gt;106.11.68.13:http (CLOSE_WAIT)</code></li>
+<li>关闭进程 (根据PID)<br>  <code>kill -9 进程ID</code><br>  <code>kill -9 11836</code></li>
+</ul>
+<ol>
+<li>参考文档</li>
+</ol>
+<ul>
+<li><a href="http://www.cnblogs.com/smoothLily/p/4366099.html" target="_blank" rel="external">CentOS安装Nginx，并配置nodejs反向代理</a></li>
+<li><a href="https://segmentfault.com/a/1190000009393665" target="_blank" rel="external">Linux CentOS7 搭建node服务详细教程</a></li>
+<li><a href="http://www.jb51.net/article/107075.htm" target="_blank" rel="external">CentOS7 + node.js + nginx + MySQL搭建服务器全过程</a></li>
+</ul>
 
       
     </div>
@@ -277,15 +370,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/10/13/Error Chunk entry was removed Use hasRuntime()/">
-                    webpack使用中遇到的一些问题及解决办法
+                <a href="/2017/01/13/新年展望/">
+                    新一年的展望
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/07/06/git使用总结/">
-                    git使用总结
+                <a href="/2016/10/13/Error Chunk entry was removed Use hasRuntime()/">
+                    webpack使用中遇到的一些问题及解决办法
                 </a>
             </div>
         
@@ -298,7 +391,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Coldplay-Viva-la-vida"><span class="toc-number">1.</span> <span class="toc-text">Coldplay - Viva la vida</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#今天给大家推荐一个超赞的吉他弹奏"><span class="toc-number">1.1.</span> <span class="toc-text">今天给大家推荐一个超赞的吉他弹奏</span></a></li></ol></li></ol>
+            
         
     </div>
     <style>
@@ -325,7 +418,7 @@
     
       <div class="duoshuo" id="comments">
     <div id="comment-box" ></div>
-    <div class="ds-thread" id="ds-thread" data-thread-key="2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/" data-title="Coldplay - Viva la vida - 超赞吉他弹奏" data-url="https://keree.github.io/2016/09/03/推荐-Coldplay - Viva la vida吉他弹奏/"></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/" data-title="CentOS7搭建Node服务器，配置Nginx、forever" data-url="https://keree.github.io/2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/"></div>
     <script>
         var duoshuoQuery = {short_name:"null"};
         var loadComment = function(){
@@ -348,7 +441,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/10/13/Error Chunk entry was removed Use hasRuntime()/" title="上一篇: webpack使用中遇到的一些问题及解决办法">
+            <a href="/2017/01/13/新年展望/" title="上一篇: 新一年的展望">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -356,7 +449,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/07/06/git使用总结/" title="下一篇: git使用总结">
+            <a href="/2016/10/13/Error Chunk entry was removed Use hasRuntime()/" title="下一篇: webpack使用中遇到的一些问题及解决办法">
                 <i class="fa fa-angle-right"></i>
             </a>
         
