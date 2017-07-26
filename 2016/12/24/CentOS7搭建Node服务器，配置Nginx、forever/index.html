@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://keree.github.io/2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/index.html">
 <meta property="og:site_name" content="keRee-Blog">
 <meta property="og:description" content="服务器搭建">
-<meta property="og:updated_time" content="2017-07-26T13:30:15.539Z">
+<meta property="og:updated_time" content="2017-07-26T13:42:06.234Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7搭建Node服务器，配置Nginx、forever">
 <meta name="twitter:description" content="服务器搭建">
@@ -206,7 +206,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="標籤" friends="友情鏈接" about="關於我"/>
 </nav>
       <div class="body-wrap"><article id="post-CentOS7搭建Node服务器，配置Nginx、forever" class="article article-type-post" itemscope itemprop="blogPost">
   <!-- 
@@ -298,20 +298,29 @@
 </ul>
 <p>3、 配置一个简单的Web项目</p>
 <ul>
-<li><p>写一个测试脚本</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]# cd ..</div><div class="line">[root@*** ~]# vi test.js</div></pre></td></tr></table></figure>
-<p>  进入vim后，按i进入编辑模式，写个简单的脚本：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">const http = require(&apos;http&apos;);</div><div class="line">const hostname = &apos;0.0.0.0&apos;;</div><div class="line">const port = 80;</div><div class="line">const server = http.createServer((req, res) =&gt; &#123;</div><div class="line">    res.statusCode = 200;</div><div class="line">    res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;);</div><div class="line">    res.end(&apos;Hello World\n&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">server.listen(port, hostname, () =&gt; &#123;</div><div class="line">    console.log(`Server running at http://$&#123;hostname&#125;:$&#123;port&#125;`);</div><div class="line">&#125;);</div><div class="line">``</div><div class="line">按Esc退出编辑，输入`:wq`退出并保存；</div></pre></td></tr></table></figure>
-<p>  [root@<em>*</em> ~]# node test.js</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">    提示：`Server running at http://0.0.0.0:80/`则说明成功了；</div><div class="line">- 在外网测试访问</div><div class="line">    在浏览器输入在即的公网IP，出现`Hello World`，则说明Web服务搭建成功了！</div><div class="line">- 总结</div><div class="line">    若出现不能访问的情况，则需要看下防火墙；</div><div class="line">    CentOs7默认防火墙是关闭的，需要在Ecs的安全组入网端配置一下（防止端口被屏蔽）；</div><div class="line"></div><div class="line">4、 安装Nginx</div><div class="line">- 安装依赖</div></pre></td></tr></table></figure>
-<p>  [root@<em>*</em> ~]# yum -y install zlib zlib-devel openssl openssl–devel pcre pcre-devel</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- 下载nginx源码包</div></pre></td></tr></table></figure>
-<p>  [root@<em>*</em> ~]# wget <a href="http://nginx.org/download/nginx-1.12.1.tar.gz" target="_blank" rel="external">http://nginx.org/download/nginx-1.12.1.tar.gz</a></p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- 解压、配置、编译、安装nginx</div></pre></td></tr></table></figure>
-<p>  [root@<strong><em> ~]# tar zxf nginx-1.12.1.tar.gz<br>  [root@</em></strong> ~]# cd nginx-1.12.1<br>  [root@<strong><em> nginx-1.12.1]# ./configure –prefix=/usr/local/nginx<br>  [root@</em></strong> nginx-1.12.1]# make<br>  [root@<em>*</em> nginx-1.12.1]# make install</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">- 配置nginx反向代理</div><div class="line">    进入`/usr/local/nginx/conf`目录，打开文件`nginx.conf`(可以vim打开，也可以在编辑器打开)</div><div class="line">    在http对象下，将模块`配置一`修改为模块`配置二`</div><div class="line">    ```// 配置一</div><div class="line">    server&#123;</div><div class="line">        listen 80;</div><div class="line">        server_name localhost;</div><div class="line">        location / &#123;</div><div class="line">            root    html;</div><div class="line">            index   index.html index.htm;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-  <figure class="highlight plain"><figcaption><span>配置二</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">    server_name localhost;</div><div class="line">    location / &#123;</div><div class="line">        proxy_set_header X-Real-IP $remote_addr;</div><div class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">        proxy_set_header Host  $http_host;</div><div class="line">        proxy_set_header X-Nginx-Proxy true;</div><div class="line">        proxy_set_header Connection &quot;&quot;;</div><div class="line">        proxy_pass      http://127.0.0.1:3000;  # 此处配置为node默认的3000端口</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>写一个测试脚本<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]# cd ..</div><div class="line">[root@*** ~]# vi test.js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>进入vim后，按i进入编辑模式，写个简单的脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">const http = require(&apos;http&apos;);</div><div class="line">const hostname = &apos;0.0.0.0&apos;;</div><div class="line">const port = 80;</div><div class="line">const server = http.createServer((req, res) =&gt; &#123;</div><div class="line">    res.statusCode = 200;</div><div class="line">    res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;);</div><div class="line">    res.end(&apos;Hello World\n&apos;);</div><div class="line">&#125;);</div><div class="line">server.listen(port, hostname, () =&gt; &#123;</div><div class="line">    console.log(`Server running at http://$&#123;hostname&#125;:$&#123;port&#125;`);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>按Esc退出编辑，输入<code>:wq</code>退出并保存；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# node test.js</div></pre></td></tr></table></figure></p>
+<p>提示：<code>Server running at http://0.0.0.0:80/</code>则说明成功了；</p>
+<ul>
+<li>在外网测试访问<br>  在浏览器输入在即的公网IP，出现<code>Hello World</code>，则说明Web服务搭建成功了！</li>
+<li>总结<br>  若出现不能访问的情况，则需要看下防火墙；<br>  CentOs7默认防火墙是关闭的，需要在Ecs的安全组入网端配置一下（防止端口被屏蔽）；</li>
+</ul>
+<p>4、 安装Nginx</p>
+<ul>
+<li><p>安装依赖</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# yum -y install zlib zlib-devel openssl openssl--devel pcre pcre-devel</div></pre></td></tr></table></figure>
+</li>
+<li><p>下载nginx源码包</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# wget http://nginx.org/download/nginx-1.12.1.tar.gz</div></pre></td></tr></table></figure>
+</li>
+<li><p>解压、配置、编译、安装nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# tar zxf nginx-1.12.1.tar.gz</div><div class="line">[root@*** ~]# cd nginx-1.12.1</div><div class="line">[root@*** nginx-1.12.1]# ./configure --prefix=/usr/local/nginx</div><div class="line">[root@*** nginx-1.12.1]# make</div><div class="line">[root@*** nginx-1.12.1]# make install</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置nginx反向代理<br>  进入<code>/usr/local/nginx/conf</code>目录，打开文件<code>nginx.conf</code>(可以vim打开，也可以在编辑器打开)<br>  在http对象下，将模块<code>配置一</code>修改为模块<code>配置二</code></p>
+<figure class="highlight plain"><figcaption><span>配置一</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">    server_name localhost;</div><div class="line">    location / &#123;</div><div class="line">        root    html;</div><div class="line">        index   index.html index.htm;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// 配置二</div><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">    server_name localhost;</div><div class="line">    location / &#123;</div><div class="line">        proxy_set_header X-Real-IP $remote_addr;</div><div class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">        proxy_set_header Host  $http_host;</div><div class="line">        proxy_set_header X-Nginx-Proxy true;</div><div class="line">        proxy_set_header Connection &quot;&quot;;</div><div class="line">        proxy_pass      http://127.0.0.1:3000;  # 此处配置为node默认的3000端口</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>启动nginx服务</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# cd /usr/local/nginx/sbin</div><div class="line">[root@*** sbin]# ./nginx</div></pre></td></tr></table></figure>
@@ -394,7 +403,7 @@
 <!-- 不要目录 -->
 <!-- 
     <div id="toc" class="toc-article">
-        <strong class="toc-title">文章目录</strong>
+        <strong class="toc-title">文章目錄</strong>
         
             
         
@@ -410,10 +419,10 @@
         }
     </style>
 
-    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+    <input type="button" id="tocButton" value="隱藏目錄"  title="點擊按鈕隱藏或者顯示文章目錄">
 
     <script>
-        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+        yiliaConfig.toc = ["隱藏目錄", "顯示目錄", !!"false"];
     </script>
  -->
 
@@ -476,17 +485,17 @@
                 <i class="fa fa-copyright"></i> 
                 2016-2017 <a  href="/archives/"> keRee </a>
                 - Powered By 
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>
+                <a href="http://hexo.io/" target="_blank" title="快速、簡潔且高效的博客框架">Hexo</a>
             </div>
             <!-- <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="快速、簡潔且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="簡而不減 Hexo 雙欄博客主題  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div> -->
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="本站到訪數"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -495,7 +504,7 @@
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="本頁閱讀量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -512,9 +521,9 @@
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="返回頂部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看評論"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="轉到底部"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
