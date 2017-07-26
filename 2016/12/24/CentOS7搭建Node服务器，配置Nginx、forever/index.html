@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://keree.github.io/2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/index.html">
 <meta property="og:site_name" content="keRee-Blog">
 <meta property="og:description" content="服务器搭建">
-<meta property="og:updated_time" content="2017-07-26T12:53:53.251Z">
+<meta property="og:updated_time" content="2017-07-26T13:09:55.875Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7搭建Node服务器，配置Nginx、forever">
 <meta name="twitter:description" content="服务器搭建">
@@ -279,14 +279,18 @@
 <li>安装NodeJs</li>
 </ol>
 <ul>
-<li>下载NodeJs（源码安装）<blockquote>
+<li><p>下载NodeJs（源码安装）</p>
+<blockquote>
 <p>一种方式是在<a href="http://nodejs.cn/download/" target="_blank" rel="external">NodeJs</a>官网自己下载好Node源码包，然后通过XFtp上传到自己的服务器</p>
-<p>另一种方式是在XShell中采用wget – <code>[root@*** ~]# wget https://npm.taobao.org/mirrors/node/v8.2.1/node-v8.2.1.tar.gz</code></p>
+<p>另一种方式是在XShell中采用wget – <figure class="highlight plain"><figcaption><span>~]# wget</span><a href="https://npm.taobao.org/mirrors/node/v8.2.1/node-v8.2.1.tar.gz```" target="_blank" rel="external">link</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- 解压</div><div class="line">    ```[root@*** ~]#  tar zxf node-v8.2.1.tar.gz</div></pre></td></tr></table></figure></p>
 </blockquote>
 </li>
-<li>解压<br>  <code>[root@*** ~]#  tar zxf node-v8.2.1.tar.gz</code></li>
-<li>编译安装<br>  <code>[root@*** ~]#  cd node-v8.2.1</code><br>  <code>[root@*** node-v8.2.1]#  ./configure --prefix=/usr/local/node</code><br>  <code>[root@*** node-v8.2.1]#  make</code><br>  <code>[root@*** node-v8.2.1]#  make install</code></li>
-<li>配置Node环境<br>  <code>[root@*** node-v8.2.1]#  vi /etc/profile</code><br>  使用vim打开profile，按键盘i进入到vim编辑模式，在文本的最后插入以下内容：<br>  <code>export NODE_HOME=/usr/local/node</code><br>  <code>export PATH=$NODE_HOME/bin:$PATH</code><br>  <code>export NODE_PATH=$NODE_HOME/lib/node_modules:$PATH</code><br>  输入完成之后，按ESC退出编辑模式；<br>  然后再输入<code>:wq</code>，退出并保存我们刚刚编辑过得文件；<br>  输入以下命令让刚刚的变动生效：<br>  <code>[root@*** node-v8.2.1]#  source /etc/profile</code></li>
+<li><p>编译安装</p>
+  <figure class="highlight plain"><figcaption><span>~]#  cd node-v8.2.1```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">```[root@*** node-v8.2.1]#  ./configure --prefix=/usr/local/node</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><figcaption><span>node-v8.2.1]#  make```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">```[root@*** node-v8.2.1]#  make install</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置Node环境<br>  <code>[root@*** node-v8.2.1]#  vi /etc/profile</code><br>  使用vim打开profile，按键盘i进入到vim编辑模式，在文本的最后插入以下内容：<br>  <code>export NODE_HOME=/usr/local/node</code><br>  <code>export PATH=$NODE_HOME/bin:$PATH</code><br>  <code>export NODE_PATH=$NODE_HOME/lib/node_modules:$PATH</code><br>  输入完成之后，按ESC退出编辑模式；<br>  然后再输入<code>:wq</code>，退出并保存我们刚刚编辑过得文件；<br>  输入以下命令让刚刚的变动生效：<br>  <code>[root@*** node-v8.2.1]#  source /etc/profile</code></p>
+</li>
 <li>测试安装是否生效<br>  <code>[root@*** node-v8.2.1]#  node -v</code><br>  出现版本号<code>v8.2.1</code>，则说明安装成功；</li>
 <li>总结<br>   <code>./configure</code> <pre><code>&gt; 需要进入到解压好的node文件夹操作
 </code></pre>   <code>--prefix=/usr/local/node</code><br>  此处是把Node安装到<code>/usr/local/node</code>目录下（一般安装的都是在/usr/local目录下）；<br>  这个命令也可以不要，但可能会导致目录混乱；<br>  如果系统是CentOS低版本，安装NodeJs过程中可能会提示gcc-c++版本过低，需要升级；</li>
@@ -310,24 +314,12 @@ res.end(&apos;Hello World\n&apos;);
 <li>安装依赖<br>  <code>[root@*** ~]# yum -y install zlib zlib-devel openssl openssl--devel pcre pcre-devel</code></li>
 <li>下载nginx源码包<br>  <code>[root@*** ~]# wget http://nginx.org/download/nginx-1.12.1.tar.gz</code></li>
 <li>解压、配置、编译、安装nginx<br>  <code>[root@*** ~]# tar zxf nginx-1.12.1.tar.gz</code><br>  <code>[root@*** ~]# cd nginx-1.12.1</code><br>  <code>[root@*** nginx-1.12.1]# ./configure --prefix=/usr/local/nginx</code><br>  <code>[root@*** nginx-1.12.1]# make</code><br>  <code>[root@*** nginx-1.12.1]# make install</code></li>
-<li>配置nginx反向代理<br>  进入<code>/usr/local/nginx/conf</code>目录，打开文件<code>nginx.conf</code>(可以vim打开，也可以在编辑器打开)<br>  在http对象下，将模块<code>配置一</code>修改为模块<code>配置二</code><br>  `// 配置一<br>  server{<pre><code>listen 80;
-server_name localhost;
-location / {
-    root    html;
-    index   index.html index.htm;
-}
-</code></pre>  }<code> </code>// 配置二<br>  server{<pre><code>listen 80;
-server_name localhost;
-location / {
-    proxy_set_header X-Real-IP $remote_addr;
-    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-    proxy_set_header Host  $http_host;
-    proxy_set_header X-Nginx-Proxy true;
-    proxy_set_header Connection &quot;&quot;;
-    proxy_pass      http://127.0.0.1:3000;  # 此处配置为node默认的3000端口
-}
-</code></pre>  }`</li>
-<li>启动nginx服务<br>  <code>[root@*** ~]# cd /usr/local/nginx/sbin</code><br>  <code>[root@*** sbin]# ./nginx</code></li>
+<li><p>配置nginx反向代理<br>  进入<code>/usr/local/nginx/conf</code>目录，打开文件<code>nginx.conf</code>(可以vim打开，也可以在编辑器打开)<br>  在http对象下，将模块<code>配置一</code>修改为模块<code>配置二</code></p>
+  <figure class="highlight plain"><figcaption><span>配置一</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">    server_name localhost;</div><div class="line">    location / &#123;</div><div class="line">        root    html;</div><div class="line">        index   index.html index.htm;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><figcaption><span>配置二</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">    server_name localhost;</div><div class="line">    location / &#123;</div><div class="line">        proxy_set_header X-Real-IP $remote_addr;</div><div class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">        proxy_set_header Host  $http_host;</div><div class="line">        proxy_set_header X-Nginx-Proxy true;</div><div class="line">        proxy_set_header Connection &quot;&quot;;</div><div class="line">        proxy_pass      http://127.0.0.1:3000;  # 此处配置为node默认的3000端口</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动nginx服务<br>  <code>[root@*** ~]# cd /usr/local/nginx/sbin</code><br>  <code>[root@*** sbin]# ./nginx</code></p>
+</li>
 </ul>
 <ol>
 <li>安装forever<br> 可以让进程在终端关闭之后，继续运行；</li>
