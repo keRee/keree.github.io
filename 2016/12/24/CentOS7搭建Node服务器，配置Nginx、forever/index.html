@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://keree.github.io/2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/index.html">
 <meta property="og:site_name" content="keRee-Blog">
 <meta property="og:description" content="服务器搭建">
-<meta property="og:updated_time" content="2017-07-26T12:48:27.907Z">
+<meta property="og:updated_time" content="2017-07-26T12:53:53.251Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7搭建Node服务器，配置Nginx、forever">
 <meta name="twitter:description" content="服务器搭建">
@@ -295,13 +295,11 @@
 <li>配置一个简单的Web项目</li>
 </ol>
 <ul>
-<li>写一个测试脚本<br>  <code>[root@*** node-v8.2.1]# cd ..</code><br>  <code>[root@*** ~]# vi test.js</code><br>  进入vim后，按i进入编辑模式，写个简单的脚本：<br>  ``const http = require(‘http’);<br>  const hostname = ‘0.0.0.0’;<br>  const port = 80;<br>  const server = http.createServer((req, res) =&gt; {<pre><code>res.statusCode = 200;
+<li>写一个测试脚本<br>  <code>[root@*** node-v8.2.1]# cd ..</code><br>  <code>[root@*** ~]# vi test.js</code><br>  进入vim后，按i进入编辑模式，写个简单的脚本：<br>  `const http = require(‘http’);<br>  const hostname = ‘0.0.0.0’;<br>  const port = 80;<br>  const server = http.createServer((req, res) =&gt; {<pre><code>res.statusCode = 200;
 res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;);
 res.end(&apos;Hello World\n&apos;);
-</code></pre>  });<br>  server.listen(port, hostname, () =&gt; {<pre><code>console.log(`Server running at http://${hostname}:${port}/`);
-</code></pre>  });<code>按Esc退出编辑，输入`:wq`退出并保存；
-  `[root@*** ~]# node test.js`
-  提示：</code>Server running at <a href="http://0.0.0.0:80/`则说明成功了；" target="_blank" rel="external">http://0.0.0.0:80/`则说明成功了；</a></li>
+</code></pre>  });<code> </code>server.listen(port, hostname, () =&gt; {<pre><code>console.log(&apos;Server running at http://&apos; + hostname +&apos;:&apos; + port);
+</code></pre>  });<code>按Esc退出编辑，输入</code>:wq<code>退出并保存；</code>[root@<em>*</em> ~]# node test.js<code>提示：</code>Server running at <a href="http://0.0.0.0:80/`则说明成功了；" target="_blank" rel="external">http://0.0.0.0:80/`则说明成功了；</a></li>
 <li>在外网测试访问<br>  在浏览器输入在即的公网IP，出现<code>Hello World</code>，则说明Web服务搭建成功了！</li>
 <li>总结<br>  若出现不能访问的情况，则需要看下防火墙；<br>  CentOs7默认防火墙是关闭的，需要在Ecs的安全组入网端配置一下（防止端口被屏蔽）；</li>
 </ul>
@@ -312,7 +310,7 @@ res.end(&apos;Hello World\n&apos;);
 <li>安装依赖<br>  <code>[root@*** ~]# yum -y install zlib zlib-devel openssl openssl--devel pcre pcre-devel</code></li>
 <li>下载nginx源码包<br>  <code>[root@*** ~]# wget http://nginx.org/download/nginx-1.12.1.tar.gz</code></li>
 <li>解压、配置、编译、安装nginx<br>  <code>[root@*** ~]# tar zxf nginx-1.12.1.tar.gz</code><br>  <code>[root@*** ~]# cd nginx-1.12.1</code><br>  <code>[root@*** nginx-1.12.1]# ./configure --prefix=/usr/local/nginx</code><br>  <code>[root@*** nginx-1.12.1]# make</code><br>  <code>[root@*** nginx-1.12.1]# make install</code></li>
-<li>配置nginx反向代理<br>  进入<code>/usr/local/nginx/conf</code>目录，打开文件<code>nginx.conf</code>(可以vim打开，也可以在编辑器打开)<br>  在http对象下，将模块<code>配置一</code>修改为模块<code>配置二</code><br>  ``// 配置一<br>  server{<pre><code>listen 80;
+<li>配置nginx反向代理<br>  进入<code>/usr/local/nginx/conf</code>目录，打开文件<code>nginx.conf</code>(可以vim打开，也可以在编辑器打开)<br>  在http对象下，将模块<code>配置一</code>修改为模块<code>配置二</code><br>  `// 配置一<br>  server{<pre><code>listen 80;
 server_name localhost;
 location / {
     root    html;
@@ -328,7 +326,7 @@ location / {
     proxy_set_header Connection &quot;&quot;;
     proxy_pass      http://127.0.0.1:3000;  # 此处配置为node默认的3000端口
 }
-</code></pre>  }``</li>
+</code></pre>  }`</li>
 <li>启动nginx服务<br>  <code>[root@*** ~]# cd /usr/local/nginx/sbin</code><br>  <code>[root@*** sbin]# ./nginx</code></li>
 </ul>
 <ol>
