@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://keree.github.io/2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/index.html">
 <meta property="og:site_name" content="keRee-Blog">
 <meta property="og:description" content="服务器搭建">
-<meta property="og:updated_time" content="2017-07-26T13:09:55.875Z">
+<meta property="og:updated_time" content="2017-07-26T13:12:53.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7搭建Node服务器，配置Nginx、forever">
 <meta name="twitter:description" content="服务器搭建">
@@ -263,22 +263,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <ol>
-<li>前提准备</li>
-</ol>
+        <p>1、 前提准备</p>
 <ul>
 <li><p>阿里云服务器安装CentOS7系统，安装NodeJs环境；</p>
 </li>
 <li><p>在ECS上装好系统后，去<a href="https://www.netsarang.com/download/free_license.html" target="_blank" rel="external">netsarang</a>官网下载个人免费版的XShell和XFtp，管理自己的服务器；</p>
 <blockquote>
-<p>XShell和XFtp需要用ECS提供的外网IP和密码配置好（分别采用ssh和sftp的方式）</p>
+<p>XShell和XFtp需要用ECS提供的外网IP和密码配置好（分别采用ssh和sftp的方式）<br>2、 安装NodeJs</p>
 </blockquote>
 </li>
-</ul>
-<ol>
-<li>安装NodeJs</li>
-</ol>
-<ul>
 <li><p>下载NodeJs（源码安装）</p>
 <blockquote>
 <p>一种方式是在<a href="http://nodejs.cn/download/" target="_blank" rel="external">NodeJs</a>官网自己下载好Node源码包，然后通过XFtp上传到自己的服务器</p>
@@ -295,9 +288,7 @@
 <li>总结<br>   <code>./configure</code> <pre><code>&gt; 需要进入到解压好的node文件夹操作
 </code></pre>   <code>--prefix=/usr/local/node</code><br>  此处是把Node安装到<code>/usr/local/node</code>目录下（一般安装的都是在/usr/local目录下）；<br>  这个命令也可以不要，但可能会导致目录混乱；<br>  如果系统是CentOS低版本，安装NodeJs过程中可能会提示gcc-c++版本过低，需要升级；</li>
 </ul>
-<ol>
-<li>配置一个简单的Web项目</li>
-</ol>
+<p>3、 配置一个简单的Web项目</p>
 <ul>
 <li>写一个测试脚本<br>  <code>[root@*** node-v8.2.1]# cd ..</code><br>  <code>[root@*** ~]# vi test.js</code><br>  进入vim后，按i进入编辑模式，写个简单的脚本：<br>  `const http = require(‘http’);<br>  const hostname = ‘0.0.0.0’;<br>  const port = 80;<br>  const server = http.createServer((req, res) =&gt; {<pre><code>res.statusCode = 200;
 res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;);
@@ -307,9 +298,7 @@ res.end(&apos;Hello World\n&apos;);
 <li>在外网测试访问<br>  在浏览器输入在即的公网IP，出现<code>Hello World</code>，则说明Web服务搭建成功了！</li>
 <li>总结<br>  若出现不能访问的情况，则需要看下防火墙；<br>  CentOs7默认防火墙是关闭的，需要在Ecs的安全组入网端配置一下（防止端口被屏蔽）；</li>
 </ul>
-<ol>
-<li>安装Nginx</li>
-</ol>
+<p>4、 安装Nginx</p>
 <ul>
 <li>安装依赖<br>  <code>[root@*** ~]# yum -y install zlib zlib-devel openssl openssl--devel pcre pcre-devel</code></li>
 <li>下载nginx源码包<br>  <code>[root@*** ~]# wget http://nginx.org/download/nginx-1.12.1.tar.gz</code></li>
@@ -321,28 +310,19 @@ res.end(&apos;Hello World\n&apos;);
 <li><p>启动nginx服务<br>  <code>[root@*** ~]# cd /usr/local/nginx/sbin</code><br>  <code>[root@*** sbin]# ./nginx</code></p>
 </li>
 </ul>
-<ol>
-<li>安装forever<br> 可以让进程在终端关闭之后，继续运行；</li>
-</ol>
+<p>5、 安装forever<br>    可以让进程在终端关闭之后，继续运行；</p>
 <ul>
 <li>安装<br>  <code>[root@*** ~]# npm install forever -g</code></li>
 <li>启动<br>  <code>[root@*** ~]# forever start /root/app/index.js</code></li>
 <li>关闭<br>  方式一：<br>  <code>[root@*** ~]# forever stop /root/app/index.js</code><br>  方式二：<br>  查看forever list - 守护进程列表<br>  <code>[root@*** ~]# forever list</code><br>  <code>info:    Forever processes running</code><br>  <code>data: uid command  script  forever pid   id logfile    uptime</code><br>  <code>data:[0] UGhW /usr/local/node/bin/node /root/app/index.js 22288 22294    /root/.forever/UGhW.log 0:3:57:32.789</code><br>  根据uid 选择关闭；当前是0则<code>stop 0</code>即可；<br>  <code>[root@*** ~]# forever stop 0</code></li>
-<li>输出日志和错误<br>  <code>[root@*** ~]# forever start -l forever.log -o out.log -e err.log /root/app/index.js</code></li>
-</ul>
-<ol>
-<li>一些Linux基本操作</li>
-</ol>
-<ul>
+<li>输出日志和错误<br>  <code>[root@*** ~]# forever start -l forever.log -o out.log -e err.log /root/app/index.js</code><br>6、 一些Linux基本操作</li>
 <li>删除文件夹<br>  <code>rm -rf /usr/local/node</code><br>  将会删除掉<code>/usr/local/node</code>目录及其包含的而所有文件、文件夹</li>
 <li>删除文件<br>  <code>rm -f /usr/local/node/ini.log</code><br>  将会删除掉<code>/usr/local/node</code>目录下的文件<code>ini.log</code></li>
 <li>查看端口号<br>  <code>netstat -tln</code><br>  <code>netstat -tln | grep 80</code><br>  前者是查看端口使用情况，后者是只查看端口80的使用情况</li>
 <li>查看端口是哪个程序占用的？哪个进程？<br>  <code>lsof -i:80</code><br>  <code>COMMAND PID  USER  FD  TYPE DEVICE SIZE/OFF NODE NAME</code><br>  <code>Ali 11836 root 18u IPv4 13553 0t0  TCP iZw:44452-&gt;106.11.68.13:http (CLOSE_WAIT)</code></li>
 <li>关闭进程 (根据PID)<br>  <code>kill -9 进程ID</code><br>  <code>kill -9 11836</code></li>
 </ul>
-<ol>
-<li>参考文档</li>
-</ol>
+<p>7、 参考文档</p>
 <ul>
 <li><a href="http://www.cnblogs.com/smoothLily/p/4366099.html" target="_blank" rel="external">CentOS安装Nginx，并配置nodejs反向代理</a></li>
 <li><a href="https://segmentfault.com/a/1190000009393665" target="_blank" rel="external">Linux CentOS7 搭建node服务详细教程</a></li>
