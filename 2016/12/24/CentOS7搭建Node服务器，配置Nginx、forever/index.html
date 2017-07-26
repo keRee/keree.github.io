@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://keree.github.io/2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/index.html">
 <meta property="og:site_name" content="keRee-Blog">
 <meta property="og:description" content="服务器搭建">
-<meta property="og:updated_time" content="2017-07-26T13:21:47.729Z">
+<meta property="og:updated_time" content="2017-07-26T13:25:48.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7搭建Node服务器，配置Nginx、forever">
 <meta name="twitter:description" content="服务器搭建">
@@ -297,36 +297,60 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]# cd ..</div><div class="line">[root@*** ~]# vi test.js</div></pre></td></tr></table></figure>
 <p>  进入vim后，按i进入编辑模式，写个简单的脚本：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">const http = require(&apos;http&apos;);</div><div class="line">const hostname = &apos;0.0.0.0&apos;;</div><div class="line">const port = 80;</div><div class="line">const server = http.createServer((req, res) =&gt; &#123;</div><div class="line">    res.statusCode = 200;</div><div class="line">    res.setHeader(&apos;Content-Type&apos;, &apos;text/plain&apos;);</div><div class="line">    res.end(&apos;Hello World\n&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>  `server.listen(port, hostname, () =&gt; {</p>
-<pre><code>console.log(&apos;Server running at http://&apos; + hostname +&apos;:&apos; + port);
-</code></pre><p>  });<code>按Esc退出编辑，输入</code>:wq<code>退出并保存；</code>[root@<em>*</em> ~]# node test.js<code>提示：</code>Server running at <a href="http://0.0.0.0:80/`则说明成功了；" target="_blank" rel="external">http://0.0.0.0:80/`则说明成功了；</a></p>
-</li>
-<li>在外网测试访问<br>  在浏览器输入在即的公网IP，出现<code>Hello World</code>，则说明Web服务搭建成功了！</li>
-<li>总结<br>  若出现不能访问的情况，则需要看下防火墙；<br>  CentOs7默认防火墙是关闭的，需要在Ecs的安全组入网端配置一下（防止端口被屏蔽）；</li>
-</ul>
-<p>4、 安装Nginx</p>
-<ul>
-<li>安装依赖<br>  <code>[root@*** ~]# yum -y install zlib zlib-devel openssl openssl--devel pcre pcre-devel</code></li>
-<li>下载nginx源码包<br>  <code>[root@*** ~]# wget http://nginx.org/download/nginx-1.12.1.tar.gz</code></li>
-<li>解压、配置、编译、安装nginx<br>  <code>[root@*** ~]# tar zxf nginx-1.12.1.tar.gz</code><br>  <code>[root@*** ~]# cd nginx-1.12.1</code><br>  <code>[root@*** nginx-1.12.1]# ./configure --prefix=/usr/local/nginx</code><br>  <code>[root@*** nginx-1.12.1]# make</code><br>  <code>[root@*** nginx-1.12.1]# make install</code></li>
-<li><p>配置nginx反向代理<br>  进入<code>/usr/local/nginx/conf</code>目录，打开文件<code>nginx.conf</code>(可以vim打开，也可以在编辑器打开)<br>  在http对象下，将模块<code>配置一</code>修改为模块<code>配置二</code></p>
-  <figure class="highlight plain"><figcaption><span>配置一</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">    server_name localhost;</div><div class="line">    location / &#123;</div><div class="line">        root    html;</div><div class="line">        index   index.html index.htm;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">server.listen(port, hostname, () =&gt; &#123;</div><div class="line">    console.log(`Server running at http://$&#123;hostname&#125;:$&#123;port&#125;`);</div><div class="line">&#125;);</div><div class="line">``</div><div class="line">按Esc退出编辑，输入`:wq`退出并保存；</div></pre></td></tr></table></figure>
+<p>  [root@<em>*</em> ~]# node test.js</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">    提示：`Server running at http://0.0.0.0:80/`则说明成功了；</div><div class="line">- 在外网测试访问</div><div class="line">    在浏览器输入在即的公网IP，出现`Hello World`，则说明Web服务搭建成功了！</div><div class="line">- 总结</div><div class="line">    若出现不能访问的情况，则需要看下防火墙；</div><div class="line">    CentOs7默认防火墙是关闭的，需要在Ecs的安全组入网端配置一下（防止端口被屏蔽）；</div><div class="line"></div><div class="line">4、 安装Nginx</div><div class="line">- 安装依赖</div></pre></td></tr></table></figure>
+<p>  [root@<em>*</em> ~]# yum -y install zlib zlib-devel openssl openssl–devel pcre pcre-devel</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- 下载nginx源码包</div></pre></td></tr></table></figure>
+<p>  [root@<em>*</em> ~]# wget <a href="http://nginx.org/download/nginx-1.12.1.tar.gz" target="_blank" rel="external">http://nginx.org/download/nginx-1.12.1.tar.gz</a></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- 解压、配置、编译、安装nginx</div></pre></td></tr></table></figure>
+<p>  [root@<strong><em> ~]# tar zxf nginx-1.12.1.tar.gz<br>  [root@</em></strong> ~]# cd nginx-1.12.1<br>  [root@<strong><em> nginx-1.12.1]# ./configure –prefix=/usr/local/nginx<br>  [root@</em></strong> nginx-1.12.1]# make<br>  [root@<em>*</em> nginx-1.12.1]# make install</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">- 配置nginx反向代理</div><div class="line">    进入`/usr/local/nginx/conf`目录，打开文件`nginx.conf`(可以vim打开，也可以在编辑器打开)</div><div class="line">    在http对象下，将模块`配置一`修改为模块`配置二`</div><div class="line">    ```// 配置一</div><div class="line">    server&#123;</div><div class="line">        listen 80;</div><div class="line">        server_name localhost;</div><div class="line">        location / &#123;</div><div class="line">            root    html;</div><div class="line">            index   index.html index.htm;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
   <figure class="highlight plain"><figcaption><span>配置二</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">    server_name localhost;</div><div class="line">    location / &#123;</div><div class="line">        proxy_set_header X-Real-IP $remote_addr;</div><div class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</div><div class="line">        proxy_set_header Host  $http_host;</div><div class="line">        proxy_set_header X-Nginx-Proxy true;</div><div class="line">        proxy_set_header Connection &quot;&quot;;</div><div class="line">        proxy_pass      http://127.0.0.1:3000;  # 此处配置为node默认的3000端口</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>启动nginx服务<br>  <code>[root@*** ~]# cd /usr/local/nginx/sbin</code><br>  <code>[root@*** sbin]# ./nginx</code></p>
+<li><p>启动nginx服务</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# cd /usr/local/nginx/sbin</div><div class="line">[root@*** sbin]# ./nginx</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>5、 安装forever<br>    可以让进程在终端关闭之后，继续运行；</p>
 <ul>
-<li>安装<br>  <code>[root@*** ~]# npm install forever -g</code></li>
-<li>启动<br>  <code>[root@*** ~]# forever start /root/app/index.js</code></li>
-<li>关闭<br>  方式一：<br>  <code>[root@*** ~]# forever stop /root/app/index.js</code><br>  方式二：<br>  查看forever list - 守护进程列表<br>  <code>[root@*** ~]# forever list</code><br>  <code>info:    Forever processes running</code><br>  <code>data: uid command  script  forever pid   id logfile    uptime</code><br>  <code>data:[0] UGhW /usr/local/node/bin/node /root/app/index.js 22288 22294    /root/.forever/UGhW.log 0:3:57:32.789</code><br>  根据uid 选择关闭；当前是0则<code>stop 0</code>即可；<br>  <code>[root@*** ~]# forever stop 0</code></li>
-<li>输出日志和错误<br>  <code>[root@*** ~]# forever start -l forever.log -o out.log -e err.log /root/app/index.js</code><br>6、 一些Linux基本操作</li>
-<li>删除文件夹<br>  <code>rm -rf /usr/local/node</code><br>  将会删除掉<code>/usr/local/node</code>目录及其包含的而所有文件、文件夹</li>
-<li>删除文件<br>  <code>rm -f /usr/local/node/ini.log</code><br>  将会删除掉<code>/usr/local/node</code>目录下的文件<code>ini.log</code></li>
-<li>查看端口号<br>  <code>netstat -tln</code><br>  <code>netstat -tln | grep 80</code><br>  前者是查看端口使用情况，后者是只查看端口80的使用情况</li>
-<li>查看端口是哪个程序占用的？哪个进程？<br>  <code>lsof -i:80</code><br>  <code>COMMAND PID  USER  FD  TYPE DEVICE SIZE/OFF NODE NAME</code><br>  <code>Ali 11836 root 18u IPv4 13553 0t0  TCP iZw:44452-&gt;106.11.68.13:http (CLOSE_WAIT)</code></li>
-<li>关闭进程 (根据PID)<br>  <code>kill -9 进程ID</code><br>  <code>kill -9 11836</code></li>
+<li><p>安装</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# npm install forever -g</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# forever start /root/app/index.js</div></pre></td></tr></table></figure>
+</li>
+<li><p>关闭<br>  方式一：</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# forever stop /root/app/index.js</div></pre></td></tr></table></figure>
+<p>  方式二：<br>  查看forever list - 守护进程列表</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# forever list</div><div class="line">info:    Forever processes running</div><div class="line">data: uid command  script  forever pid   id logfile    uptime      </div><div class="line">data:[0] UGhW /usr/local/node/bin/node /root/app/index.js 22288 22294    /root/.forever/UGhW.log 0:3:57:32.789</div></pre></td></tr></table></figure>
+<p>  根据uid 选择关闭；当前是0则<code>stop 0</code>即可；</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# forever stop 0</div></pre></td></tr></table></figure>
+</li>
+<li><p>输出日志和错误</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# forever start -l forever.log -o out.log -e err.log /root/app/index.js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>6、 一些Linux基本操作</p>
+<ul>
+<li><p>删除文件夹</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf /usr/local/node</div></pre></td></tr></table></figure>
+<p>  将会删除掉<code>/usr/local/node</code>目录及其包含的而所有文件、文件夹</p>
+</li>
+<li><p>删除文件</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -f /usr/local/node/ini.log</div></pre></td></tr></table></figure>
+<p>  将会删除掉<code>/usr/local/node</code>目录下的文件<code>ini.log</code></p>
+</li>
+<li><p>查看端口号</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">netstat -tln</div><div class="line">netstat -tln | grep 80</div></pre></td></tr></table></figure>
+<p>  前者是查看端口使用情况，后者是只查看端口80的使用情况</p>
+</li>
+<li><p>查看端口是哪个程序占用的？哪个进程？</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">lsof -i:80</div><div class="line">COMMAND PID  USER  FD  TYPE DEVICE SIZE/OFF NODE NAME</div><div class="line">Ali 11836 root 18u IPv4 13553 0t0  TCP iZw:44452-&gt;106.11.68.13:http (CLOSE_WAIT)</div></pre></td></tr></table></figure>
+</li>
+<li><p>关闭进程 (根据PID)</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">kill -9 进程ID</div><div class="line">kill -9 11836</div></pre></td></tr></table></figure>
+</li>
 </ul>
 <p>7、 参考文档</p>
 <ul>
