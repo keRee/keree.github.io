@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://keree.github.io/2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/index.html">
 <meta property="og:site_name" content="keRee-Blog">
 <meta property="og:description" content="服务器搭建">
-<meta property="og:updated_time" content="2017-07-26T13:19:29.297Z">
+<meta property="og:updated_time" content="2017-07-26T13:21:47.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7搭建Node服务器，配置Nginx、forever">
 <meta name="twitter:description" content="服务器搭建">
@@ -263,32 +263,25 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>1、 前提准备</p>
+        <p>1、 前提准备<br>-阿里云服务器安装CentOS7系统，安装NodeJs环境；</p>
+<p>-在ECS上装好系统后，去<a href="https://www.netsarang.com/download/free_license.html" target="_blank" rel="external">netsarang</a>官网下载个人免费版的XShell和XFtp，管理自己的服务器；</p>
+<pre><code>&gt; XShell和XFtp需要用ECS提供的外网IP和密码配置好（分别采用ssh和sftp的方式）
+</code></pre><p>2、 安装NodeJs</p>
 <ul>
-<li><p>阿里云服务器安装CentOS7系统，安装NodeJs环境；</p>
-</li>
-<li><p>在ECS上装好系统后，去<a href="https://www.netsarang.com/download/free_license.html" target="_blank" rel="external">netsarang</a>官网下载个人免费版的XShell和XFtp，管理自己的服务器；</p>
-<blockquote>
-<p>XShell和XFtp需要用ECS提供的外网IP和密码配置好（分别采用ssh和sftp的方式）<br>2、 安装NodeJs</p>
-</blockquote>
-</li>
 <li>下载NodeJs（源码安装）<br>一种方式是在<a href="http://nodejs.cn/download/" target="_blank" rel="external">NodeJs</a>官网自己下载好Node源码包，然后通过XFtp上传到自己的服务器<br>另一种方式是在XShell中采用wget</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]# wget https://npm.taobao.org/mirrors/node/v8.2.1/node-v8.2.1.tar.gz</div></pre></td></tr></table></figure>
-<ul>
-<li><p>解压</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]#  tar zxf node-v8.2.1.tar.gz</div></pre></td></tr></table></figure>
-</li>
-<li><p>编译安装</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]#  cd node-v8.2.1</div><div class="line">[root@*** node-v8.2.1]#  ./configure --prefix=/usr/local/node</div><div class="line">[root@*** node-v8.2.1]#  make</div><div class="line">[root@*** node-v8.2.1]#  make install</div></pre></td></tr></table></figure>
-</li>
-<li><p>配置Node环境</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]#  vi /etc/profile</div></pre></td></tr></table></figure>
-<p>  使用vim打开profile，按键盘i进入到vim编辑模式，在文本的最后插入以下内容：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export NODE_HOME=/usr/local/node</div><div class="line">export PATH=$NODE_HOME/bin:$PATH</div><div class="line">export NODE_PATH=$NODE_HOME/lib/node_modules:$PATH</div></pre></td></tr></table></figure>
-<p>  输入完成之后，按ESC退出编辑模式；<br>  然后再输入<code>:wq</code>，退出并保存我们刚刚编辑过得文件；<br>  输入以下命令让刚刚的变动生效：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]#  source /etc/profile</div></pre></td></tr></table></figure>
-</li>
+<p>-解压<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]#  tar zxf node-v8.2.1.tar.gz</div></pre></td></tr></table></figure></p>
+<p>-编译安装<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@*** ~]#  cd node-v8.2.1</div><div class="line">[root@*** node-v8.2.1]#  ./configure --prefix=/usr/local/node</div><div class="line">[root@*** node-v8.2.1]#  make</div><div class="line">[root@*** node-v8.2.1]#  make install</div></pre></td></tr></table></figure></p>
+<p>-配置Node环境<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]#  vi /etc/profile</div></pre></td></tr></table></figure></p>
+<pre><code>使用vim打开profile，按键盘i进入到vim编辑模式，在文本的最后插入以下内容：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export NODE_HOME=/usr/local/node</div><div class="line">export PATH=$NODE_HOME/bin:$PATH</div><div class="line">export NODE_PATH=$NODE_HOME/lib/node_modules:$PATH</div></pre></td></tr></table></figure>
+
+输入完成之后，按ESC退出编辑模式；
+然后再输入`:wq`，退出并保存我们刚刚编辑过得文件；
+输入以下命令让刚刚的变动生效：
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]#  source /etc/profile</div></pre></td></tr></table></figure>
+</code></pre><ul>
 <li><p>测试安装是否生效</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]#  node -v</div></pre></td></tr></table></figure>
 <p>  出现版本号<code>v8.2.1</code>，则说明安装成功；</p>
