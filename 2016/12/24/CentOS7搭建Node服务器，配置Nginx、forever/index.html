@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://keree.github.io/2016/12/24/CentOS7搭建Node服务器，配置Nginx、forever/index.html">
 <meta property="og:site_name" content="keRee-Blog">
 <meta property="og:description" content="服务器搭建">
-<meta property="og:updated_time" content="2017-07-26T13:28:05.241Z">
+<meta property="og:updated_time" content="2017-07-26T13:30:15.539Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS7搭建Node服务器，配置Nginx、forever">
 <meta name="twitter:description" content="服务器搭建">
@@ -285,10 +285,10 @@
 <p>  使用vim打开profile，按键盘i进入到vim编辑模式，在文本的最后插入以下内容：</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export NODE_HOME=/usr/local/node</div><div class="line">export PATH=$NODE_HOME/bin:$PATH</div><div class="line">export NODE_PATH=$NODE_HOME/lib/node_modules:$PATH</div></pre></td></tr></table></figure>
 <p>  输入完成之后，按ESC退出编辑模式；<br>  然后再输入<code>:wq</code>，退出并保存我们刚刚编辑过得文件；<br>  输入以下命令让刚刚的变动生效：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]#  source /etc/profile</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]#  source /etc/profile</div></pre></td></tr></table></figure>
 </li>
 <li><p>测试安装是否生效</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]#  node -v</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@*** node-v8.2.1]#  node -v</div></pre></td></tr></table></figure>
 <p>  出现版本号<code>v8.2.1</code>，则说明安装成功；</p>
 </li>
 <li><p>总结</p>
